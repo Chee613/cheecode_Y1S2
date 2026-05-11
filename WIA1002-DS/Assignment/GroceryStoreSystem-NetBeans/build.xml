@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GroceryStoreSystem" default="run" basedir=".">
+    <description>NetBeans-ready Ant project for the Grocery Store Management System.</description>
+
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.jar" value="${dist.dir}/GroceryStoreSystem.jar"/>
+    <property name="main.class" value="grocerystoresystem.GroceryStoreSystem"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="dist"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar jarfile="${dist.jar}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="jar"/>
+
+    <target name="run" depends="jar">
+        <java jar="${dist.jar}" fork="true" dir="${basedir}"/>
+    </target>
+</project>
