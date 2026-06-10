@@ -131,6 +131,14 @@ public class InventoryManager {
         return null;
     }
 
+    public Product searchByPrice(double price){
+        for (Product product : products){
+            if (product.getPrice()== price)
+                return product;
+        }
+        return null;
+    };
+    
     public ArrayList<Product> searchByName(String keyword) {
         // Prepare a list for every matching product.
         ArrayList<Product> matches = new ArrayList<>();

@@ -153,6 +153,8 @@ public class GroceryStoreSystem {
             System.out.println("1. Search product by ID");
             System.out.println("2. Search product by name");
             System.out.println("3. Back to main menu");
+            System.out.println("4. Search product by price");
+            
 
             // Read the selected search option.
             int choice = readInt("Enter choice: ");
@@ -169,6 +171,8 @@ public class GroceryStoreSystem {
                 case 3:
                     searching = false;
                     break;
+                case 4:
+                    searchProductByPrice();
                 default:
                     System.out.println("Invalid choice. Please select a menu option from 1 to 3.");
                     break;
@@ -185,6 +189,21 @@ public class GroceryStoreSystem {
         int id = readInt("Enter product ID: ");
         // Search the inventory for that ID.
         Product product = inventoryManager.searchById(id);
+
+        // Show a message when no product matches the ID.
+        if (product == null) {
+            System.out.println("Product not found.");
+        } else {
+            // Print the matching product details.
+            System.out.println(product);
+        }
+    }
+    
+    private void searchProductByPrice() {
+        // Ask the user for the target product ID.
+        double price = readNonNegativeDouble("Enter product price: ");
+        // Search the inventory for that ID.
+        Product product = inventoryManager.searchByPrice(price);
 
         // Show a message when no product matches the ID.
         if (product == null) {
