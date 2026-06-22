@@ -2,3 +2,6 @@
 *.class
 /WIA1002-DS/Assignment/GroceryStoreSystem-NetBeans/nbproject/private/
 /WIA1002-DS/Assignment/GroceryStoreSystem-NetBeans/dist/
+
+# Ignore Office temporary lock files
+~$*
