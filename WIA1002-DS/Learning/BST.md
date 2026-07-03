@@ -1460,6 +1460,534 @@ public boolean delete(E element) {
 
 ---
 
+# Part 9.5: In-Order Successor and In-Order Predecessor
+
+## 1. What Are They?
+
+Think of the inorder traversal. It visits nodes in sorted order.
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Inorder: `45 55 57 59 60 67 100 101 107`
+
+For any node, the **in-order successor** is the next node in that sorted list.
+
+For any node, the **in-order predecessor** is the previous node in that sorted list.
+
+Example:
+
+```text
+Node 60:
+  In-order successor   = 67   (next in sorted order)
+  In-order predecessor = 59   (previous in sorted order)
+
+Node 55:
+  In-order successor   = 57
+  In-order predecessor = 45
+
+Node 45:
+  In-order successor   = 55
+  In-order predecessor = none (45 is the smallest)
+
+Node 107:
+  In-order successor   = none (107 is the largest)
+  In-order predecessor = 101
+```
+
+Simple definition:
+
+```text
+In-order successor   = the smallest value that is bigger than the current node.
+In-order predecessor = the largest value that is smaller than the current node.
+```
+
+---
+
+## 2. Why Are They Important?
+
+Two main reasons:
+
+```text
+1. Deletion uses in-order predecessor (the rightMost node in Part 9 IS the in-order predecessor).
+2. Exam questions often ask you to find successor/predecessor of a node.
+```
+
+Connection to deletion:
+
+```text
+In delete Case 2, we find rightMost in the left subtree.
+rightMost = in-order predecessor of the node being deleted.
+Some textbooks use in-order successor instead (leftMost of the right subtree).
+Both approaches are valid.
+```
+
+---
+
+## 3. How to Find In-Order Successor
+
+There are two cases.
+
+### Case 1: Node has a right subtree
+
+```text
+Go to the right child.
+Then keep going left until you reach a node with no left child.
+That node is the in-order successor.
+```
+
+In short:
+
+```text
+In-order successor = leftmost node in the right subtree.
+```
+
+Example:
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Find successor of 60:
+
+```text
+60 has right subtree rooted at 100.
+Go right to 100.
+Go left to 67.
+67 has no left child.
+In-order successor of 60 = 67.
+```
+
+Find successor of 55:
+
+```text
+55 has right subtree rooted at 57.
+Go right to 57.
+57 has no left child.
+In-order successor of 55 = 57.
+```
+
+Find successor of 100:
+
+```text
+100 has right subtree rooted at 107.
+Go right to 107.
+Go left to 101.
+101 has no left child.
+In-order successor of 100 = 101.
+```
+
+### Case 2: Node has no right subtree
+
+```text
+Go up the tree using parent pointers.
+Keep going up while the current node is a right child of its parent.
+When the current node is a left child of its parent, that parent is the successor.
+```
+
+In short:
+
+```text
+In-order successor = the nearest ancestor for which the node is in its left subtree.
+```
+
+Example:
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Find successor of 59:
+
+```text
+59 has no right subtree.
+59 is right child of 57.
+57 is right child of 55.
+55 is left child of 60.
+In-order successor of 59 = 60.
+```
+
+Find successor of 45:
+
+```text
+45 has no right subtree.
+45 is left child of 55.
+In-order successor of 45 = 55.
+```
+
+---
+
+## 4. How to Find In-Order Predecessor
+
+There are two cases. It is the mirror of successor.
+
+### Case 1: Node has a left subtree
+
+```text
+Go to the left child.
+Then keep going right until you reach a node with no right child.
+That node is the in-order predecessor.
+```
+
+In short:
+
+```text
+In-order predecessor = rightmost node in the left subtree.
+```
+
+This is exactly the rightMost node from deletion Case 2.
+
+Example:
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Find predecessor of 60:
+
+```text
+60 has left subtree rooted at 55.
+Go left to 55.
+Go right to 57.
+Go right to 59.
+59 has no right child.
+In-order predecessor of 60 = 59.
+```
+
+Find predecessor of 100:
+
+```text
+100 has left subtree rooted at 67.
+Go left to 67.
+67 has no right child.
+In-order predecessor of 100 = 67.
+```
+
+### Case 2: Node has no left subtree
+
+```text
+Go up the tree using parent pointers.
+Keep going up while the current node is a left child of its parent.
+When the current node is a right child of its parent, that parent is the predecessor.
+```
+
+In short:
+
+```text
+In-order predecessor = the nearest ancestor for which the node is in its right subtree.
+```
+
+Example:
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Find predecessor of 67:
+
+```text
+67 has no left subtree.
+67 is left child of 100.
+100 is right child of 60.
+In-order predecessor of 67 = 60.
+```
+
+Find predecessor of 101:
+
+```text
+101 has no left subtree.
+101 is left child of 107.
+107 is right child of 100.
+In-order predecessor of 101 = 100.
+```
+
+---
+
+## 5. Summary Table
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+
+Inorder: 45 55 57 59 60 67 100 101 107
+
+Node | Predecessor | Successor
+-----|-------------|----------
+ 45  |    none     |    55
+ 55  |     45      |    57
+ 57  |     55      |    59
+ 59  |     57      |    60
+ 60  |     59      |    67
+ 67  |     60      |   100
+100  |     67      |   101
+101  |    100      |   107
+107  |    101      |   none
+```
+
+---
+
+## 6. Quick Rule to Remember
+
+```text
+In-order successor:
+  Has right subtree   → leftmost of right subtree
+  No right subtree    → go up until you are a left child; that parent is successor
+
+In-order predecessor:
+  Has left subtree    → rightmost of left subtree
+  No left subtree     → go up until you are a right child; that parent is predecessor
+```
+
+Even simpler:
+
+```text
+Successor   = next bigger value   = go right once, then go left all the way
+Predecessor = next smaller value  = go left once, then go right all the way
+```
+
+(The second line only works when the subtree exists.)
+
+---
+
+## 7. Java Code: In-Order Successor (Right Subtree Case)
+
+This is the most common version asked in exams, since BST nodes often don't store parent pointers.
+
+```java
+public E inorderSuccessor(E element) {
+    // Step 1: Find the node
+    TreeNode<E> current = root;
+    TreeNode<E> successor = null;
+
+    while (current != null) {
+        if (element.compareTo(current.element) < 0) {
+            successor = current;       // current could be successor
+            current = current.left;
+        } else if (element.compareTo(current.element) > 0) {
+            current = current.right;
+        } else {
+            break;                     // found the node
+        }
+    }
+
+    if (current == null) {
+        return null;                   // element not in tree
+    }
+
+    // Step 2: If right subtree exists, find leftmost
+    if (current.right != null) {
+        TreeNode<E> temp = current.right;
+        while (temp.left != null) {
+            temp = temp.left;
+        }
+        return temp.element;
+    }
+
+    // Step 3: If no right subtree, successor was tracked during search
+    return (successor != null) ? successor.element : null;
+}
+```
+
+### How it works (no parent pointer needed)
+
+```text
+While searching for the node:
+  Every time we go LEFT, we save the current node as a potential successor.
+  Every time we go RIGHT, we do NOT update successor.
+
+Why?
+  If we go left at node X, it means our target is in X's left subtree.
+  So X is bigger than our target → X could be the successor.
+```
+
+---
+
+## 8. Java Code: In-Order Predecessor (Left Subtree Case)
+
+```java
+public E inorderPredecessor(E element) {
+    // Step 1: Find the node
+    TreeNode<E> current = root;
+    TreeNode<E> predecessor = null;
+
+    while (current != null) {
+        if (element.compareTo(current.element) < 0) {
+            current = current.left;
+        } else if (element.compareTo(current.element) > 0) {
+            predecessor = current;     // current could be predecessor
+            current = current.right;
+        } else {
+            break;                     // found the node
+        }
+    }
+
+    if (current == null) {
+        return null;                   // element not in tree
+    }
+
+    // Step 2: If left subtree exists, find rightmost
+    if (current.left != null) {
+        TreeNode<E> temp = current.left;
+        while (temp.right != null) {
+            temp = temp.right;
+        }
+        return temp.element;
+    }
+
+    // Step 3: If no left subtree, predecessor was tracked during search
+    return (predecessor != null) ? predecessor.element : null;
+}
+```
+
+### How it works
+
+```text
+While searching for the node:
+  Every time we go RIGHT, we save the current node as a potential predecessor.
+  Every time we go LEFT, we do NOT update predecessor.
+
+Why?
+  If we go right at node X, it means our target is in X's right subtree.
+  So X is smaller than our target → X could be the predecessor.
+```
+
+---
+
+## 9. Trace Example: Find Successor of 59
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Search for 59:
+
+```text
+At 60: 59 < 60 → go left. Save 60 as successor.
+At 55: 59 > 55 → go right. Don't update successor.
+At 57: 59 > 57 → go right. Don't update successor.
+At 59: 59 == 59 → found.
+```
+
+59 has no right subtree.
+
+So use the saved successor = 60.
+
+```text
+In-order successor of 59 = 60 ✓
+```
+
+---
+
+## 10. Trace Example: Find Predecessor of 67
+
+```text
+        60
+       /  \
+     55    100
+    /  \   /  \
+  45   57 67  107
+        \     /
+        59   101
+```
+
+Search for 67:
+
+```text
+At 60: 67 > 60 → go right. Save 60 as predecessor.
+At 100: 67 < 100 → go left. Don't update predecessor.
+At 67: 67 == 67 → found.
+```
+
+67 has no left subtree.
+
+So use the saved predecessor = 60.
+
+```text
+In-order predecessor of 67 = 60 ✓
+```
+
+---
+
+## 11. Connection to Deletion (Important for Exams)
+
+```text
+In deletion Case 2:
+  We replace the deleted node with its IN-ORDER PREDECESSOR.
+  That is the rightMost node in the left subtree.
+
+Alternative approach:
+  Some textbooks replace the deleted node with its IN-ORDER SUCCESSOR.
+  That is the leftMost node in the right subtree.
+
+Both preserve the BST property.
+```
+
+Example (using successor instead):
+
+```text
+        50
+       /  \
+      20    80
+     /  \
+   10    40
+
+Delete 20 using in-order successor:
+  Right subtree of 20 = 40.
+  leftMost of right subtree = 40.
+  Replace 20 with 40.
+
+Result:
+        50
+       /  \
+      40    80
+     /
+   10
+```
+
+---
+
 # Part 10: Complete BST Java Code
 
 Copy into `Main.java`.
