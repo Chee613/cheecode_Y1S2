@@ -6,1604 +6,1604 @@
 
 ## Question 1
 
-**Question:** A condition has prior 0.1, sensitivity P(+|C)=0.7, and false-positive rate P(+|not C)=0.15. What is P(C|+)?
+**Question:** Using prior=0.1, $P(+\mid C)$=0.7, $P(+\mid \neg C)$=0.15, compute the Bayes posterior.
 
 **Choices:**
-- **A.** 0.07
-- **B.** 0.205
-- **C.** 0.3415
-- **D.** 0.6585
+- **A.** Bayes posterior = 0.2705
+- **B.** Bayes posterior = 0.4125
+- **C.** Bayes posterior = 0.3415
+- **D.** Bayes posterior = 0.4835
 
-**Correct Answer:** 0.3415
+**Correct Answer:** Bayes posterior = 0.3415
 
-**Explanation:** Evidence=0.7(0.1)+0.15(1-0.1)=0.205; posterior=0.3415.
+**Explanation:** Apply $\frac{P(B\mid A)P(A)}{P(B)}$; substitution gives Bayes posterior=0.3415.
 
 ---
 
 ## Question 2
 
-**Question:** A Markov path has initial probability 0.2 and successive transition probabilities ['0.8', '0.4', '0.6']. What is its joint probability?
+**Question:** Using initial=0.2, transitions=['0.8', '0.4', '0.6', '0.3'], compute the Markov path probability.
 
 **Choices:**
-- **A.** 0.36
-- **B.** 0.192
-- **C.** 0.0128
-- **D.** 0.0384
+- **A.** Markov path probability = 0.1535
+- **B.** Markov path probability = 0.0825
+- **C.** Markov path probability = -0.0595
+- **D.** Markov path probability = 0.0115
 
-**Correct Answer:** 0.0384
+**Correct Answer:** Markov path probability = 0.0115
 
-**Explanation:** Multiply the one initial term and every transition: 0.2 x 0.8 x 0.4 x 0.6=0.0384.
+**Explanation:** Apply $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$; substitution gives Markov path probability=0.0115.
 
 ---
 
 ## Question 3
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.7', '0.2'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.4', '0.6']. What is P(o1,o2)?
+**Question:** Using $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.7', '0.2'], emissions2=['0.4', '0.6'], compute the HMM observation likelihood.
 
 **Choices:**
-- **A.** 0.5
-- **B.** 0.144
-- **C.** 0.228
-- **D.** 0.0121
+- **A.** HMM observation likelihood = 0.37
+- **B.** HMM observation likelihood = 0.299
+- **C.** HMM observation likelihood = 0.157
+- **D.** HMM observation likelihood = 0.228
 
-**Correct Answer:** 0.228
+**Correct Answer:** HMM observation likelihood = 0.228
 
-**Explanation:** alpha1=['0.42', '0.08']; alpha2=['0.144', '0.084']; summing final alphas gives 0.228.
+**Explanation:** Apply $\sum_j\alpha_T(j)$; substitution gives HMM observation likelihood=0.228.
 
 ---
 
 ## Question 4
 
-**Question:** Current forward vector is ['0.12', '0.18'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Using $\alpha=[0.12, 0.18]$, destination transitions=(.3,.8), emission=0.4, compute the destination forward value.
 
 **Choices:**
-- **A.** (0.06, 0.072)
-- **B.** (0.069, 0.0672)
-- **C.** (0.15, 0.12)
-- **D.** (0.09, 0.072)
+- **A.** destination forward value = 0.143
+- **B.** destination forward value = 0.072
+- **C.** destination forward value = 0.001
+- **D.** destination forward value = 0.214
 
-**Correct Answer:** (0.06, 0.072)
+**Correct Answer:** destination forward value = 0.072
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.06', '0.072'].
+**Explanation:** Apply $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$; substitution gives destination forward value=0.072.
 
 ---
 
 ## Question 5
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.02', '0.015', '0.025']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Using candidate HMM likelihoods=['0.02', '0.015', '0.025'], compute the top-two HMM likelihood gap.
 
 **Choices:**
-- **A.** Model 3 with 0.025
-- **B.** Model 2 with 0.015
-- **C.** All models with 0.06
-- **D.** Model 3 with 0.4167
+- **A.** top-two HMM likelihood gap = 0.005
+- **B.** top-two HMM likelihood gap = 0.076
+- **C.** top-two HMM likelihood gap = -0.066
+- **D.** top-two HMM likelihood gap = 0.147
 
-**Correct Answer:** Model 3 with 0.025
+**Correct Answer:** top-two HMM likelihood gap = 0.005
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 3's 0.025.
+**Explanation:** Apply $L_{(1)}-L_{(2)}$; substitution gives top-two HMM likelihood gap=0.005.
 
 ---
 
 ## Question 6
 
-**Question:** A condition has prior 0.12, sensitivity P(+|C)=0.68, and false-positive rate P(+|not C)=0.16. What is P(C|+)?
+**Question:** Compare the Bayes posterior for Case P (prior=0.12, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.16) and Case Q (prior=0.18, $P(+\mid C)$=0.66, $P(+\mid \neg C)$=0.19).
 
 **Choices:**
-- **A.** 0.0816
-- **B.** 0.3669
-- **C.** 0.2224
-- **D.** 0.6331
+- **A.** The first case is larger: 0.3703 versus 0.4326 under the complete set of stated assumptions
+- **B.** The second case is larger: 0.4326 versus 0.3703
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** 0.3669
+**Correct Answer:** The second case is larger: 0.4326 versus 0.3703
 
-**Explanation:** Evidence=0.68(0.12)+0.16(1-0.12)=0.2224; posterior=0.3669.
+**Explanation:** The same formula gives 0.3703 for P and 0.4326 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 7
 
-**Question:** A Markov path has initial probability 0.23 and successive transition probabilities ['0.8', '0.4', '0.6', '0.3']. What is its joint probability?
+**Question:** Compare the Markov path probability for Case P (initial=0.225, transitions=['0.8', '0.41', '0.6', '0.3']) and Case Q (initial=0.3, transitions=['0.8', '0.44', '0.6', '0.3']).
 
 **Choices:**
-- **A.** 0.483
-- **B.** 0.0576
-- **C.** 0.0033
-- **D.** 0.0132
+- **A.** The second case is larger: 0.019 versus 0.0133
+- **B.** The first case is larger: 0.0133 versus 0.019 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** 0.0132
+**Correct Answer:** The second case is larger: 0.019 versus 0.0133
 
-**Explanation:** Multiply the one initial term and every transition: 0.23 x 0.8 x 0.4 x 0.6 x 0.3=0.0132.
+**Explanation:** The same formula gives 0.0133 for P and 0.019 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 8
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.69', '0.21'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.41', '0.59']. What is P(o1,o2)?
+**Question:** Compare the HMM observation likelihood for Case P ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.69', '0.21'], emissions2=['0.41', '0.59']) and Case Q ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.66', '0.24'], emissions2=['0.44', '0.56']).
 
 **Choices:**
-- **A.** 0.498
-- **B.** 0.2297
-- **C.** 0.1461
-- **D.** 0.0122
+- **A.** Only their sum can be determined
+- **B.** The first case is larger: 0.2297 versus 0.234 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** The second case is larger: 0.234 versus 0.2297
 
-**Correct Answer:** 0.2297
+**Correct Answer:** The second case is larger: 0.234 versus 0.2297
 
-**Explanation:** alpha1=['0.414', '0.084']; alpha2=['0.1461', '0.0835']; summing final alphas gives 0.2297.
+**Explanation:** The same formula gives 0.2297 for P and 0.234 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 9
 
-**Question:** Current forward vector is ['0.13', '0.175'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Compare the destination forward value for Case P ($\alpha=[0.13, 0.176]$, destination transitions=(.3,.8), emission=0.41) and Case Q ($\alpha=[0.16, 0.164]$, destination transitions=(.3,.8), emission=0.44).
 
 **Choices:**
-- **A.** (0.063, 0.0716)
-- **B.** (0.0717, 0.0664)
-- **C.** (0.1525, 0.122)
-- **D.** (0.0875, 0.07)
+- **A.** The second case is larger: 0.0788 versus 0.0737
+- **B.** The first case is larger: 0.0737 versus 0.0788 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** (0.063, 0.0716)
+**Correct Answer:** The second case is larger: 0.0788 versus 0.0737
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.063', '0.0716'].
+**Explanation:** The same formula gives 0.0737 for P and 0.0788 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 10
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.022', '0.018', '0.024']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Compare the top-two HMM likelihood gap for Case P (candidate HMM likelihoods=['0.021', '0.017', '0.0245']) and Case Q (candidate HMM likelihoods=['0.024', '0.023', '0.023']).
 
 **Choices:**
-- **A.** Model 2 with 0.018
-- **B.** All models with 0.064
-- **C.** Model 3 with 0.024
-- **D.** Model 3 with 0.375
+- **A.** The second case is larger: 0.001 versus 0.0035
+- **B.** The first case is larger: 0.0035 versus 0.001
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** Model 3 with 0.024
+**Correct Answer:** The first case is larger: 0.0035 versus 0.001
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 3's 0.024.
+**Explanation:** The same formula gives 0.0035 for P and 0.001 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 11
 
-**Question:** A condition has prior 0.14, sensitivity P(+|C)=0.66, and false-positive rate P(+|not C)=0.17. What is P(C|+)?
+**Question:** How far apart are the Bayes posterior values for (prior=0.14, $P(+\mid C)$=0.68, $P(+\mid \neg C)$=0.17) and (prior=0.26, $P(+\mid C)$=0.67, $P(+\mid \neg C)$=0.23)?
 
 **Choices:**
-- **A.** 0.3873
-- **B.** 0.0924
-- **C.** 0.2386
-- **D.** 0.6127
+- **A.** absolute Bayes posterior difference = 0.0404
+- **B.** absolute Bayes posterior difference = 0.1824
+- **C.** absolute Bayes posterior difference = 0.1114
+- **D.** absolute Bayes posterior difference = 0.2534
 
-**Correct Answer:** 0.3873
+**Correct Answer:** absolute Bayes posterior difference = 0.1114
 
-**Explanation:** Evidence=0.66(0.14)+0.17(1-0.14)=0.2386; posterior=0.3873.
+**Explanation:** The two values are 0.3944 and 0.5058; their absolute difference is 0.1114.
 
 ---
 
 ## Question 12
 
-**Question:** A Markov path has initial probability 0.26 and successive transition probabilities ['0.8', '0.4', '0.6']. What is its joint probability?
+**Question:** How far apart are the Markov path probability values for (initial=0.25, transitions=['0.8', '0.42', '0.6', '0.3']) and (initial=0.4, transitions=['0.8', '0.48', '0.6', '0.3'])?
 
 **Choices:**
-- **A.** 0.0499
-- **B.** 0.468
-- **C.** 0.192
-- **D.** 0.0166
+- **A.** absolute Markov path probability difference = 0.1545
+- **B.** absolute Markov path probability difference = 0.0835
+- **C.** absolute Markov path probability difference = -0.0585
+- **D.** absolute Markov path probability difference = 0.0125
 
-**Correct Answer:** 0.0499
+**Correct Answer:** absolute Markov path probability difference = 0.0125
 
-**Explanation:** Multiply the one initial term and every transition: 0.26 x 0.8 x 0.4 x 0.6=0.0499.
+**Explanation:** The two values are 0.0151 and 0.0276; their absolute difference is 0.0125.
 
 ---
 
 ## Question 13
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.68', '0.22'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.42', '0.58']. What is P(o1,o2)?
+**Question:** How far apart are the HMM observation likelihood values for ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.68', '0.22'], emissions2=['0.42', '0.58']) and ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.62', '0.28'], emissions2=['0.48', '0.52'])?
 
 **Choices:**
-- **A.** 0.496
-- **B.** 0.1482
-- **C.** 0.2312
-- **D.** 0.0123
+- **A.** absolute HMM observation likelihood difference = 0.1492
+- **B.** absolute HMM observation likelihood difference = 0.0782
+- **C.** absolute HMM observation likelihood difference = -0.0638
+- **D.** absolute HMM observation likelihood difference = 0.0072
 
-**Correct Answer:** 0.2312
+**Correct Answer:** absolute HMM observation likelihood difference = 0.0072
 
-**Explanation:** alpha1=['0.408', '0.088']; alpha2=['0.1482', '0.0831']; summing final alphas gives 0.2312.
+**Explanation:** The two values are 0.2312 and 0.2384; their absolute difference is 0.0072.
 
 ---
 
 ## Question 14
 
-**Question:** Current forward vector is ['0.14', '0.17'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** How far apart are the destination forward value values for ($\alpha=[0.14, 0.172]$, destination transitions=(.3,.8), emission=0.42) and ($\alpha=[0.2, 0.148]$, destination transitions=(.3,.8), emission=0.48)?
 
 **Choices:**
-- **A.** (0.0745, 0.0656)
-- **B.** (0.066, 0.0712)
-- **C.** (0.155, 0.124)
-- **D.** (0.085, 0.068)
+- **A.** absolute destination forward value difference = 0.1522
+- **B.** absolute destination forward value difference = 0.0812
+- **C.** absolute destination forward value difference = -0.0608
+- **D.** absolute destination forward value difference = 0.0102
 
-**Correct Answer:** (0.066, 0.0712)
+**Correct Answer:** absolute destination forward value difference = 0.0102
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.066', '0.0712'].
+**Explanation:** The two values are 0.0754 and 0.0856; their absolute difference is 0.0102.
 
 ---
 
 ## Question 15
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.024', '0.021', '0.023']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** How far apart are the top-two HMM likelihood gap values for (candidate HMM likelihoods=['0.022', '0.019', '0.024']) and (candidate HMM likelihoods=['0.028', '0.031', '0.021'])?
 
 **Choices:**
-- **A.** Model 2 with 0.021
-- **B.** All models with 0.068
-- **C.** Model 1 with 0.3529
-- **D.** Model 1 with 0.024
+- **A.** absolute top-two HMM likelihood gap difference = 0.143
+- **B.** absolute top-two HMM likelihood gap difference = 0.072
+- **C.** absolute top-two HMM likelihood gap difference = -0.07
+- **D.** absolute top-two HMM likelihood gap difference = 0.001
 
-**Correct Answer:** Model 1 with 0.024
+**Correct Answer:** absolute top-two HMM likelihood gap difference = 0.001
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 1's 0.024.
+**Explanation:** The two values are 0.002 and 0.003; their absolute difference is 0.001.
 
 ---
 
 ## Question 16
 
-**Question:** A condition has prior 0.16, sensitivity P(+|C)=0.64, and false-positive rate P(+|not C)=0.18. What is P(C|+)?
+**Question:** Taking (prior=0.16, $P(+\mid C)$=0.67, $P(+\mid \neg C)$=0.18) as baseline and (prior=0.12, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.16) as the new case, what is the percentage change in Bayes posterior?
 
 **Choices:**
-- **A.** 0.4038
-- **B.** 0.1024
-- **C.** 0.2536
-- **D.** 0.5962
+- **A.** percentage change in Bayes posterior = -10.7401
+- **B.** percentage change in Bayes posterior = -8.8069
+- **C.** percentage change in Bayes posterior = -12.6734
+- **D.** percentage change in Bayes posterior = -6.8737
 
-**Correct Answer:** 0.4038
+**Correct Answer:** percentage change in Bayes posterior = -10.7401
 
-**Explanation:** Evidence=0.64(0.16)+0.18(1-0.16)=0.2536; posterior=0.4038.
+**Explanation:** The values change from 0.4149 to 0.3703; (new-old)/|old|*100=-10.7401%.
 
 ---
 
 ## Question 17
 
-**Question:** A Markov path has initial probability 0.29 and successive transition probabilities ['0.8', '0.4', '0.6', '0.3']. What is its joint probability?
+**Question:** Taking (initial=0.275, transitions=['0.8', '0.43', '0.6', '0.3']) as baseline and (initial=0.225, transitions=['0.8', '0.41', '0.6', '0.3']) as the new case, what is the percentage change in Markov path probability?
 
 **Choices:**
-- **A.** 0.0167
-- **B.** 0.609
-- **C.** 0.0576
-- **D.** 0.0042
+- **A.** percentage change in Markov path probability = -21.9873
+- **B.** percentage change in Markov path probability = -18.0296
+- **C.** percentage change in Markov path probability = -25.945
+- **D.** percentage change in Markov path probability = -14.0719
 
-**Correct Answer:** 0.0167
+**Correct Answer:** percentage change in Markov path probability = -21.9873
 
-**Explanation:** Multiply the one initial term and every transition: 0.29 x 0.8 x 0.4 x 0.6 x 0.3=0.0167.
+**Explanation:** The values change from 0.017 to 0.0133; (new-old)/|old|*100=-21.9873%.
 
 ---
 
 ## Question 18
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.67', '0.23'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.43', '0.57']. What is P(o1,o2)?
+**Question:** Taking ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.67', '0.23'], emissions2=['0.43', '0.57']) as baseline and ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.69', '0.21'], emissions2=['0.41', '0.59']) as the new case, what is the percentage change in HMM observation likelihood?
 
 **Choices:**
-- **A.** 0.494
-- **B.** 0.2327
-- **C.** 0.1502
-- **D.** 0.0124
+- **A.** percentage change in HMM observation likelihood = -1.5335
+- **B.** percentage change in HMM observation likelihood = -1.0656
+- **C.** percentage change in HMM observation likelihood = -1.2996
+- **D.** percentage change in HMM observation likelihood = -0.8317
 
-**Correct Answer:** 0.2327
+**Correct Answer:** percentage change in HMM observation likelihood = -1.2996
 
-**Explanation:** alpha1=['0.402', '0.092']; alpha2=['0.1502', '0.0825']; summing final alphas gives 0.2327.
+**Explanation:** The values change from 0.2327 to 0.2297; (new-old)/|old|*100=-1.2996%.
 
 ---
 
 ## Question 19
 
-**Question:** Current forward vector is ['0.15', '0.165'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Taking ($\alpha=[0.15, 0.168]$, destination transitions=(.3,.8), emission=0.43) as baseline and ($\alpha=[0.13, 0.176]$, destination transitions=(.3,.8), emission=0.41) as the new case, what is the percentage change in destination forward value?
 
 **Choices:**
-- **A.** (0.0772, 0.0648)
-- **B.** (0.1575, 0.126)
-- **C.** (0.0825, 0.066)
-- **D.** (0.069, 0.0708)
+- **A.** percentage change in destination forward value = -4.4386
+- **B.** percentage change in destination forward value = -3.6396
+- **C.** percentage change in destination forward value = -5.2375
+- **D.** percentage change in destination forward value = -2.8407
 
-**Correct Answer:** (0.069, 0.0708)
+**Correct Answer:** percentage change in destination forward value = -4.4386
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.069', '0.0708'].
+**Explanation:** The values change from 0.0771 to 0.0737; (new-old)/|old|*100=-4.4386%.
 
 ---
 
 ## Question 20
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.026', '0.024', '0.022']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Taking (candidate HMM likelihoods=['0.023', '0.021', '0.0235']) as baseline and (candidate HMM likelihoods=['0.021', '0.017', '0.0245']) as the new case, what is the percentage change in top-two HMM likelihood gap?
 
 **Choices:**
-- **A.** Model 1 with 0.026
-- **B.** Model 3 with 0.022
-- **C.** All models with 0.072
-- **D.** Model 1 with 0.3611
+- **A.** percentage change in top-two HMM likelihood gap = 600
+- **B.** percentage change in top-two HMM likelihood gap = 708
+- **C.** percentage change in top-two HMM likelihood gap = 492
+- **D.** percentage change in top-two HMM likelihood gap = 816
 
-**Correct Answer:** Model 1 with 0.026
+**Correct Answer:** percentage change in top-two HMM likelihood gap = 600
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 1's 0.026.
+**Explanation:** The values change from 0.0005 to 0.0035; (new-old)/|old|*100=600%.
 
 ---
 
 ## Question 21
 
-**Question:** A condition has prior 0.18, sensitivity P(+|C)=0.62, and false-positive rate P(+|not C)=0.19. What is P(C|+)?
+**Question:** Which formula must be applied to obtain Bayes posterior from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.1116
-- **B.** 0.4174
-- **C.** 0.2674
-- **D.** 0.5826
+- **A.** For Bayes posterior, use $\frac{P(B\mid A)P(A)}{P(B)}$
+- **B.** For Bayes posterior, use $1-\left(\frac{P(B\mid A)P(A)}{P(B)}\right)$
+- **C.** For Bayes posterior, use $\sqrt{\frac{P(B\mid A)P(A)}{P(B)}}$
+- **D.** For Bayes posterior, use sum inputs without the required weighting for Bayes posterior
 
-**Correct Answer:** 0.4174
+**Correct Answer:** For Bayes posterior, use $\frac{P(B\mid A)P(A)}{P(B)}$
 
-**Explanation:** Evidence=0.62(0.18)+0.19(1-0.18)=0.2674; posterior=0.4174.
+**Explanation:** The chapter defines Bayes posterior with $\frac{P(B\mid A)P(A)}{P(B)}$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 22
 
-**Question:** A Markov path has initial probability 0.32 and successive transition probabilities ['0.8', '0.4', '0.6']. What is its joint probability?
+**Question:** Which formula must be applied to obtain Markov path probability from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.0614
-- **B.** 0.576
-- **C.** 0.192
-- **D.** 0.0205
+- **A.** For Markov path probability, use $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$
+- **B.** For Markov path probability, use $1-\left(P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})\right)$
+- **C.** For Markov path probability, use $\sqrt{P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})}$
+- **D.** For Markov path probability, use sum inputs without the required weighting for Markov path probability
 
-**Correct Answer:** 0.0614
+**Correct Answer:** For Markov path probability, use $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$
 
-**Explanation:** Multiply the one initial term and every transition: 0.32 x 0.8 x 0.4 x 0.6=0.0614.
+**Explanation:** The chapter defines Markov path probability with $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 23
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.66', '0.24'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.44', '0.56']. What is P(o1,o2)?
+**Question:** Which formula must be applied to obtain HMM observation likelihood from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.492
-- **B.** 0.1521
-- **C.** 0.234
-- **D.** 0.0125
+- **A.** For HMM observation likelihood, use $1-\left(\sum_j\alpha_T(j)\right)$
+- **B.** For HMM observation likelihood, use $\sum_j\alpha_T(j)$
+- **C.** For HMM observation likelihood, use $\sqrt{\sum_j\alpha_T(j)}$
+- **D.** For HMM observation likelihood, use sum inputs without the required weighting for HMM observation likelihood
 
-**Correct Answer:** 0.234
+**Correct Answer:** For HMM observation likelihood, use $\sum_j\alpha_T(j)$
 
-**Explanation:** alpha1=['0.396', '0.096']; alpha2=['0.1521', '0.082']; summing final alphas gives 0.234.
+**Explanation:** The chapter defines HMM observation likelihood with $\sum_j\alpha_T(j)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 24
 
-**Question:** Current forward vector is ['0.16', '0.16'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Which formula must be applied to obtain destination forward value from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (0.08, 0.064), even when the other quantities in the formula are fixed
-- **B.** (0.16, 0.128)
-- **C.** (0.08, 0.064)
-- **D.** (0.072, 0.0704)
+- **A.** For destination forward value, use $\sqrt{\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})}$
+- **B.** For destination forward value, use $1-\left(\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})\right)$
+- **C.** For destination forward value, use $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$
+- **D.** For destination forward value, use sum inputs without the required weighting for destination forward value
 
-**Correct Answer:** (0.072, 0.0704)
+**Correct Answer:** For destination forward value, use $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.072', '0.0704'].
+**Explanation:** The chapter defines destination forward value with $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 25
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.028', '0.027', '0.021']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Which formula must be applied to obtain top-two HMM likelihood gap from the supplied chapter quantities?
 
 **Choices:**
-- **A.** Model 3 with 0.021
-- **B.** All models with 0.076
-- **C.** Model 1 with 0.3684
-- **D.** Model 1 with 0.028
+- **A.** For top-two HMM likelihood gap, use $L_{(1)}-L_{(2)}$
+- **B.** For top-two HMM likelihood gap, use $1-\left(L_{(1)}-L_{(2)}\right)$
+- **C.** For top-two HMM likelihood gap, use $\sqrt{L_{(1)}-L_{(2)}}$
+- **D.** For top-two HMM likelihood gap, use sum inputs without the required weighting for top-two HMM likelihood gap
 
-**Correct Answer:** Model 1 with 0.028
+**Correct Answer:** For top-two HMM likelihood gap, use $L_{(1)}-L_{(2)}$
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 1's 0.028.
+**Explanation:** The chapter defines top-two HMM likelihood gap with $L_{(1)}-L_{(2)}$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 26
 
-**Question:** A condition has prior 0.2, sensitivity P(+|C)=0.7, and false-positive rate P(+|not C)=0.2. What is P(C|+)?
+**Question:** Four datasets are candidates. Which one produces Bayes posterior=0.4667?
 
 **Choices:**
-- **A.** 0.14
-- **B.** 0.3
-- **C.** 0.4667
-- **D.** 0.5333
+- **A.** For Bayes posterior, the third dataset: prior=0.2, $P(+\mid C)$=0.7, $P(+\mid \neg C)$=0.2
+- **B.** For Bayes posterior, the first dataset: prior=0.1, $P(+\mid C)$=0.7, $P(+\mid \neg C)$=0.15
+- **C.** For Bayes posterior, the second dataset: prior=0.14, $P(+\mid C)$=0.68, $P(+\mid \neg C)$=0.17
+- **D.** For Bayes posterior, the fourth dataset: prior=0.26, $P(+\mid C)$=0.67, $P(+\mid \neg C)$=0.23
 
-**Correct Answer:** 0.4667
+**Correct Answer:** For Bayes posterior, the third dataset: prior=0.2, $P(+\mid C)$=0.7, $P(+\mid \neg C)$=0.2
 
-**Explanation:** Evidence=0.7(0.2)+0.2(1-0.2)=0.3; posterior=0.4667.
+**Explanation:** Evaluating all four with $\frac{P(B\mid A)P(A)}{P(B)}$ shows that the third dataset produces 0.4667.
 
 ---
 
 ## Question 27
 
-**Question:** A Markov path has initial probability 0.35 and successive transition probabilities ['0.8', '0.4', '0.6', '0.3']. What is its joint probability?
+**Question:** Four datasets are candidates. Which one produces Markov path probability=0.0211?
 
 **Choices:**
-- **A.** 0.735
-- **B.** 0.0576
-- **C.** 0.005
-- **D.** 0.0202
+- **A.** For Markov path probability, the second dataset: initial=0.25, transitions=['0.8', '0.42', '0.6', '0.3']
+- **B.** For Markov path probability, the first dataset: initial=0.2, transitions=['0.8', '0.4', '0.6', '0.3']
+- **C.** For Markov path probability, the third dataset: initial=0.325, transitions=['0.8', '0.45', '0.6', '0.3']
+- **D.** For Markov path probability, the fourth dataset: initial=0.4, transitions=['0.8', '0.48', '0.6', '0.3']
 
-**Correct Answer:** 0.0202
+**Correct Answer:** For Markov path probability, the third dataset: initial=0.325, transitions=['0.8', '0.45', '0.6', '0.3']
 
-**Explanation:** Multiply the one initial term and every transition: 0.35 x 0.8 x 0.4 x 0.6 x 0.3=0.0202.
+**Explanation:** Evaluating all four with $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$ shows that the third dataset produces 0.0211.
 
 ---
 
 ## Question 28
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.65', '0.25'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.45', '0.55']. What is P(o1,o2)?
+**Question:** Four datasets are candidates. Which one produces HMM observation likelihood=0.2353?
 
 **Choices:**
-- **A.** 0.49
-- **B.** 0.2353
-- **C.** 0.1539
-- **D.** 0.0125
+- **A.** For HMM observation likelihood, the second dataset: $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.68', '0.22'], emissions2=['0.42', '0.58']
+- **B.** For HMM observation likelihood, the first dataset: $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.7', '0.2'], emissions2=['0.4', '0.6']
+- **C.** For HMM observation likelihood, the third dataset: $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.65', '0.25'], emissions2=['0.45', '0.55']
+- **D.** For HMM observation likelihood, the fourth dataset: $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.62', '0.28'], emissions2=['0.48', '0.52']
 
-**Correct Answer:** 0.2353
+**Correct Answer:** For HMM observation likelihood, the third dataset: $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.65', '0.25'], emissions2=['0.45', '0.55']
 
-**Explanation:** alpha1=['0.39', '0.1']; alpha2=['0.1539', '0.0814']; summing final alphas gives 0.2353.
+**Explanation:** Evaluating all four with $\sum_j\alpha_T(j)$ shows that the third dataset produces 0.2353.
 
 ---
 
 ## Question 29
 
-**Question:** Current forward vector is ['0.17', '0.155'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Four datasets are candidates. Which one produces destination forward value=0.0805?
 
 **Choices:**
-- **A.** (0.0827, 0.0632)
-- **B.** (0.1625, 0.13)
-- **C.** (0.085, 0.068)
-- **D.** (0.075, 0.07)
+- **A.** For destination forward value, the second dataset: $\alpha=[0.14, 0.172]$, destination transitions=(.3,.8), emission=0.42
+- **B.** For destination forward value, the first dataset: $\alpha=[0.12, 0.18]$, destination transitions=(.3,.8), emission=0.4
+- **C.** For destination forward value, the third dataset: $\alpha=[0.17, 0.16]$, destination transitions=(.3,.8), emission=0.45
+- **D.** For destination forward value, the fourth dataset: $\alpha=[0.2, 0.148]$, destination transitions=(.3,.8), emission=0.48
 
-**Correct Answer:** (0.075, 0.07)
+**Correct Answer:** For destination forward value, the third dataset: $\alpha=[0.17, 0.16]$, destination transitions=(.3,.8), emission=0.45
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.075', '0.07'].
+**Explanation:** Evaluating all four with $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$ shows that the third dataset produces 0.0805.
 
 ---
 
 ## Question 30
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.03', '0.03', '0.02']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Four datasets are candidates. Which one produces top-two HMM likelihood gap=0?
 
 **Choices:**
-- **A.** Model 1 with 0.03
-- **B.** Model 3 with 0.02
-- **C.** All models with 0.08
-- **D.** Model 1 with 0.375
+- **A.** For top-two HMM likelihood gap, the first dataset: candidate HMM likelihoods=['0.02', '0.015', '0.025']
+- **B.** For top-two HMM likelihood gap, the third dataset: candidate HMM likelihoods=['0.025', '0.025', '0.0225']
+- **C.** For top-two HMM likelihood gap, the second dataset: candidate HMM likelihoods=['0.022', '0.019', '0.024']
+- **D.** For top-two HMM likelihood gap, the fourth dataset: candidate HMM likelihoods=['0.028', '0.031', '0.021']
 
-**Correct Answer:** Model 1 with 0.03
+**Correct Answer:** For top-two HMM likelihood gap, the third dataset: candidate HMM likelihoods=['0.025', '0.025', '0.0225']
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 1's 0.03.
+**Explanation:** Evaluating all four with $L_{(1)}-L_{(2)}$ shows that the third dataset produces 0.
 
 ---
 
 ## Question 31
 
-**Question:** A condition has prior 0.22, sensitivity P(+|C)=0.68, and false-positive rate P(+|not C)=0.21. What is P(C|+)?
+**Question:** For prior=0.22, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.21, a student reports Bayes posterior=0.6012. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.1496
-- **B.** 0.3134
-- **C.** 0.4773
-- **D.** 0.5227
+- **A.** corrected Bayes posterior = 0.6541
+- **B.** corrected Bayes posterior = 0.5676
+- **C.** corrected Bayes posterior = 0.3944
+- **D.** corrected Bayes posterior = 0.481
 
-**Correct Answer:** 0.4773
+**Correct Answer:** corrected Bayes posterior = 0.481
 
-**Explanation:** Evidence=0.68(0.22)+0.21(1-0.22)=0.3134; posterior=0.4773.
+**Explanation:** Recomputing with $\frac{P(B\mid A)P(A)}{P(B)}$ gives 0.481, so the reported 0.6012 is rejected.
 
 ---
 
 ## Question 32
 
-**Question:** A Markov path has initial probability 0.38 and successive transition probabilities ['0.8', '0.4', '0.6']. What is its joint probability?
+**Question:** For initial=0.35, transitions=['0.8', '0.46', '0.6', '0.3'], a student reports Markov path probability=0.1232. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.073
-- **B.** 0.684
-- **C.** 0.192
-- **D.** 0.0243
+- **A.** corrected Markov path probability = 0.1652
+- **B.** corrected Markov path probability = 0.0942
+- **C.** corrected Markov path probability = -0.0478
+- **D.** corrected Markov path probability = 0.0232
 
-**Correct Answer:** 0.073
+**Correct Answer:** corrected Markov path probability = 0.0232
 
-**Explanation:** Multiply the one initial term and every transition: 0.38 x 0.8 x 0.4 x 0.6=0.073.
+**Explanation:** Recomputing with $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$ gives 0.0232, so the reported 0.1232 is rejected.
 
 ---
 
 ## Question 33
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.64', '0.26'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.46', '0.54']. What is P(o1,o2)?
+**Question:** For $\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.64', '0.26'], emissions2=['0.46', '0.54'], a student reports HMM observation likelihood=0.3364. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.2364
-- **B.** 0.488
-- **C.** 0.1557
-- **D.** 0.0126
+- **A.** corrected HMM observation likelihood = 0.3784
+- **B.** corrected HMM observation likelihood = 0.3074
+- **C.** corrected HMM observation likelihood = 0.1654
+- **D.** corrected HMM observation likelihood = 0.2364
 
-**Correct Answer:** 0.2364
+**Correct Answer:** corrected HMM observation likelihood = 0.2364
 
-**Explanation:** alpha1=['0.384', '0.104']; alpha2=['0.1557', '0.0808']; summing final alphas gives 0.2364.
+**Explanation:** Recomputing with $\sum_j\alpha_T(j)$ gives 0.2364, so the reported 0.3364 is rejected.
 
 ---
 
 ## Question 34
 
-**Question:** Current forward vector is ['0.18', '0.15'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** For $\alpha=[0.18, 0.156]$, destination transitions=(.3,.8), emission=0.46, a student reports destination forward value=0.1822. What corrected value should replace it?
 
 **Choices:**
-- **A.** (0.0855, 0.0624)
-- **B.** (0.078, 0.0696)
-- **C.** (0.165, 0.132)
-- **D.** (0.09, 0.072)
+- **A.** corrected destination forward value = 0.0822
+- **B.** corrected destination forward value = 0.1532
+- **C.** corrected destination forward value = 0.0112
+- **D.** corrected destination forward value = 0.2242
 
-**Correct Answer:** (0.078, 0.0696)
+**Correct Answer:** corrected destination forward value = 0.0822
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.078', '0.0696'].
+**Explanation:** Recomputing with $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$ gives 0.0822, so the reported 0.1822 is rejected.
 
 ---
 
 ## Question 35
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.032', '0.033', '0.019']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** For candidate HMM likelihoods=['0.026', '0.027', '0.022'], a student reports top-two HMM likelihood gap=0.101. What corrected value should replace it?
 
 **Choices:**
-- **A.** Model 3 with 0.019
-- **B.** All models with 0.084
-- **C.** Model 2 with 0.3929
-- **D.** Model 2 with 0.033
+- **A.** corrected top-two HMM likelihood gap = 0.072
+- **B.** corrected top-two HMM likelihood gap = 0.001
+- **C.** corrected top-two HMM likelihood gap = -0.07
+- **D.** corrected top-two HMM likelihood gap = 0.143
 
-**Correct Answer:** Model 2 with 0.033
+**Correct Answer:** corrected top-two HMM likelihood gap = 0.001
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 2's 0.033.
+**Explanation:** Recomputing with $L_{(1)}-L_{(2)}$ gives 0.001, so the reported 0.101 is rejected.
 
 ---
 
 ## Question 36
 
-**Question:** A condition has prior 0.24, sensitivity P(+|C)=0.66, and false-positive rate P(+|not C)=0.22. What is P(C|+)?
+**Question:** Compute Bayes posterior separately for (prior=0.24, $P(+\mid C)$=0.68, $P(+\mid \neg C)$=0.22) and (prior=0.1, $P(+\mid C)$=0.7, $P(+\mid \neg C)$=0.15), then average the two results.
 
 **Choices:**
-- **A.** 0.1584
-- **B.** 0.3256
-- **C.** 0.4865
-- **D.** 0.5135
+- **A.** mean of the two Bayes posterior values = 0.5681
+- **B.** mean of the two Bayes posterior values = 0.4929
+- **C.** mean of the two Bayes posterior values = 0.3425
+- **D.** mean of the two Bayes posterior values = 0.4177
 
-**Correct Answer:** 0.4865
+**Correct Answer:** mean of the two Bayes posterior values = 0.4177
 
-**Explanation:** Evidence=0.66(0.24)+0.22(1-0.24)=0.3256; posterior=0.4865.
+**Explanation:** The individual results are 0.4939 and 0.3415; their arithmetic mean is 0.4177.
 
 ---
 
 ## Question 37
 
-**Question:** A Markov path has initial probability 0.41 and successive transition probabilities ['0.8', '0.4', '0.6', '0.3']. What is its joint probability?
+**Question:** Compute Markov path probability separately for (initial=0.375, transitions=['0.8', '0.47', '0.6', '0.3']) and (initial=0.2, transitions=['0.8', '0.4', '0.6', '0.3']), then average the two results.
 
 **Choices:**
-- **A.** 0.0236
-- **B.** 0.861
-- **C.** 0.0576
-- **D.** 0.0059
+- **A.** mean of the two Markov path probability values = 0.1604
+- **B.** mean of the two Markov path probability values = 0.0895
+- **C.** mean of the two Markov path probability values = -0.0525
+- **D.** mean of the two Markov path probability values = 0.0185
 
-**Correct Answer:** 0.0236
+**Correct Answer:** mean of the two Markov path probability values = 0.0185
 
-**Explanation:** Multiply the one initial term and every transition: 0.41 x 0.8 x 0.4 x 0.6 x 0.3=0.0236.
+**Explanation:** The individual results are 0.0254 and 0.0115; their arithmetic mean is 0.0185.
 
 ---
 
 ## Question 38
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.63', '0.27'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.47', '0.53']. What is P(o1,o2)?
+**Question:** Compute HMM observation likelihood separately for ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.63', '0.27'], emissions2=['0.47', '0.53']) and ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.7', '0.2'], emissions2=['0.4', '0.6']), then average the two results.
 
 **Choices:**
-- **A.** 0.2375
-- **B.** 0.486
-- **C.** 0.1574
-- **D.** 0.0126
+- **A.** mean of the two HMM observation likelihood values = 0.1617
+- **B.** mean of the two HMM observation likelihood values = 0.3037
+- **C.** mean of the two HMM observation likelihood values = 0.2327
+- **D.** mean of the two HMM observation likelihood values = 0.3747
 
-**Correct Answer:** 0.2375
+**Correct Answer:** mean of the two HMM observation likelihood values = 0.2327
 
-**Explanation:** alpha1=['0.378', '0.108']; alpha2=['0.1574', '0.0801']; summing final alphas gives 0.2375.
+**Explanation:** The individual results are 0.2375 and 0.228; their arithmetic mean is 0.2327.
 
 ---
 
 ## Question 39
 
-**Question:** Current forward vector is ['0.19', '0.145'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Compute destination forward value separately for ($\alpha=[0.19, 0.152]$, destination transitions=(.3,.8), emission=0.47) and ($\alpha=[0.12, 0.18]$, destination transitions=(.3,.8), emission=0.4), then average the two results.
 
 **Choices:**
-- **A.** (0.0882, 0.0616)
-- **B.** (0.1675, 0.134)
-- **C.** (0.095, 0.076)
-- **D.** (0.081, 0.0692)
+- **A.** mean of the two destination forward value values = 0.007
+- **B.** mean of the two destination forward value values = 0.149
+- **C.** mean of the two destination forward value values = 0.078
+- **D.** mean of the two destination forward value values = 0.22
 
-**Correct Answer:** (0.081, 0.0692)
+**Correct Answer:** mean of the two destination forward value values = 0.078
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.081', '0.0692'].
+**Explanation:** The individual results are 0.0839 and 0.072; their arithmetic mean is 0.078.
 
 ---
 
 ## Question 40
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.034', '0.036', '0.018']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Compute top-two HMM likelihood gap separately for (candidate HMM likelihoods=['0.027', '0.029', '0.0215']) and (candidate HMM likelihoods=['0.02', '0.015', '0.025']), then average the two results.
 
 **Choices:**
-- **A.** Model 3 with 0.018
-- **B.** Model 2 with 0.036
-- **C.** All models with 0.088
-- **D.** Model 2 with 0.4091
+- **A.** mean of the two top-two HMM likelihood gap values = -0.0675
+- **B.** mean of the two top-two HMM likelihood gap values = 0.0745
+- **C.** mean of the two top-two HMM likelihood gap values = 0.0035
+- **D.** mean of the two top-two HMM likelihood gap values = 0.1455
 
-**Correct Answer:** Model 2 with 0.036
+**Correct Answer:** mean of the two top-two HMM likelihood gap values = 0.0035
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 2's 0.036.
+**Explanation:** The individual results are 0.002 and 0.005; their arithmetic mean is 0.0035.
 
 ---
 
 ## Question 41
 
-**Question:** A condition has prior 0.26, sensitivity P(+|C)=0.64, and false-positive rate P(+|not C)=0.23. What is P(C|+)?
+**Question:** After the data change from (prior=0.26, $P(+\mid C)$=0.67, $P(+\mid \neg C)$=0.23) to (prior=0.22, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.21), what is the new Bayes posterior?
 
 **Choices:**
-- **A.** 0.1664
-- **B.** 0.3366
-- **C.** 0.4944
-- **D.** 0.5056
+- **A.** Bayes posterior = 0.3944
+- **B.** Bayes posterior = 0.5676
+- **C.** Bayes posterior = 0.481
+- **D.** Bayes posterior = 0.6541
 
-**Correct Answer:** 0.4944
+**Correct Answer:** Bayes posterior = 0.481
 
-**Explanation:** Evidence=0.64(0.26)+0.23(1-0.26)=0.3366; posterior=0.4944.
+**Explanation:** Only the new data enter $\frac{P(B\mid A)P(A)}{P(B)}$; they produce 0.481.
 
 ---
 
 ## Question 42
 
-**Question:** A Markov path has initial probability 0.44 and successive transition probabilities ['0.8', '0.4', '0.6']. What is its joint probability?
+**Question:** After the data change from (initial=0.4, transitions=['0.8', '0.48', '0.6', '0.3']) to (initial=0.35, transitions=['0.8', '0.46', '0.6', '0.3']), what is the new Markov path probability?
 
 **Choices:**
-- **A.** 0.792
-- **B.** 0.192
-- **C.** 0.0845
-- **D.** 0.0282
+- **A.** Markov path probability = 0.1652
+- **B.** Markov path probability = 0.0942
+- **C.** Markov path probability = -0.0478
+- **D.** Markov path probability = 0.0232
 
-**Correct Answer:** 0.0845
+**Correct Answer:** Markov path probability = 0.0232
 
-**Explanation:** Multiply the one initial term and every transition: 0.44 x 0.8 x 0.4 x 0.6=0.0845.
+**Explanation:** Only the new data enter $P(s_1)\prod_{t=2}^{T}P(s_t\mid s_{t-1})$; they produce 0.0232.
 
 ---
 
 ## Question 43
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.62', '0.28'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.48', '0.52']. What is P(o1,o2)?
+**Question:** After the data change from ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.62', '0.28'], emissions2=['0.48', '0.52']) to ($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.64', '0.26'], emissions2=['0.46', '0.54']), what is the new HMM observation likelihood?
 
 **Choices:**
-- **A.** 0.484
-- **B.** 0.159
-- **C.** 0.0126
-- **D.** 0.2384
+- **A.** HMM observation likelihood = 0.2364
+- **B.** HMM observation likelihood = 0.3074
+- **C.** HMM observation likelihood = 0.1654
+- **D.** HMM observation likelihood = 0.3784
 
-**Correct Answer:** 0.2384
+**Correct Answer:** HMM observation likelihood = 0.2364
 
-**Explanation:** alpha1=['0.372', '0.112']; alpha2=['0.159', '0.0795']; summing final alphas gives 0.2384.
+**Explanation:** Only the new data enter $\sum_j\alpha_T(j)$; they produce 0.2364.
 
 ---
 
 ## Question 44
 
-**Question:** Current forward vector is ['0.2', '0.14'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** After the data change from ($\alpha=[0.2, 0.148]$, destination transitions=(.3,.8), emission=0.48) to ($\alpha=[0.18, 0.156]$, destination transitions=(.3,.8), emission=0.46), what is the new destination forward value?
 
 **Choices:**
-- **A.** (0.091, 0.0608)
-- **B.** (0.17, 0.136)
-- **C.** (0.084, 0.0688)
-- **D.** (0.1, 0.08)
+- **A.** destination forward value = 0.1532
+- **B.** destination forward value = 0.0822
+- **C.** destination forward value = 0.0112
+- **D.** destination forward value = 0.2242
 
-**Correct Answer:** (0.084, 0.0688)
+**Correct Answer:** destination forward value = 0.0822
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.084', '0.0688'].
+**Explanation:** Only the new data enter $\left(\sum_i\alpha_t(i)a_{ij}\right)B_j(o_{t+1})$; they produce 0.0822.
 
 ---
 
 ## Question 45
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.036', '0.039', '0.017']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** After the data change from (candidate HMM likelihoods=['0.028', '0.031', '0.021']) to (candidate HMM likelihoods=['0.026', '0.027', '0.022']), what is the new top-two HMM likelihood gap?
 
 **Choices:**
-- **A.** Model 3 with 0.017
-- **B.** Model 2 with 0.039
-- **C.** All models with 0.092
-- **D.** Model 2 with 0.4239
+- **A.** top-two HMM likelihood gap = 0.143
+- **B.** top-two HMM likelihood gap = 0.072
+- **C.** top-two HMM likelihood gap = -0.07
+- **D.** top-two HMM likelihood gap = 0.001
 
-**Correct Answer:** Model 2 with 0.039
+**Correct Answer:** top-two HMM likelihood gap = 0.001
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 2's 0.039.
+**Explanation:** Only the new data enter $L_{(1)}-L_{(2)}$; they produce 0.001.
 
 ---
 
 ## Question 46
 
-**Question:** A condition has prior 0.28, sensitivity P(+|C)=0.62, and false-positive rate P(+|not C)=0.24. What is P(C|+)?
+**Question:** Rank P, Q, R, S from largest to smallest Bayes posterior: P(prior=0.12, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.16), Q(prior=0.16, $P(+\mid C)$=0.67, $P(+\mid \neg C)$=0.18), R(prior=0.22, $P(+\mid C)$=0.69, $P(+\mid \neg C)$=0.21), S(prior=0.28, $P(+\mid C)$=0.66, $P(+\mid \neg C)$=0.24).
 
 **Choices:**
-- **A.** 0.1736
-- **B.** 0.3464
-- **C.** 0.4988
-- **D.** 0.5012
+- **A.** Bayes posterior ranking: S > R > Q > P
+- **B.** Bayes posterior ranking: P > Q > R > S
+- **C.** Bayes posterior ranking: P = Q = R = S
+- **D.** Bayes posterior ranking: Q > P > S > R
 
-**Correct Answer:** 0.5012
+**Correct Answer:** Bayes posterior ranking: S > R > Q > P
 
-**Explanation:** Evidence=0.62(0.28)+0.24(1-0.28)=0.3464; posterior=0.5012.
+**Explanation:** Their values are {'P': '0.3703', 'Q': '0.4149', 'R': '0.481', 'S': '0.5168'}; grouping equal values and sorting descending gives Bayes posterior ranking: S > R > Q > P.
 
 ---
 
 ## Question 47
 
-**Question:** A Markov path has initial probability 0.47 and successive transition probabilities ['0.8', '0.4', '0.6', '0.3']. What is its joint probability?
+**Question:** Rank P, Q, R, S from largest to smallest Markov path probability: P(initial=0.225, transitions=['0.8', '0.41', '0.6', '0.3']), Q(initial=0.275, transitions=['0.8', '0.43', '0.6', '0.3']), R(initial=0.35, transitions=['0.8', '0.46', '0.6', '0.3']), S(initial=0.425, transitions=['0.8', '0.49', '0.6', '0.3']).
 
 **Choices:**
-- **A.** 0.987
-- **B.** 0.0576
-- **C.** 0.0068
-- **D.** 0.0271
+- **A.** Markov path probability ranking: Q > P > S > R
+- **B.** Markov path probability ranking: P > Q > R > S
+- **C.** Markov path probability ranking: P = Q = R = S
+- **D.** Markov path probability ranking: S > R > Q > P
 
-**Correct Answer:** 0.0271
+**Correct Answer:** Markov path probability ranking: S > R > Q > P
 
-**Explanation:** Multiply the one initial term and every transition: 0.47 x 0.8 x 0.4 x 0.6 x 0.3=0.0271.
+**Explanation:** Their values are {'P': '0.0133', 'Q': '0.017', 'R': '0.0232', 'S': '0.03'}; grouping equal values and sorting descending gives Markov path probability ranking: S > R > Q > P.
 
 ---
 
 ## Question 48
 
-**Question:** For a two-state HMM, pi=[0.6, 0.4], first-emission=['0.61', '0.29'], A=[[0.8, 0.2], [0.3, 0.7]], second-emission=['0.49', '0.51']. What is P(o1,o2)?
+**Question:** Rank P, Q, R, S from largest to smallest HMM observation likelihood: P($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.69', '0.21'], emissions2=['0.41', '0.59']), Q($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.67', '0.23'], emissions2=['0.43', '0.57']), R($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.64', '0.26'], emissions2=['0.46', '0.54']), S($\pi=[0.6, 0.4]$, A=[[0.8, 0.2], [0.3, 0.7]], emissions1=['0.61', '0.29'], emissions2=['0.49', '0.51']).
 
 **Choices:**
-- **A.** 0.482
-- **B.** 0.1605
-- **C.** 0.2393
-- **D.** 0.0126
+- **A.** HMM observation likelihood ranking: P > Q > R > S
+- **B.** HMM observation likelihood ranking: S > R > Q > P
+- **C.** HMM observation likelihood ranking: P = Q = R = S
+- **D.** HMM observation likelihood ranking: Q > P > S > R
 
-**Correct Answer:** 0.2393
+**Correct Answer:** HMM observation likelihood ranking: S > R > Q > P
 
-**Explanation:** alpha1=['0.366', '0.116']; alpha2=['0.1605', '0.0787']; summing final alphas gives 0.2393.
+**Explanation:** Their values are {'P': '0.2297', 'Q': '0.2327', 'R': '0.2364', 'S': '0.2393'}; grouping equal values and sorting descending gives HMM observation likelihood ranking: S > R > Q > P.
 
 ---
 
 ## Question 49
 
-**Question:** Current forward vector is ['0.21', '0.135'], A=[[0.7, 0.3], [0.2, 0.8]], and next-symbol emissions=[0.5, 0.4]. What is the next forward vector?
+**Question:** Rank P, Q, R, S from largest to smallest destination forward value: P($\alpha=[0.13, 0.176]$, destination transitions=(.3,.8), emission=0.41), Q($\alpha=[0.15, 0.168]$, destination transitions=(.3,.8), emission=0.43), R($\alpha=[0.18, 0.156]$, destination transitions=(.3,.8), emission=0.46), S($\alpha=[0.21, 0.144]$, destination transitions=(.3,.8), emission=0.49).
 
 **Choices:**
-- **A.** (0.0938, 0.06)
-- **B.** (0.1725, 0.138)
-- **C.** (0.105, 0.084)
-- **D.** (0.087, 0.0684)
+- **A.** destination forward value ranking: P = Q = R = S
+- **B.** destination forward value ranking: P > Q > R > S
+- **C.** destination forward value ranking: S > R > Q > P
+- **D.** destination forward value ranking: Q > P > S > R
 
-**Correct Answer:** (0.087, 0.0684)
+**Correct Answer:** destination forward value ranking: S > R > Q > P
 
-**Explanation:** For each destination j, sum alpha_i a_ij, then multiply by its emission, yielding ['0.087', '0.0684'].
+**Explanation:** Their values are {'P': '0.0737', 'Q': '0.0771', 'R': '0.0822', 'S': '0.0873'}; grouping equal values and sorting descending gives destination forward value ranking: S > R > Q > P.
 
 ---
 
 ## Question 50
 
-**Question:** Three word HMMs assign an observed image sequence likelihoods ['0.038', '0.042', '0.016']. Under maximum likelihood, which model and likelihood are selected?
+**Question:** Rank P, Q, R, S from largest to smallest top-two HMM likelihood gap: P(candidate HMM likelihoods=['0.021', '0.017', '0.0245']), Q(candidate HMM likelihoods=['0.023', '0.021', '0.0235']), R(candidate HMM likelihoods=['0.026', '0.027', '0.022']), S(candidate HMM likelihoods=['0.029', '0.033', '0.0205']).
 
 **Choices:**
-- **A.** Model 3 with 0.016
-- **B.** Model 2 with 0.042
-- **C.** All models with 0.096
-- **D.** Model 2 with 0.4375
+- **A.** top-two HMM likelihood gap ranking: P = Q = R = S
+- **B.** top-two HMM likelihood gap ranking: Q > R > P > S
+- **C.** top-two HMM likelihood gap ranking: S > P > R > Q
+- **D.** top-two HMM likelihood gap ranking: P > Q > R > S
 
-**Correct Answer:** Model 2 with 0.042
+**Correct Answer:** top-two HMM likelihood gap ranking: S > P > R > Q
 
-**Explanation:** Evaluation supplies one likelihood per candidate; the largest is model 2's 0.042.
+**Explanation:** Their values are {'P': '0.0035', 'Q': '0.0005', 'R': '0.001', 'S': '0.004'}; grouping equal values and sorting descending gives top-two HMM likelihood gap ranking: S > P > R > Q.
 
 ---
 
 ## Question 51
 
-**Question:** A probabilistic sequence model is reviewed. Case 1: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes Bayesian evidence?
 
 **Choices:**
-- **A.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-- **B.** The evidence is always equal to the likelihood for every hypothesis., under both the training and evaluation conditions stated
+- **A.** Bayes' theorem makes $P(A\mid B)$ equal to $P(B\mid A)$.
+- **B.** The evidence is always equal to the likelihood for every hypothesis. for all permitted parameter values
 - **C.** The posterior is computed without using the prior.
-- **D.** Bayes' theorem makes P(A|B) equal to P(B|A).
+- **D.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
 
 **Correct Answer:** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
 
-**Explanation:** P(B) is the denominator in the displayed Bayes formula.
+**Explanation:** For Bayesian evidence, the accurate statement is the first one because P(B) is the denominator in the displayed Bayes formula.
 
 ---
 
 ## Question 52
 
-**Question:** A probabilistic sequence model is reviewed. Case 2: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes the Markov property?
 
 **Choices:**
 - **A.** The next state is independent of the current state.
 - **B.** The Markov property conditions the next state on the current state rather than the full history.
 - **C.** Every state sequence must have equal probability.
-- **D.** The initial state distribution is unnecessary for sequence probability., even when the other quantities in the formula are fixed
+- **D.** The initial state distribution is unnecessary for sequence probability. under every stated condition
 
 **Correct Answer:** The Markov property conditions the next state on the current state rather than the full history.
 
-**Explanation:** A first-order chain retains the most recent state for predicting the next.
+**Explanation:** For the Markov property, the accurate statement is the first one because A first-order chain retains the most recent state for predicting the next.
 
 ---
 
 ## Question 53
 
-**Question:** A probabilistic sequence model is reviewed. Case 3: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes state-sequence probability?
 
 **Choices:**
-- **A.** It adds transition probabilities and divides by sequence length., as a consequence that holds for every permitted input
-- **B.** It multiplies emissions even when no observations are modeled.
-- **C.** It omits the transition into the final state.
-- **D.** A Markov sequence probability multiplies one initial probability and all required transitions.
-
-**Correct Answer:** A Markov sequence probability multiplies one initial probability and all required transitions.
-
-**Explanation:** The joint sequence formula is P(s1) product from t=2 to k.
-
----
-
-## Question 54
-
-**Question:** A probabilistic sequence model is reviewed. Case 4: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** A emits observations and B chooses the initial state.
-- **B.** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-- **C.** B transitions directly between visible observations only.
-- **D.** Pi is the probability of every complete observation sequence., without needing any additional modeling assumption
-
-**Correct Answer:** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-
-**Explanation:** The model tuple assigns distinct transition, emission, and initial roles.
-
----
-
-## Question 55
-
-**Question:** A probabilistic sequence model is reviewed. Case 5: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Forward initialization sums every transition before seeing the first observation., under both the training and evaluation conditions stated
-- **B.** Forward initialization chooses only the largest initial probability.
-- **C.** Forward initialization sets all states to probability one.
-- **D.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Correct Answer:** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Explanation:** alpha_1(j)=pi_j B_j(o1).
-
----
-
-## Question 56
-
-**Question:** A probabilistic sequence model is reviewed. Case 6: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Forward recursion multiplies only the single largest incoming path., even when the other quantities in the formula are fixed
-- **B.** The emission belongs to the source state at the previous time only.
-- **C.** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-- **D.** Forward recursion discards transition probabilities.
-
-**Correct Answer:** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-
-**Explanation:** The sum over i accounts for all paths reaching state j.
-
----
-
-## Question 57
-
-**Question:** A probabilistic sequence model is reviewed. Case 7: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Termination selects the state with the smallest alpha., as a consequence that holds for every permitted input
-- **B.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-- **C.** Termination divides each alpha by its emission.
-- **D.** Termination learns A, B, and pi automatically.
-
-**Correct Answer:** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-
-**Explanation:** All possible final hidden states contribute to P(O|M).
-
----
-
-## Question 58
-
-**Question:** A probabilistic sequence model is reviewed. Case 8: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Evaluation and decoding both mean learning model parameters.
-- **B.** Decoding returns only the observation probability and no states., without needing any additional modeling assumption
-- **C.** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-- **D.** Learning assumes A, B, and pi can never change.
-
-**Correct Answer:** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-
-**Explanation:** The three canonical HMM problems have distinct outputs.
-
----
-
-## Question 59
-
-**Question:** A probabilistic sequence model is reviewed. Case 9: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Word recognition directly observes the hidden word state at every time., under both the training and evaluation conditions stated
-- **B.** The least likely HMM must be selected by definition.
-- **C.** Observation images replace the need for emission probabilities.
-- **D.** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Explanation:** Evaluation under each model supports choosing the best-matching candidate.
-
----
-
-## Question 60
-
-**Question:** A probabilistic sequence model is reviewed. Case 10: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-- **B.** Every matrix entry is an unconditional initial probability.
-- **C.** A transition row may sum to any value because probabilities are unrelated.
-- **D.** The diagonal entries are observation probabilities rather than persistence., even when the other quantities in the formula are fixed
-
-**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-
-**Explanation:** A transition row is a conditional distribution and therefore sums to one.
-
----
-
-## Question 61
-
-**Question:** A probabilistic sequence model is reviewed. Case 11: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** The evidence is always equal to the likelihood for every hypothesis., as a consequence that holds for every permitted input
-- **B.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-- **C.** The posterior is computed without using the prior.
-- **D.** Bayes' theorem makes P(A|B) equal to P(B|A).
-
-**Correct Answer:** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-
-**Explanation:** P(B) is the denominator in the displayed Bayes formula.
-
----
-
-## Question 62
-
-**Question:** A probabilistic sequence model is reviewed. Case 12: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** The next state is independent of the current state.
-- **B.** Every state sequence must have equal probability.
-- **C.** The Markov property conditions the next state on the current state rather than the full history.
-- **D.** The initial state distribution is unnecessary for sequence probability., without needing any additional modeling assumption
-
-**Correct Answer:** The Markov property conditions the next state on the current state rather than the full history.
-
-**Explanation:** A first-order chain retains the most recent state for predicting the next.
-
----
-
-## Question 63
-
-**Question:** A probabilistic sequence model is reviewed. Case 13: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A Markov sequence probability multiplies one initial probability and all required transitions.
-- **B.** It adds transition probabilities and divides by sequence length., under both the training and evaluation conditions stated
-- **C.** It multiplies emissions even when no observations are modeled.
-- **D.** It omits the transition into the final state.
-
-**Correct Answer:** A Markov sequence probability multiplies one initial probability and all required transitions.
-
-**Explanation:** The joint sequence formula is P(s1) product from t=2 to k.
-
----
-
-## Question 64
-
-**Question:** A probabilistic sequence model is reviewed. Case 14: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A emits observations and B chooses the initial state.
-- **B.** B transitions directly between visible observations only.
-- **C.** Pi is the probability of every complete observation sequence., even when the other quantities in the formula are fixed
-- **D.** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-
-**Correct Answer:** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-
-**Explanation:** The model tuple assigns distinct transition, emission, and initial roles.
-
----
-
-## Question 65
-
-**Question:** A probabilistic sequence model is reviewed. Case 15: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Forward initialization sums every transition before seeing the first observation., as a consequence that holds for every permitted input
-- **B.** Forward initialization chooses only the largest initial probability.
-- **C.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-- **D.** Forward initialization sets all states to probability one.
-
-**Correct Answer:** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Explanation:** alpha_1(j)=pi_j B_j(o1).
-
----
-
-## Question 66
-
-**Question:** A probabilistic sequence model is reviewed. Case 16: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Forward recursion multiplies only the single largest incoming path., without needing any additional modeling assumption
-- **B.** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-- **C.** The emission belongs to the source state at the previous time only.
-- **D.** Forward recursion discards transition probabilities.
-
-**Correct Answer:** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-
-**Explanation:** The sum over i accounts for all paths reaching state j.
-
----
-
-## Question 67
-
-**Question:** A probabilistic sequence model is reviewed. Case 17: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Termination selects the state with the smallest alpha., under both the training and evaluation conditions stated
-- **B.** Termination divides each alpha by its emission.
-- **C.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-- **D.** Termination learns A, B, and pi automatically.
-
-**Correct Answer:** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-
-**Explanation:** All possible final hidden states contribute to P(O|M).
-
----
-
-## Question 68
-
-**Question:** A probabilistic sequence model is reviewed. Case 18: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Evaluation and decoding both mean learning model parameters.
-- **B.** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-- **C.** Decoding returns only the observation probability and no states., even when the other quantities in the formula are fixed
-- **D.** Learning assumes A, B, and pi can never change.
-
-**Correct Answer:** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-
-**Explanation:** The three canonical HMM problems have distinct outputs.
-
----
-
-## Question 69
-
-**Question:** A probabilistic sequence model is reviewed. Case 19: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Word recognition directly observes the hidden word state at every time., as a consequence that holds for every permitted input
-- **B.** Word recognition can compare observation likelihoods under several candidate HMMs.
-- **C.** The least likely HMM must be selected by definition.
-- **D.** Observation images replace the need for emission probabilities.
-
-**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Explanation:** Evaluation under each model supports choosing the best-matching candidate.
-
----
-
-## Question 70
-
-**Question:** A probabilistic sequence model is reviewed. Case 20: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Every matrix entry is an unconditional initial probability.
-- **B.** A transition row may sum to any value because probabilities are unrelated.
-- **C.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-- **D.** The diagonal entries are observation probabilities rather than persistence., without needing any additional modeling assumption
-
-**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-
-**Explanation:** A transition row is a conditional distribution and therefore sums to one.
-
----
-
-## Question 71
-
-**Question:** A probabilistic sequence model is reviewed. Case 21: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** The evidence is always equal to the likelihood for every hypothesis., under both the training and evaluation conditions stated
-- **B.** The posterior is computed without using the prior.
-- **C.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-- **D.** Bayes' theorem makes P(A|B) equal to P(B|A).
-
-**Correct Answer:** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-
-**Explanation:** P(B) is the denominator in the displayed Bayes formula.
-
----
-
-## Question 72
-
-**Question:** A probabilistic sequence model is reviewed. Case 22: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** The next state is independent of the current state.
-- **B.** The Markov property conditions the next state on the current state rather than the full history.
-- **C.** Every state sequence must have equal probability.
-- **D.** The initial state distribution is unnecessary for sequence probability., even when the other quantities in the formula are fixed
-
-**Correct Answer:** The Markov property conditions the next state on the current state rather than the full history.
-
-**Explanation:** A first-order chain retains the most recent state for predicting the next.
-
----
-
-## Question 73
-
-**Question:** A probabilistic sequence model is reviewed. Case 23: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** A Markov sequence probability multiplies one initial probability and all required transitions.
-- **B.** It adds transition probabilities and divides by sequence length., as a consequence that holds for every permitted input
-- **C.** It multiplies emissions even when no observations are modeled.
-- **D.** It omits the transition into the final state.
-
-**Correct Answer:** A Markov sequence probability multiplies one initial probability and all required transitions.
-
-**Explanation:** The joint sequence formula is P(s1) product from t=2 to k.
-
----
-
-## Question 74
-
-**Question:** A probabilistic sequence model is reviewed. Case 24: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-- **B.** A emits observations and B chooses the initial state.
-- **C.** B transitions directly between visible observations only.
-- **D.** Pi is the probability of every complete observation sequence., without needing any additional modeling assumption
-
-**Correct Answer:** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-
-**Explanation:** The model tuple assigns distinct transition, emission, and initial roles.
-
----
-
-## Question 75
-
-**Question:** A probabilistic sequence model is reviewed. Case 25: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Forward initialization sums every transition before seeing the first observation., under both the training and evaluation conditions stated
-- **B.** Forward initialization chooses only the largest initial probability.
-- **C.** Forward initialization sets all states to probability one.
-- **D.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Correct Answer:** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Explanation:** alpha_1(j)=pi_j B_j(o1).
-
----
-
-## Question 76
-
-**Question:** A probabilistic sequence model is reviewed. Case 26: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Forward recursion multiplies only the single largest incoming path., even when the other quantities in the formula are fixed
-- **B.** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-- **C.** The emission belongs to the source state at the previous time only.
-- **D.** Forward recursion discards transition probabilities.
-
-**Correct Answer:** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-
-**Explanation:** The sum over i accounts for all paths reaching state j.
-
----
-
-## Question 77
-
-**Question:** A probabilistic sequence model is reviewed. Case 27: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Termination selects the state with the smallest alpha., as a consequence that holds for every permitted input
-- **B.** Termination divides each alpha by its emission.
-- **C.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-- **D.** Termination learns A, B, and pi automatically.
-
-**Correct Answer:** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-
-**Explanation:** All possible final hidden states contribute to P(O|M).
-
----
-
-## Question 78
-
-**Question:** A probabilistic sequence model is reviewed. Case 28: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Evaluation and decoding both mean learning model parameters.
-- **B.** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-- **C.** Decoding returns only the observation probability and no states., without needing any additional modeling assumption
-- **D.** Learning assumes A, B, and pi can never change.
-
-**Correct Answer:** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-
-**Explanation:** The three canonical HMM problems have distinct outputs.
-
----
-
-## Question 79
-
-**Question:** A probabilistic sequence model is reviewed. Case 29: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Word recognition can compare observation likelihoods under several candidate HMMs.
-- **B.** Word recognition directly observes the hidden word state at every time., under both the training and evaluation conditions stated
-- **C.** The least likely HMM must be selected by definition.
-- **D.** Observation images replace the need for emission probabilities.
-
-**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Explanation:** Evaluation under each model supports choosing the best-matching candidate.
-
----
-
-## Question 80
-
-**Question:** A probabilistic sequence model is reviewed. Case 30: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Every matrix entry is an unconditional initial probability.
-- **B.** A transition row may sum to any value because probabilities are unrelated.
-- **C.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-- **D.** The diagonal entries are observation probabilities rather than persistence., even when the other quantities in the formula are fixed
-
-**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-
-**Explanation:** A transition row is a conditional distribution and therefore sums to one.
-
----
-
-## Question 81
-
-**Question:** A probabilistic sequence model is reviewed. Case 31: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** The evidence is always equal to the likelihood for every hypothesis., as a consequence that holds for every permitted input
-- **B.** The posterior is computed without using the prior.
-- **C.** Bayes' theorem makes P(A|B) equal to P(B|A).
-- **D.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-
-**Correct Answer:** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-
-**Explanation:** P(B) is the denominator in the displayed Bayes formula.
-
----
-
-## Question 82
-
-**Question:** A probabilistic sequence model is reviewed. Case 32: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** The next state is independent of the current state.
-- **B.** Every state sequence must have equal probability.
-- **C.** The Markov property conditions the next state on the current state rather than the full history.
-- **D.** The initial state distribution is unnecessary for sequence probability., without needing any additional modeling assumption
-
-**Correct Answer:** The Markov property conditions the next state on the current state rather than the full history.
-
-**Explanation:** A first-order chain retains the most recent state for predicting the next.
-
----
-
-## Question 83
-
-**Question:** A probabilistic sequence model is reviewed. Case 33: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** It adds transition probabilities and divides by sequence length., under both the training and evaluation conditions stated
+- **A.** It adds transition probabilities and divides by sequence length. without changing the supplied data
 - **B.** It multiplies emissions even when no observations are modeled.
 - **C.** A Markov sequence probability multiplies one initial probability and all required transitions.
 - **D.** It omits the transition into the final state.
 
 **Correct Answer:** A Markov sequence probability multiplies one initial probability and all required transitions.
 
-**Explanation:** The joint sequence formula is P(s1) product from t=2 to k.
+**Explanation:** For state-sequence probability, the accurate statement is the first one because The joint sequence formula is P(s1) product from t=2 to k.
 
 ---
 
-## Question 84
+## Question 54
 
-**Question:** A probabilistic sequence model is reviewed. Case 34: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes the roles of A and B?
 
 **Choices:**
 - **A.** In an HMM, A models hidden-state transitions while B links hidden states to observations.
 - **B.** A emits observations and B chooses the initial state.
 - **C.** B transitions directly between visible observations only.
-- **D.** Pi is the probability of every complete observation sequence., even when the other quantities in the formula are fixed
+- **D.** Pi is the probability of every complete observation sequence. for all permitted parameter values
 
 **Correct Answer:** In an HMM, A models hidden-state transitions while B links hidden states to observations.
 
-**Explanation:** The model tuple assigns distinct transition, emission, and initial roles.
+**Explanation:** For the roles of A and B, the accurate statement is the first one because The model tuple assigns distinct transition, emission, and initial roles.
 
 ---
 
-## Question 85
+## Question 55
 
-**Question:** A probabilistic sequence model is reviewed. Case 35: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Forward initialization sums every transition before seeing the first observation., as a consequence that holds for every permitted input
-- **B.** Forward initialization chooses only the largest initial probability.
-- **C.** Forward initialization sets all states to probability one.
-- **D.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Correct Answer:** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-
-**Explanation:** alpha_1(j)=pi_j B_j(o1).
-
----
-
-## Question 86
-
-**Question:** A probabilistic sequence model is reviewed. Case 36: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes forward initialization?
 
 **Choices:**
-- **A.** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-- **B.** Forward recursion multiplies only the single largest incoming path., without needing any additional modeling assumption
-- **C.** The emission belongs to the source state at the previous time only.
-- **D.** Forward recursion discards transition probabilities.
-
-**Correct Answer:** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
-
-**Explanation:** The sum over i accounts for all paths reaching state j.
-
----
-
-## Question 87
-
-**Question:** A probabilistic sequence model is reviewed. Case 37: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Termination selects the state with the smallest alpha., under both the training and evaluation conditions stated
-- **B.** Termination divides each alpha by its emission.
-- **C.** Termination learns A, B, and pi automatically.
-- **D.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-
-**Correct Answer:** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
-
-**Explanation:** All possible final hidden states contribute to P(O|M).
-
----
-
-## Question 88
-
-**Question:** A probabilistic sequence model is reviewed. Case 38: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Evaluation and decoding both mean learning model parameters.
-- **B.** Decoding returns only the observation probability and no states., even when the other quantities in the formula are fixed
-- **C.** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-- **D.** Learning assumes A, B, and pi can never change.
-
-**Correct Answer:** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-
-**Explanation:** The three canonical HMM problems have distinct outputs.
-
----
-
-## Question 89
-
-**Question:** A probabilistic sequence model is reviewed. Case 39: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Word recognition directly observes the hidden word state at every time., as a consequence that holds for every permitted input
-- **B.** The least likely HMM must be selected by definition.
-- **C.** Observation images replace the need for emission probabilities.
-- **D.** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
-
-**Explanation:** Evaluation under each model supports choosing the best-matching candidate.
-
----
-
-## Question 90
-
-**Question:** A probabilistic sequence model is reviewed. Case 40: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Every matrix entry is an unconditional initial probability.
-- **B.** A transition row may sum to any value because probabilities are unrelated.
-- **C.** The diagonal entries are observation probabilities rather than persistence., without needing any additional modeling assumption
-- **D.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-
-**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
-
-**Explanation:** A transition row is a conditional distribution and therefore sums to one.
-
----
-
-## Question 91
-
-**Question:** A probabilistic sequence model is reviewed. Case 41: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
-
-**Choices:**
-- **A.** The evidence is always equal to the likelihood for every hypothesis., under both the training and evaluation conditions stated
-- **B.** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-- **C.** The posterior is computed without using the prior.
-- **D.** Bayes' theorem makes P(A|B) equal to P(B|A).
-
-**Correct Answer:** The evidence P(B) normalizes prior-times-likelihood values into a posterior.
-
-**Explanation:** P(B) is the denominator in the displayed Bayes formula.
-
----
-
-## Question 92
-
-**Question:** A probabilistic sequence model is reviewed. Case 42: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
-
-**Choices:**
-- **A.** The Markov property conditions the next state on the current state rather than the full history.
-- **B.** The next state is independent of the current state.
-- **C.** Every state sequence must have equal probability.
-- **D.** The initial state distribution is unnecessary for sequence probability., even when the other quantities in the formula are fixed
-
-**Correct Answer:** The Markov property conditions the next state on the current state rather than the full history.
-
-**Explanation:** A first-order chain retains the most recent state for predicting the next.
-
----
-
-## Question 93
-
-**Question:** A probabilistic sequence model is reviewed. Case 43: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
-
-**Choices:**
-- **A.** A Markov sequence probability multiplies one initial probability and all required transitions.
-- **B.** It adds transition probabilities and divides by sequence length., as a consequence that holds for every permitted input
-- **C.** It multiplies emissions even when no observations are modeled.
-- **D.** It omits the transition into the final state.
-
-**Correct Answer:** A Markov sequence probability multiplies one initial probability and all required transitions.
-
-**Explanation:** The joint sequence formula is P(s1) product from t=2 to k.
-
----
-
-## Question 94
-
-**Question:** A probabilistic sequence model is reviewed. Case 44: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
-
-**Choices:**
-- **A.** A emits observations and B chooses the initial state.
-- **B.** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-- **C.** B transitions directly between visible observations only.
-- **D.** Pi is the probability of every complete observation sequence., without needing any additional modeling assumption
-
-**Correct Answer:** In an HMM, A models hidden-state transitions while B links hidden states to observations.
-
-**Explanation:** The model tuple assigns distinct transition, emission, and initial roles.
-
----
-
-## Question 95
-
-**Question:** A probabilistic sequence model is reviewed. Case 45: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
-
-**Choices:**
-- **A.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
-- **B.** Forward initialization sums every transition before seeing the first observation., under both the training and evaluation conditions stated
-- **C.** Forward initialization chooses only the largest initial probability.
+- **A.** Forward initialization chooses only the largest initial probability.
+- **B.** Forward initialization sums every transition before seeing the first observation. under every stated condition
+- **C.** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
 - **D.** Forward initialization sets all states to probability one.
 
 **Correct Answer:** Forward initialization multiplies each initial-state probability by that state's first-observation emission.
 
-**Explanation:** alpha_1(j)=pi_j B_j(o1).
+**Explanation:** For forward initialization, the accurate statement is the first one because alpha_1(j)=pi_j B_j(o1).
 
 ---
 
-## Question 96
+## Question 56
 
-**Question:** A probabilistic sequence model is reviewed. Case 46: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Which statement correctly characterizes forward recursion?
 
 **Choices:**
-- **A.** Forward recursion multiplies only the single largest incoming path., even when the other quantities in the formula are fixed
+- **A.** Forward recursion multiplies only the single largest incoming path. without changing the supplied data
 - **B.** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
 - **C.** The emission belongs to the source state at the previous time only.
 - **D.** Forward recursion discards transition probabilities.
 
 **Correct Answer:** Forward recursion sums incoming path mass before multiplying by the destination state's emission.
 
-**Explanation:** The sum over i accounts for all paths reaching state j.
+**Explanation:** For forward recursion, the accurate statement is the first one because The sum over i accounts for all paths reaching state j.
 
 ---
 
-## Question 97
+## Question 57
 
-**Question:** A probabilistic sequence model is reviewed. Case 47: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Which statement correctly characterizes forward termination?
 
 **Choices:**
-- **A.** Termination selects the state with the smallest alpha., as a consequence that holds for every permitted input
-- **B.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+- **A.** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+- **B.** Termination selects the state with the smallest alpha. for all permitted parameter values under the complete set of stated assumptions
 - **C.** Termination divides each alpha by its emission.
 - **D.** Termination learns A, B, and pi automatically.
 
 **Correct Answer:** Forward termination sums final alpha values to obtain the observation-sequence likelihood.
 
-**Explanation:** All possible final hidden states contribute to P(O|M).
+**Explanation:** For forward termination, the accurate statement is the first one because All possible final hidden states contribute to $P(O\mid M)$.
+
+---
+
+## Question 58
+
+**Question:** Which statement correctly characterizes evaluation versus decoding?
+
+**Choices:**
+- **A.** Decoding returns only the observation probability and no states. under every stated condition
+- **B.** Evaluation and decoding both mean learning model parameters.
+- **C.** Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+- **D.** Learning assumes A, B, and pi can never change.
+
+**Correct Answer:** Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+
+**Explanation:** For evaluation versus decoding, the accurate statement is the first one because The three canonical HMM problems have distinct outputs.
+
+---
+
+## Question 59
+
+**Question:** Which statement correctly characterizes word-model comparison?
+
+**Choices:**
+- **A.** Word recognition directly observes the hidden word state at every time. without changing the supplied data
+- **B.** Word recognition can compare observation likelihoods under several candidate HMMs.
+- **C.** The least likely HMM must be selected by definition.
+- **D.** Observation images replace the need for emission probabilities.
+
+**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
+
+**Explanation:** For word-model comparison, the accurate statement is the first one because Evaluation under each model supports choosing the best-matching candidate.
+
+---
+
+## Question 60
+
+**Question:** Which statement correctly characterizes transition-matrix rows?
+
+**Choices:**
+- **A.** The diagonal entries are observation probabilities rather than persistence. for all permitted parameter values
+- **B.** Every matrix entry is an unconditional initial probability.
+- **C.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+- **D.** A transition row may sum to any value because probabilities are unrelated.
+
+**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+
+**Explanation:** For transition-matrix rows, the accurate statement is the first one because A transition row is a conditional distribution and therefore sums to one.
+
+---
+
+## Question 61
+
+**Question:** A student writes, “The evidence is always equal to the likelihood for every hypothesis.” Which replacement correctly repairs the claim about Bayesian evidence?
+
+**Choices:**
+- **A.** Replace it with: The evidence P(B) normalizes prior-times-likelihood values into a posterior.
+- **B.** Replace it with: The evidence is always equal to the likelihood for every hypothesis. under every stated condition
+- **C.** Replace it with: The posterior is computed without using the prior.
+- **D.** Replace it with: Bayes' theorem makes $P(A\mid B)$ equal to $P(B\mid A)$.
+
+**Correct Answer:** Replace it with: The evidence P(B) normalizes prior-times-likelihood values into a posterior.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because P(B) is the denominator in the displayed Bayes formula.
+
+---
+
+## Question 62
+
+**Question:** A student writes, “The next state is independent of the current state.” Which replacement correctly repairs the claim about the Markov property?
+
+**Choices:**
+- **A.** Replace it with: The initial state distribution is unnecessary for sequence probability. without changing the supplied data
+- **B.** Replace it with: The next state is independent of the current state.
+- **C.** Replace it with: Every state sequence must have equal probability.
+- **D.** Replace it with: The Markov property conditions the next state on the current state rather than the full history.
+
+**Correct Answer:** Replace it with: The Markov property conditions the next state on the current state rather than the full history.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because A first-order chain retains the most recent state for predicting the next.
+
+---
+
+## Question 63
+
+**Question:** A student writes, “It adds transition probabilities and divides by sequence length.” Which replacement correctly repairs the claim about state-sequence probability?
+
+**Choices:**
+- **A.** Replace it with: It omits the transition into the final state.
+- **B.** Replace it with: It adds transition probabilities and divides by sequence length. for all permitted parameter values
+- **C.** Replace it with: It multiplies emissions even when no observations are modeled.
+- **D.** Replace it with: A Markov sequence probability multiplies one initial probability and all required transitions.
+
+**Correct Answer:** Replace it with: A Markov sequence probability multiplies one initial probability and all required transitions.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The joint sequence formula is P(s1) product from t=2 to k.
+
+---
+
+## Question 64
+
+**Question:** A student writes, “A emits observations and B chooses the initial state.” Which replacement correctly repairs the claim about the roles of A and B?
+
+**Choices:**
+- **A.** Replace it with: Pi is the probability of every complete observation sequence. under every stated condition
+- **B.** Replace it with: A emits observations and B chooses the initial state.
+- **C.** Replace it with: B transitions directly between visible observations only.
+- **D.** Replace it with: In an HMM, A models hidden-state transitions while B links hidden states to observations.
+
+**Correct Answer:** Replace it with: In an HMM, A models hidden-state transitions while B links hidden states to observations.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The model tuple assigns distinct transition, emission, and initial roles.
+
+---
+
+## Question 65
+
+**Question:** A student writes, “Forward initialization sums every transition before seeing the first observation.” Which replacement correctly repairs the claim about forward initialization?
+
+**Choices:**
+- **A.** Replace it with: Forward initialization multiplies each initial-state probability by that state's first-observation emission.
+- **B.** Replace it with: Forward initialization sums every transition before seeing the first observation. without changing the supplied data
+- **C.** Replace it with: Forward initialization chooses only the largest initial probability.
+- **D.** Replace it with: Forward initialization sets all states to probability one.
+
+**Correct Answer:** Replace it with: Forward initialization multiplies each initial-state probability by that state's first-observation emission.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because alpha_1(j)=pi_j B_j(o1).
+
+---
+
+## Question 66
+
+**Question:** A student writes, “Forward recursion multiplies only the single largest incoming path.” Which replacement correctly repairs the claim about forward recursion?
+
+**Choices:**
+- **A.** Replace it with: Forward recursion discards transition probabilities.
+- **B.** Replace it with: Forward recursion sums incoming path mass before multiplying by the destination state's emission.
+- **C.** Replace it with: The emission belongs to the source state at the previous time only.
+- **D.** Replace it with: Forward recursion multiplies only the single largest incoming path. for all permitted parameter values
+
+**Correct Answer:** Replace it with: Forward recursion sums incoming path mass before multiplying by the destination state's emission.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The sum over i accounts for all paths reaching state j.
+
+---
+
+## Question 67
+
+**Question:** A student writes, “Termination selects the state with the smallest alpha.” Which replacement correctly repairs the claim about forward termination?
+
+**Choices:**
+- **A.** Replace it with: Termination divides each alpha by its emission.
+- **B.** Replace it with: Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+- **C.** Replace it with: Termination selects the state with the smallest alpha. under every stated condition under the complete set of stated assumptions
+- **D.** Replace it with: Termination learns A, B, and pi automatically.
+
+**Correct Answer:** Replace it with: Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because All possible final hidden states contribute to $P(O\mid M)$.
+
+---
+
+## Question 68
+
+**Question:** A student writes, “Evaluation and decoding both mean learning model parameters.” Which replacement correctly repairs the claim about evaluation versus decoding?
+
+**Choices:**
+- **A.** Replace it with: Evaluation and decoding both mean learning model parameters.
+- **B.** Replace it with: Decoding returns only the observation probability and no states. without changing the supplied data
+- **C.** Replace it with: Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+- **D.** Replace it with: Learning assumes A, B, and pi can never change.
+
+**Correct Answer:** Replace it with: Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The three canonical HMM problems have distinct outputs.
+
+---
+
+## Question 69
+
+**Question:** A student writes, “Word recognition directly observes the hidden word state at every time.” Which replacement correctly repairs the claim about word-model comparison?
+
+**Choices:**
+- **A.** Replace it with: Observation images replace the need for emission probabilities.
+- **B.** Replace it with: Word recognition directly observes the hidden word state at every time. for all permitted parameter values
+- **C.** Replace it with: The least likely HMM must be selected by definition.
+- **D.** Replace it with: Word recognition can compare observation likelihoods under several candidate HMMs.
+
+**Correct Answer:** Replace it with: Word recognition can compare observation likelihoods under several candidate HMMs.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Evaluation under each model supports choosing the best-matching candidate.
+
+---
+
+## Question 70
+
+**Question:** A student writes, “Every matrix entry is an unconditional initial probability.” Which replacement correctly repairs the claim about transition-matrix rows?
+
+**Choices:**
+- **A.** Replace it with: The diagonal entries are observation probabilities rather than persistence. under every stated condition
+- **B.** Replace it with: Every matrix entry is an unconditional initial probability.
+- **C.** Replace it with: Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+- **D.** Replace it with: A transition row may sum to any value because probabilities are unrelated.
+
+**Correct Answer:** Replace it with: Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because A transition row is a conditional distribution and therefore sums to one.
+
+---
+
+## Question 71
+
+**Question:** A student's answer about Bayesian evidence contains the claim “The evidence is always equal to the likelihood for every hypothesis.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about Bayesian evidence is correct without qualification
+- **B.** The quoted claim concerns Bayesian evidence but is only a harmless change of notation
+- **C.** The quoted claim about Bayesian evidence is false and must be replaced
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about Bayesian evidence is false and must be replaced
+
+**Explanation:** The quoted claim contradicts Bayesian evidence; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 72
+
+**Question:** A student's answer about the Markov property contains the claim “The next state is independent of the current state.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about the Markov property is correct without qualification
+- **B.** The quoted claim about the Markov property is false and must be replaced
+- **C.** The quoted claim concerns the Markov property but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about the Markov property is false and must be replaced
+
+**Explanation:** The quoted claim contradicts the Markov property; it must be replaced by The Markov property conditions the next state on the current state rather than the full history..
+
+---
+
+## Question 73
+
+**Question:** A student's answer about state-sequence probability contains the claim “It adds transition probabilities and divides by sequence length.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about state-sequence probability is false and must be replaced
+- **C.** The quoted claim concerns state-sequence probability but is only a harmless change of notation
+- **D.** The quoted claim about state-sequence probability is correct without qualification
+
+**Correct Answer:** The quoted claim about state-sequence probability is false and must be replaced
+
+**Explanation:** The quoted claim contradicts state-sequence probability; it must be replaced by A Markov sequence probability multiplies one initial probability and all required transitions..
+
+---
+
+## Question 74
+
+**Question:** A student's answer about the roles of A and B contains the claim “A emits observations and B chooses the initial state.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about the roles of A and B is correct without qualification
+- **B.** The quoted claim about the roles of A and B is false and must be replaced
+- **C.** The quoted claim concerns the roles of A and B but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about the roles of A and B is false and must be replaced
+
+**Explanation:** The quoted claim contradicts the roles of A and B; it must be replaced by In an HMM,.
+
+---
+
+## Question 75
+
+**Question:** A student's answer about forward initialization contains the claim “Forward initialization sums every transition before seeing the first observation.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about forward initialization is false and must be replaced
+- **B.** The quoted claim about forward initialization is correct without qualification
+- **C.** The quoted claim concerns forward initialization but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about forward initialization is false and must be replaced
+
+**Explanation:** The quoted claim contradicts forward initialization; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 76
+
+**Question:** A student's answer about forward recursion contains the claim “Forward recursion multiplies only the single largest incoming path.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about forward recursion is correct without qualification
+- **B.** The quoted claim about forward recursion is false and must be replaced
+- **C.** The quoted claim concerns forward recursion but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about forward recursion is false and must be replaced
+
+**Explanation:** The quoted claim contradicts forward recursion; it must be replaced by Forward recursion sums incoming path mass before multiplying by the destination state's emission..
+
+---
+
+## Question 77
+
+**Question:** A student's answer about forward termination contains the claim “Termination selects the state with the smallest alpha.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim concerns forward termination but is only a harmless change of notation
+- **B.** The quoted claim about forward termination is false and must be replaced
+- **C.** The quoted claim about forward termination is correct without qualification
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about forward termination is false and must be replaced
+
+**Explanation:** The quoted claim contradicts forward termination; it must be replaced by Forward termination sums final alpha values to obtain the observation-sequence likelihood..
+
+---
+
+## Question 78
+
+**Question:** A student's answer about evaluation versus decoding contains the claim “Evaluation and decoding both mean learning model parameters.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about evaluation versus decoding is correct without qualification
+- **B.** The quoted claim becomes correct merely by changing the dataset size
+- **C.** The quoted claim concerns evaluation versus decoding but is only a harmless change of notation
+- **D.** The quoted claim about evaluation versus decoding is false and must be replaced
+
+**Correct Answer:** The quoted claim about evaluation versus decoding is false and must be replaced
+
+**Explanation:** The quoted claim contradicts evaluation versus decoding; it must be replaced by Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence..
+
+---
+
+## Question 79
+
+**Question:** A student's answer about word-model comparison contains the claim “Word recognition directly observes the hidden word state at every time.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about word-model comparison is false and must be replaced
+- **B.** The quoted claim about word-model comparison is correct without qualification
+- **C.** The quoted claim concerns word-model comparison but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about word-model comparison is false and must be replaced
+
+**Explanation:** The quoted claim contradicts word-model comparison; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 80
+
+**Question:** A student's answer about transition-matrix rows contains the claim “Every matrix entry is an unconditional initial probability.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about transition-matrix rows is false and must be replaced
+- **C.** The quoted claim concerns transition-matrix rows but is only a harmless change of notation
+- **D.** The quoted claim about transition-matrix rows is correct without qualification
+
+**Correct Answer:** The quoted claim about transition-matrix rows is false and must be replaced
+
+**Explanation:** The quoted claim contradicts transition-matrix rows; it must be replaced by Rows of the stated transition matrix describe conditional next-state probabilities from a current state..
+
+---
+
+## Question 81
+
+**Question:** An implementation is designed around the rule “The posterior is computed without using the prior.” Which principle exposes the design error concerning Bayesian evidence?
+
+**Choices:**
+- **A.** Required principle: The posterior is computed without using the prior.
+- **B.** Required principle: The evidence P(B) normalizes prior-times-likelihood values into a posterior.
+- **C.** Required principle: The evidence is always equal to the likelihood for every hypothesis. for all permitted parameter values
+- **D.** Required principle: Bayes' theorem makes $P(A\mid B)$ equal to $P(B\mid A)$.
+
+**Correct Answer:** Required principle: The evidence P(B) normalizes prior-times-likelihood values into a posterior.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because P(B) is the denominator in the displayed Bayes formula.
+
+---
+
+## Question 82
+
+**Question:** An implementation is designed around the rule “Every state sequence must have equal probability.” Which principle exposes the design error concerning the Markov property?
+
+**Choices:**
+- **A.** Required principle: Every state sequence must have equal probability.
+- **B.** Required principle: The next state is independent of the current state.
+- **C.** Required principle: The Markov property conditions the next state on the current state rather than the full history.
+- **D.** Required principle: The initial state distribution is unnecessary for sequence probability. under every stated condition
+
+**Correct Answer:** Required principle: The Markov property conditions the next state on the current state rather than the full history.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because A first-order chain retains the most recent state for predicting the next.
+
+---
+
+## Question 83
+
+**Question:** An implementation is designed around the rule “It multiplies emissions even when no observations are modeled.” Which principle exposes the design error concerning state-sequence probability?
+
+**Choices:**
+- **A.** Required principle: It adds transition probabilities and divides by sequence length. without changing the supplied data
+- **B.** Required principle: A Markov sequence probability multiplies one initial probability and all required transitions.
+- **C.** Required principle: It multiplies emissions even when no observations are modeled.
+- **D.** Required principle: It omits the transition into the final state.
+
+**Correct Answer:** Required principle: A Markov sequence probability multiplies one initial probability and all required transitions.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The joint sequence formula is P(s1) product from t=2 to k.
+
+---
+
+## Question 84
+
+**Question:** An implementation is designed around the rule “B transitions directly between visible observations only.” Which principle exposes the design error concerning the roles of A and B?
+
+**Choices:**
+- **A.** Required principle: Pi is the probability of every complete observation sequence. for all permitted parameter values
+- **B.** Required principle: A emits observations and B chooses the initial state.
+- **C.** Required principle: B transitions directly between visible observations only.
+- **D.** Required principle: In an HMM, A models hidden-state transitions while B links hidden states to observations.
+
+**Correct Answer:** Required principle: In an HMM, A models hidden-state transitions while B links hidden states to observations.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The model tuple assigns distinct transition, emission, and initial roles.
+
+---
+
+## Question 85
+
+**Question:** An implementation is designed around the rule “Forward initialization chooses only the largest initial probability.” Which principle exposes the design error concerning forward initialization?
+
+**Choices:**
+- **A.** Required principle: Forward initialization multiplies each initial-state probability by that state's first-observation emission.
+- **B.** Required principle: Forward initialization sums every transition before seeing the first observation. under every stated condition
+- **C.** Required principle: Forward initialization chooses only the largest initial probability.
+- **D.** Required principle: Forward initialization sets all states to probability one.
+
+**Correct Answer:** Required principle: Forward initialization multiplies each initial-state probability by that state's first-observation emission.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because alpha_1(j)=pi_j B_j(o1).
+
+---
+
+## Question 86
+
+**Question:** An implementation is designed around the rule “The emission belongs to the source state at the previous time only.” Which principle exposes the design error concerning forward recursion?
+
+**Choices:**
+- **A.** Required principle: Forward recursion discards transition probabilities.
+- **B.** Required principle: Forward recursion sums incoming path mass before multiplying by the destination state's emission.
+- **C.** Required principle: The emission belongs to the source state at the previous time only.
+- **D.** Required principle: Forward recursion multiplies only the single largest incoming path. without changing the supplied data
+
+**Correct Answer:** Required principle: Forward recursion sums incoming path mass before multiplying by the destination state's emission.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The sum over i accounts for all paths reaching state j.
+
+---
+
+## Question 87
+
+**Question:** An implementation is designed around the rule “Termination divides each alpha by its emission.” Which principle exposes the design error concerning forward termination?
+
+**Choices:**
+- **A.** Required principle: Termination learns A, B, and pi automatically.
+- **B.** Required principle: Termination selects the state with the smallest alpha. for all permitted parameter values under the complete set of stated assumptions
+- **C.** Required principle: Termination divides each alpha by its emission.
+- **D.** Required principle: Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+
+**Correct Answer:** Required principle: Forward termination sums final alpha values to obtain the observation-sequence likelihood.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because All possible final hidden states contribute to $P(O\mid M)$.
+
+---
+
+## Question 88
+
+**Question:** An implementation is designed around the rule “Decoding returns only the observation probability and no states.” Which principle exposes the design error concerning evaluation versus decoding?
+
+**Choices:**
+- **A.** Required principle: Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+- **B.** Required principle: Evaluation and decoding both mean learning model parameters.
+- **C.** Required principle: Decoding returns only the observation probability and no states. under every stated condition
+- **D.** Required principle: Learning assumes A, B, and pi can never change.
+
+**Correct Answer:** Required principle: Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The three canonical HMM problems have distinct outputs.
+
+---
+
+## Question 89
+
+**Question:** An implementation is designed around the rule “The least likely HMM must be selected by definition.” Which principle exposes the design error concerning word-model comparison?
+
+**Choices:**
+- **A.** Required principle: Word recognition can compare observation likelihoods under several candidate HMMs.
+- **B.** Required principle: Word recognition directly observes the hidden word state at every time. without changing the supplied data
+- **C.** Required principle: The least likely HMM must be selected by definition.
+- **D.** Required principle: Observation images replace the need for emission probabilities.
+
+**Correct Answer:** Required principle: Word recognition can compare observation likelihoods under several candidate HMMs.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because Evaluation under each model supports choosing the best-matching candidate.
+
+---
+
+## Question 90
+
+**Question:** An implementation is designed around the rule “A transition row may sum to any value because probabilities are unrelated.” Which principle exposes the design error concerning transition-matrix rows?
+
+**Choices:**
+- **A.** Required principle: A transition row may sum to any value because probabilities are unrelated.
+- **B.** Required principle: Every matrix entry is an unconditional initial probability.
+- **C.** Required principle: The diagonal entries are observation probabilities rather than persistence. for all permitted parameter values
+- **D.** Required principle: Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+
+**Correct Answer:** Required principle: Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because A transition row is a conditional distribution and therefore sums to one.
+
+---
+
+## Question 91
+
+**Question:** Reviewer A states, “The evidence P(B) normalizes prior-times-likelihood values into a posterior.” Reviewer B states, “Bayes' theorem makes $P(A\mid B)$ equal to $P(B\mid A)$.” What is the correct verdict about Bayesian evidence?
+
+**Choices:**
+- **A.** Reviewer A only is correct about Bayesian evidence
+- **B.** Reviewer B only is correct about Bayesian evidence
+- **C.** Both reviewers are correct about Bayesian evidence
+- **D.** Neither reviewer is correct about Bayesian evidence
+
+**Correct Answer:** Reviewer A only is correct about Bayesian evidence
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, P(B) is the denominator in the displayed Bayes formula.
+
+---
+
+## Question 92
+
+**Question:** Reviewer A states, “The Markov property conditions the next state on the current state rather than the full history.” Reviewer B states, “The initial state distribution is unnecessary for sequence probability.” What is the correct verdict about the Markov property?
+
+**Choices:**
+- **A.** Neither reviewer is correct about the Markov property
+- **B.** Reviewer B only is correct about the Markov property
+- **C.** Reviewer A only is correct about the Markov property
+- **D.** Both reviewers are correct about the Markov property
+
+**Correct Answer:** Reviewer A only is correct about the Markov property
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, A first-order chain retains the most recent state for predicting the next.
+
+---
+
+## Question 93
+
+**Question:** Reviewer A states, “A Markov sequence probability multiplies one initial probability and all required transitions.” Reviewer B states, “It omits the transition into the final state.” What is the correct verdict about state-sequence probability?
+
+**Choices:**
+- **A.** Both reviewers are correct about state-sequence probability
+- **B.** Reviewer B only is correct about state-sequence probability
+- **C.** Reviewer A only is correct about state-sequence probability
+- **D.** Neither reviewer is correct about state-sequence probability
+
+**Correct Answer:** Reviewer A only is correct about state-sequence probability
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The joint sequence formula is P(s1) product from t=2 to k.
+
+---
+
+## Question 94
+
+**Question:** Reviewer A states, “In an HMM, A models hidden-state transitions while B links hidden states to observations.” Reviewer B states, “Pi is the probability of every complete observation sequence.” What is the correct verdict about the roles of A and B?
+
+**Choices:**
+- **A.** Reviewer B only is correct about the roles of A and B
+- **B.** Reviewer A only is correct about the roles of A and B
+- **C.** Both reviewers are correct about the roles of A and B
+- **D.** Neither reviewer is correct about the roles of A and B
+
+**Correct Answer:** Reviewer A only is correct about the roles of A and B
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The model tuple assigns distinct transition, emission, and initial roles.
+
+---
+
+## Question 95
+
+**Question:** Reviewer A states, “Forward initialization multiplies each initial-state probability by that state's first-observation emission.” Reviewer B states, “Forward initialization sets all states to probability one.” What is the correct verdict about forward initialization?
+
+**Choices:**
+- **A.** Neither reviewer is correct about forward initialization
+- **B.** Reviewer B only is correct about forward initialization
+- **C.** Reviewer A only is correct about forward initialization
+- **D.** Both reviewers are correct about forward initialization
+
+**Correct Answer:** Reviewer A only is correct about forward initialization
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, alpha_1(j)=pi_j B_j(o1).
+
+---
+
+## Question 96
+
+**Question:** Reviewer A states, “Forward recursion sums incoming path mass before multiplying by the destination state's emission.” Reviewer B states, “Forward recursion discards transition probabilities.” What is the correct verdict about forward recursion?
+
+**Choices:**
+- **A.** Reviewer B only is correct about forward recursion
+- **B.** Neither reviewer is correct about forward recursion
+- **C.** Both reviewers are correct about forward recursion
+- **D.** Reviewer A only is correct about forward recursion
+
+**Correct Answer:** Reviewer A only is correct about forward recursion
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The sum over i accounts for all paths reaching state j.
+
+---
+
+## Question 97
+
+**Question:** Reviewer A states, “Forward termination sums final alpha values to obtain the observation-sequence likelihood.” Reviewer B states, “Termination learns A, B, and pi automatically.” What is the correct verdict about forward termination?
+
+**Choices:**
+- **A.** Both reviewers are correct about forward termination
+- **B.** Reviewer A only is correct about forward termination
+- **C.** Reviewer B only is correct about forward termination
+- **D.** Neither reviewer is correct about forward termination
+
+**Correct Answer:** Reviewer A only is correct about forward termination
+
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, All possible final hidden states contribute to $P(O\mid M)$.
 
 ---
 
 ## Question 98
 
-**Question:** A probabilistic sequence model is reviewed. Case 48: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Evaluation asks for $P(O\mid M)$, whereas decoding asks for a most likely hidden-state sequence.” Reviewer B states, “Learning assumes A, B, and pi can never change.” What is the correct verdict about evaluation versus decoding?
 
 **Choices:**
-- **A.** Evaluation and decoding both mean learning model parameters.
-- **B.** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
-- **C.** Decoding returns only the observation probability and no states., without needing any additional modeling assumption
-- **D.** Learning assumes A, B, and pi can never change.
+- **A.** Both reviewers are correct about evaluation versus decoding
+- **B.** Reviewer B only is correct about evaluation versus decoding
+- **C.** Reviewer A only is correct about evaluation versus decoding
+- **D.** Neither reviewer is correct about evaluation versus decoding
 
-**Correct Answer:** Evaluation asks for P(O|M), whereas decoding asks for a most likely hidden-state sequence.
+**Correct Answer:** Reviewer A only is correct about evaluation versus decoding
 
-**Explanation:** The three canonical HMM problems have distinct outputs.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The three canonical HMM problems have distinct outputs.
 
 ---
 
 ## Question 99
 
-**Question:** A probabilistic sequence model is reviewed. Case 49: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Word recognition can compare observation likelihoods under several candidate HMMs.” Reviewer B states, “Observation images replace the need for emission probabilities.” What is the correct verdict about word-model comparison?
 
 **Choices:**
-- **A.** Word recognition directly observes the hidden word state at every time., under both the training and evaluation conditions stated
-- **B.** The least likely HMM must be selected by definition.
-- **C.** Word recognition can compare observation likelihoods under several candidate HMMs.
-- **D.** Observation images replace the need for emission probabilities.
+- **A.** Reviewer A only is correct about word-model comparison
+- **B.** Reviewer B only is correct about word-model comparison
+- **C.** Both reviewers are correct about word-model comparison
+- **D.** Neither reviewer is correct about word-model comparison
 
-**Correct Answer:** Word recognition can compare observation likelihoods under several candidate HMMs.
+**Correct Answer:** Reviewer A only is correct about word-model comparison
 
-**Explanation:** Evaluation under each model supports choosing the best-matching candidate.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Evaluation under each model supports choosing the best-matching candidate.
 
 ---
 
 ## Question 100
 
-**Question:** A probabilistic sequence model is reviewed. Case 50: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Rows of the stated transition matrix describe conditional next-state probabilities from a current state.” Reviewer B states, “The diagonal entries are observation probabilities rather than persistence.” What is the correct verdict about transition-matrix rows?
 
 **Choices:**
-- **A.** Every matrix entry is an unconditional initial probability.
-- **B.** A transition row may sum to any value because probabilities are unrelated.
-- **C.** The diagonal entries are observation probabilities rather than persistence., even when the other quantities in the formula are fixed
-- **D.** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+- **A.** Reviewer B only is correct about transition-matrix rows
+- **B.** Reviewer A only is correct about transition-matrix rows
+- **C.** Both reviewers are correct about transition-matrix rows
+- **D.** Neither reviewer is correct about transition-matrix rows
 
-**Correct Answer:** Rows of the stated transition matrix describe conditional next-state probabilities from a current state.
+**Correct Answer:** Reviewer A only is correct about transition-matrix rows
 
-**Explanation:** A transition row is a conditional distribution and therefore sums to one.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, A transition row is a conditional distribution and therefore sums to one.
 
 ---
 
 ### Answer distribution (self-check)
 
-Correct-choice positions: A=25, B=25, C=25, D=25. Distractors are designed around plausible definition, sign, denominator, update-order, and rounding errors.
+Correct-choice positions: A=25, B=25, C=25, D=25. Questions were audited for structural balance, verbatim reuse, and parameter-only duplicate prompts.

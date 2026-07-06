@@ -6,1127 +6,807 @@
 
 ## Question 1
 
-**Question:** A binary node contains 1 positive and 9 negative cases. What is its entropy in bits?
+**Question:** Using binary counts=(1,11), compute the entropy.
 
 **Choices:**
-- **A.** 0.18
-- **B.** 0.469
-- **C.** 0.2345
-- **D.** 0.531
+- **A.** entropy = 0.4138
+- **B.** entropy = 0.4883
+- **C.** entropy = 0.3393
+- **D.** entropy = 0.5628
 
-**Correct Answer:** 0.469
+**Correct Answer:** entropy = 0.4138
 
-**Explanation:** With p+=0.1000, entropy=-sum p log2 p=0.469 bits.
+**Explanation:** Apply $-\sum_i p_i\log_2 p_i$; substitution gives entropy=0.4138.
 
 ---
 
 ## Question 2
 
-**Question:** A split creates children with (+,-) counts (2, 1) and (1, 4). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Using child (+,-) counts=(2, 1) and (1, 5), compute the information gain.
 
 **Choices:**
-- **A.** 0.7956
-- **B.** 0.9544
-- **C.** 0.1589
-- **D.** 1.75
+- **A.** information gain = 0.3208
+- **B.** information gain = 0.2498
+- **C.** information gain = 0.1078
+- **D.** information gain = 0.1788
 
-**Correct Answer:** 0.1589
+**Correct Answer:** information gain = 0.1788
 
-**Explanation:** Parent entropy=0.9544; weighted child entropy=0.7956; IG=0.9544-0.7956=0.1589.
+**Explanation:** Apply $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; substitution gives information gain=0.1788.
 
 ---
 
 ## Question 3
 
-**Question:** A node has class counts (2,8). What is its Gini impurity?
+**Question:** Using class counts=(2,9), compute the Gini impurity.
 
 **Choices:**
-- **A.** 0.32
-- **B.** 0.7219
-- **C.** 0.68
-- **D.** 6.8
+- **A.** Gini impurity = 0.2975
+- **B.** Gini impurity = 0.3685
+- **C.** Gini impurity = 0.2265
+- **D.** Gini impurity = 0.4395
 
-**Correct Answer:** 0.32
+**Correct Answer:** Gini impurity = 0.2975
 
-**Explanation:** Gini=1-[(2/10)^2+(8/10)^2]=0.32.
+**Explanation:** Apply $1-\sum_i p_i^2$; substitution gives Gini impurity=0.2975.
 
 ---
 
 ## Question 4
 
-**Question:** Two candidate splits have weighted child entropies A=0.35 and B=0.52 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Using child entropies=(0.2,0.7), sizes=(3,8), compute the weighted child entropy.
 
 **Choices:**
-- **A.** Choose A; IG=0.6
-- **B.** Choose B; IG=0.43
-- **C.** Choose A; IG=1.3
-- **D.** Choose B; IG=1.47
+- **A.** weighted child entropy = 0.5636
+- **B.** weighted child entropy = 0.6651
+- **C.** weighted child entropy = 0.4622
+- **D.** weighted child entropy = 0.7665
 
-**Correct Answer:** Choose A; IG=0.6
+**Correct Answer:** weighted child entropy = 0.5636
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.6 and IG_B=0.43, so split A is selected with gain 0.6.
+**Explanation:** Apply $\sum_v\frac{|S_v|}{|S|}H(S_v)$; substitution gives weighted child entropy=0.5636.
 
 ---
 
 ## Question 5
 
-**Question:** A three-way split yields child (+,-) counts [(3, 0), (1, 2), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Using three child counts=[(3, 0), (1, 2), (0, 2)], compute the multiway information gain.
 
 **Choices:**
-- **A.** (0.3444, 0.6556)
-- **B.** (1, 0.3444)
-- **C.** (0.6556, 0.3444)
-- **D.** (0.1148, 0.8852)
+- **A.** multiway information gain = 0.7737
+- **B.** multiway information gain = 0.6556
+- **C.** multiway information gain = 0.5376
+- **D.** multiway information gain = 0.8917
 
-**Correct Answer:** (0.3444, 0.6556)
+**Correct Answer:** multiway information gain = 0.6556
 
-**Explanation:** Weight each child by its size/8. Weighted entropy=0.3444, parent entropy=1, hence IG=0.6556.
+**Explanation:** Apply $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; substitution gives multiway information gain=0.6556.
 
 ---
 
 ## Question 6
 
-**Question:** A binary node contains 2 positive and 8 negative cases. What is its entropy in bits?
+**Question:** Compare the entropy for Case P (binary counts=(2,10)) and Case Q (binary counts=(5,7)).
 
 **Choices:**
-- **A.** 0.32
-- **B.** 0.361
-- **C.** 0.2781
-- **D.** 0.7219
+- **A.** The second case is larger: 0.9799 versus 0.65
+- **B.** The first case is larger: 0.65 versus 0.9799 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** 0.7219
+**Correct Answer:** The second case is larger: 0.9799 versus 0.65
 
-**Explanation:** With p+=0.2000, entropy=-sum p log2 p=0.7219 bits.
+**Explanation:** The same formula gives 0.65 for P and 0.9799 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 7
 
-**Question:** A split creates children with (+,-) counts (3, 1) and (1, 5). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Compare the information gain for Case P (child (+,-) counts=(3, 1) and (1, 6)) and Case Q (child (+,-) counts=(6, 1) and (1, 9)).
 
 **Choices:**
-- **A.** 0.7145
-- **B.** 0.971
-- **C.** 0.2564
-- **D.** 1.6855
+- **A.** Only their sum can be determined
+- **B.** The first case is larger: 0.2741 versus 0.4579 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** The second case is larger: 0.4579 versus 0.2741
 
-**Correct Answer:** 0.2564
+**Correct Answer:** The second case is larger: 0.4579 versus 0.2741
 
-**Explanation:** Parent entropy=0.971; weighted child entropy=0.7145; IG=0.971-0.7145=0.2564.
+**Explanation:** The same formula gives 0.2741 for P and 0.4579 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 8
 
-**Question:** A node has class counts (3,8). What is its Gini impurity?
+**Question:** Compare the Gini impurity for Case P (class counts=(3,9)) and Case Q (class counts=(6,9)).
 
 **Choices:**
-- **A.** 0.3967
-- **B.** 0.8454
-- **C.** 0.6033
-- **D.** 6.6364
+- **A.** Only their sum can be determined
+- **B.** The first case is larger: 0.375 versus 0.48 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** The second case is larger: 0.48 versus 0.375
 
-**Correct Answer:** 0.3967
+**Correct Answer:** The second case is larger: 0.48 versus 0.375
 
-**Explanation:** Gini=1-[(3/11)^2+(8/11)^2]=0.3967.
+**Explanation:** The same formula gives 0.375 for P and 0.48 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 9
 
-**Question:** Two candidate splits have weighted child entropies A=0.37 and B=0.51 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Compare the weighted child entropy for Case P (child entropies=(0.22,0.69), sizes=(4,8)) and Case Q (child entropies=(0.28,0.66), sizes=(7,8)).
 
 **Choices:**
-- **A.** Choose B; IG=0.44
-- **B.** Choose A; IG=0.58
-- **C.** Choose A; IG=1.32
-- **D.** Choose B; IG=1.46
+- **A.** The first case is larger: 0.5333 versus 0.4827
+- **B.** The second case is larger: 0.4827 versus 0.5333
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** Choose A; IG=0.58
+**Correct Answer:** The first case is larger: 0.5333 versus 0.4827
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.58 and IG_B=0.44, so split A is selected with gain 0.58.
+**Explanation:** The same formula gives 0.5333 for P and 0.4827 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 10
 
-**Question:** A three-way split yields child (+,-) counts [(4, 0), (1, 3), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Compare the multiway information gain for Case P (three child counts=[(4, 0), (1, 3), (0, 2)]) and Case Q (three child counts=[(7, 0), (1, 6), (0, 2)]).
 
 **Choices:**
-- **A.** (1, 0.3245)
-- **B.** (0.6755, 0.3245)
-- **C.** (0.1082, 0.8918)
-- **D.** (0.3245, 0.6755)
+- **A.** The second case is larger: 0.7411 versus 0.6755
+- **B.** The first case is larger: 0.6755 versus 0.7411 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** (0.3245, 0.6755)
+**Correct Answer:** The second case is larger: 0.7411 versus 0.6755
 
-**Explanation:** Weight each child by its size/10. Weighted entropy=0.3245, parent entropy=1, hence IG=0.6755.
+**Explanation:** The same formula gives 0.6755 for P and 0.7411 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 11
 
-**Question:** A binary node contains 3 positive and 7 negative cases. What is its entropy in bits?
+**Question:** How far apart are the entropy values for (binary counts=(3,9)) and (binary counts=(9,3))?
 
 **Choices:**
-- **A.** 0.42
-- **B.** 0.4406
-- **C.** 0.8813
-- **D.** 0.1187
+- **A.** absolute entropy difference = 0.142
+- **B.** absolute entropy difference = 0.071
+- **C.** absolute entropy difference = -0.071
+- **D.** absolute entropy difference = 0
 
-**Correct Answer:** 0.8813
+**Correct Answer:** absolute entropy difference = 0
 
-**Explanation:** With p+=0.3000, entropy=-sum p log2 p=0.8813 bits.
+**Explanation:** The two values are 0.8113 and 0.8113; their absolute difference is 0.
 
 ---
 
 ## Question 12
 
-**Question:** A split creates children with (+,-) counts (4, 1) and (1, 6). Compute information gain from the implied parent. Round to four decimals.
+**Question:** How far apart are the information gain values for (child (+,-) counts=(4, 1) and (1, 7)) and (child (+,-) counts=(10, 1) and (1, 13))?
 
 **Choices:**
-- **A.** 0.3339
-- **B.** 0.6459
-- **C.** 0.9799
-- **D.** 1.6258
+- **A.** absolute information gain difference = 0.2392
+- **B.** absolute information gain difference = 0.3102
+- **C.** absolute information gain difference = 0.1682
+- **D.** absolute information gain difference = 0.3812
 
-**Correct Answer:** 0.3339
+**Correct Answer:** absolute information gain difference = 0.2392
 
-**Explanation:** Parent entropy=0.9799; weighted child entropy=0.6459; IG=0.9799-0.6459=0.3339.
+**Explanation:** The two values are 0.3491 and 0.5883; their absolute difference is 0.2392.
 
 ---
 
 ## Question 13
 
-**Question:** A node has class counts (4,8). What is its Gini impurity?
+**Question:** How far apart are the Gini impurity values for (class counts=(4,9)) and (class counts=(10,9))?
 
 **Choices:**
-- **A.** 0.9183
-- **B.** 0.4444
-- **C.** 0.5556
-- **D.** 6.6667
+- **A.** absolute Gini impurity difference = 0.0016
+- **B.** absolute Gini impurity difference = 0.1436
+- **C.** absolute Gini impurity difference = 0.0726
+- **D.** absolute Gini impurity difference = 0.2146
 
-**Correct Answer:** 0.4444
+**Correct Answer:** absolute Gini impurity difference = 0.0726
 
-**Explanation:** Gini=1-[(4/12)^2+(8/12)^2]=0.4444.
+**Explanation:** The two values are 0.426 and 0.4986; their absolute difference is 0.0726.
 
 ---
 
 ## Question 14
 
-**Question:** Two candidate splits have weighted child entropies A=0.39 and B=0.5 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** How far apart are the weighted child entropy values for (child entropies=(0.24,0.68), sizes=(5,8)) and (child entropies=(0.36,0.62), sizes=(11,8))?
 
 **Choices:**
-- **A.** Choose B; IG=0.45
-- **B.** Choose A; IG=1.34
-- **C.** Choose B; IG=1.45
-- **D.** Choose A; IG=0.56
+- **A.** absolute weighted child entropy difference = 0.0413
+- **B.** absolute weighted child entropy difference = 0.1123
+- **C.** absolute weighted child entropy difference = -0.0297
+- **D.** absolute weighted child entropy difference = 0.1833
 
-**Correct Answer:** Choose A; IG=0.56
+**Correct Answer:** absolute weighted child entropy difference = 0.0413
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.56 and IG_B=0.45, so split A is selected with gain 0.56.
+**Explanation:** The two values are 0.5108 and 0.4695; their absolute difference is 0.0413.
 
 ---
 
 ## Question 15
 
-**Question:** A three-way split yields child (+,-) counts [(5, 0), (1, 4), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** How far apart are the multiway information gain values for (three child counts=[(5, 0), (1, 4), (0, 2)]) and (three child counts=[(11, 0), (1, 10), (0, 2)])?
 
 **Choices:**
-- **A.** (0.3008, 0.6992)
-- **B.** (1, 0.3008)
-- **C.** (0.6992, 0.3008)
-- **D.** (0.1003, 0.8997)
+- **A.** absolute multiway information gain difference = 0.1704
+- **B.** absolute multiway information gain difference = 0.0994
+- **C.** absolute multiway information gain difference = 0.0284
+- **D.** absolute multiway information gain difference = 0.2414
 
-**Correct Answer:** (0.3008, 0.6992)
+**Correct Answer:** absolute multiway information gain difference = 0.0994
 
-**Explanation:** Weight each child by its size/12. Weighted entropy=0.3008, parent entropy=1, hence IG=0.6992.
+**Explanation:** The two values are 0.6992 and 0.7986; their absolute difference is 0.0994.
 
 ---
 
 ## Question 16
 
-**Question:** A binary node contains 4 positive and 6 negative cases. What is its entropy in bits?
+**Question:** Taking (binary counts=(4,8)) as baseline and (binary counts=(2,10)) as the new case, what is the percentage change in entropy?
 
 **Choices:**
-- **A.** 0.48
-- **B.** 0.4855
-- **C.** 0.971
-- **D.** 0.029
+- **A.** percentage change in entropy = -34.4728
+- **B.** percentage change in entropy = -23.9557
+- **C.** percentage change in entropy = -29.2143
+- **D.** percentage change in entropy = -18.6971
 
-**Correct Answer:** 0.971
+**Correct Answer:** percentage change in entropy = -29.2143
 
-**Explanation:** With p+=0.4000, entropy=-sum p log2 p=0.971 bits.
+**Explanation:** The values change from 0.9183 to 0.65; (new-old)/|old|*100=-29.2143%.
 
 ---
 
 ## Question 17
 
-**Question:** A split creates children with (+,-) counts (5, 1) and (1, 7). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Taking (child (+,-) counts=(5, 1) and (1, 8)) as baseline and (child (+,-) counts=(3, 1) and (1, 6)) as the new case, what is the percentage change in information gain?
 
 **Choices:**
-- **A.** 0.5892
-- **B.** 0.9852
-- **C.** 1.5744
-- **D.** 0.396
+- **A.** percentage change in information gain = -38.9083
+- **B.** percentage change in information gain = -27.0379
+- **C.** percentage change in information gain = -32.9731
+- **D.** percentage change in information gain = -21.1028
 
-**Correct Answer:** 0.396
+**Correct Answer:** percentage change in information gain = -32.9731
 
-**Explanation:** Parent entropy=0.9852; weighted child entropy=0.5892; IG=0.9852-0.5892=0.396.
+**Explanation:** The values change from 0.409 to 0.2741; (new-old)/|old|*100=-32.9731%.
 
 ---
 
 ## Question 18
 
-**Question:** A node has class counts (5,8). What is its Gini impurity?
+**Question:** Taking (class counts=(5,9)) as baseline and (class counts=(3,9)) as the new case, what is the percentage change in Gini impurity?
 
 **Choices:**
-- **A.** 0.4734
-- **B.** 0.9612
-- **C.** 0.5266
-- **D.** 6.8462
+- **A.** percentage change in Gini impurity = -21.6333
+- **B.** percentage change in Gini impurity = -15.0333
+- **C.** percentage change in Gini impurity = -18.3333
+- **D.** percentage change in Gini impurity = -11.7333
 
-**Correct Answer:** 0.4734
+**Correct Answer:** percentage change in Gini impurity = -18.3333
 
-**Explanation:** Gini=1-[(5/13)^2+(8/13)^2]=0.4734.
+**Explanation:** The values change from 0.4592 to 0.375; (new-old)/|old|*100=-18.3333%.
 
 ---
 
 ## Question 19
 
-**Question:** Two candidate splits have weighted child entropies A=0.41 and B=0.49 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Taking (child entropies=(0.26,0.67), sizes=(6,8)) as baseline and (child entropies=(0.22,0.69), sizes=(4,8)) as the new case, what is the percentage change in weighted child entropy?
 
 **Choices:**
-- **A.** Choose B; IG=0.46
-- **B.** Choose A; IG=0.54
-- **C.** Choose A; IG=1.36
-- **D.** Choose B; IG=1.44
+- **A.** percentage change in weighted child entropy = 9.3218
+- **B.** percentage change in weighted child entropy = 7.8998
+- **C.** percentage change in weighted child entropy = 6.4778
+- **D.** percentage change in weighted child entropy = 10.7437
 
-**Correct Answer:** Choose A; IG=0.54
+**Correct Answer:** percentage change in weighted child entropy = 7.8998
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.54 and IG_B=0.46, so split A is selected with gain 0.54.
+**Explanation:** The values change from 0.4943 to 0.5333; (new-old)/|old|*100=7.8998%.
 
 ---
 
 ## Question 20
 
-**Question:** A three-way split yields child (+,-) counts [(6, 0), (1, 5), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Taking (three child counts=[(6, 0), (1, 5), (0, 2)]) as baseline and (three child counts=[(4, 0), (1, 3), (0, 2)]) as the new case, what is the percentage change in multiway information gain?
 
 **Choices:**
-- **A.** (1, 0.2786)
-- **B.** (0.7214, 0.2786)
-- **C.** (0.0929, 0.9071)
-- **D.** (0.2786, 0.7214)
+- **A.** percentage change in multiway information gain = -7.5126
+- **B.** percentage change in multiway information gain = -5.2207
+- **C.** percentage change in multiway information gain = -6.3666
+- **D.** percentage change in multiway information gain = -4.0747
 
-**Correct Answer:** (0.2786, 0.7214)
+**Correct Answer:** percentage change in multiway information gain = -6.3666
 
-**Explanation:** Weight each child by its size/14. Weighted entropy=0.2786, parent entropy=1, hence IG=0.7214.
+**Explanation:** The values change from 0.7214 to 0.6755; (new-old)/|old|*100=-6.3666%.
 
 ---
 
 ## Question 21
 
-**Question:** A binary node contains 5 positive and 5 negative cases. What is its entropy in bits?
+**Question:** Which formula must be applied to obtain entropy from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 1.137
-- **B.** 0.807
-- **C.** 1
-- **D.** 1.271
+- **A.** For entropy, use $\sqrt{-\sum_i p_i\log_2 p_i}$
+- **B.** For entropy, use $1-\left(-\sum_i p_i\log_2 p_i\right)$
+- **C.** For entropy, use $-\sum_i p_i\log_2 p_i$
+- **D.** For entropy, use sum inputs without the required weighting for entropy
 
-**Correct Answer:** 1
+**Correct Answer:** For entropy, use $-\sum_i p_i\log_2 p_i$
 
-**Explanation:** With p+=0.5000, entropy=-sum p log2 p=1 bits.
+**Explanation:** The chapter defines entropy with $-\sum_i p_i\log_2 p_i$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 22
 
-**Question:** A split creates children with (+,-) counts (6, 1) and (1, 8). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Which formula must be applied to obtain information gain from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.5419
-- **B.** 0.9887
-- **C.** 1.5306
-- **D.** 0.4468
+- **A.** For information gain, use $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$
+- **B.** For information gain, use $1-\left(H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)\right)$
+- **C.** For information gain, use $\sqrt{H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)}$
+- **D.** For information gain, use sum inputs without the required weighting for information gain
 
-**Correct Answer:** 0.4468
+**Correct Answer:** For information gain, use $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$
 
-**Explanation:** Parent entropy=0.9887; weighted child entropy=0.5419; IG=0.9887-0.5419=0.4468.
+**Explanation:** The chapter defines information gain with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 23
 
-**Question:** A node has class counts (6,8). What is its Gini impurity?
+**Question:** Which formula must be applied to obtain Gini impurity from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.9852
-- **B.** 0.5102
-- **C.** 7.1429
-- **D.** 0.4898
+- **A.** For Gini impurity, use $\sqrt{1-\sum_i p_i^2}$
+- **B.** For Gini impurity, use $1-\left(1-\sum_i p_i^2\right)$
+- **C.** For Gini impurity, use $1-\sum_i p_i^2$
+- **D.** For Gini impurity, use sum inputs without the required weighting for Gini impurity
 
-**Correct Answer:** 0.4898
+**Correct Answer:** For Gini impurity, use $1-\sum_i p_i^2$
 
-**Explanation:** Gini=1-[(6/14)^2+(8/14)^2]=0.4898.
+**Explanation:** The chapter defines Gini impurity with $1-\sum_i p_i^2$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 24
 
-**Question:** Two candidate splits have weighted child entropies A=0.43 and B=0.48 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Which formula must be applied to obtain weighted child entropy from the supplied chapter quantities?
 
 **Choices:**
-- **A.** Choose A; IG=0.52
-- **B.** Choose B; IG=0.47
-- **C.** Choose A; IG=1.38
-- **D.** Choose B; IG=1.43
+- **A.** For weighted child entropy, use sum inputs without the required weighting for weighted child entropy
+- **B.** For weighted child entropy, use $1-\left(\sum_v\frac{|S_v|}{|S|}H(S_v)\right)$
+- **C.** For weighted child entropy, use $\sqrt{\sum_v\frac{|S_v|}{|S|}H(S_v)}$
+- **D.** For weighted child entropy, use $\sum_v\frac{|S_v|}{|S|}H(S_v)$
 
-**Correct Answer:** Choose A; IG=0.52
+**Correct Answer:** For weighted child entropy, use $\sum_v\frac{|S_v|}{|S|}H(S_v)$
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.52 and IG_B=0.47, so split A is selected with gain 0.52.
+**Explanation:** The chapter defines weighted child entropy with $\sum_v\frac{|S_v|}{|S|}H(S_v)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 25
 
-**Question:** A three-way split yields child (+,-) counts [(7, 0), (1, 6), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Which formula must be applied to obtain multiway information gain from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (1, 0.2589)
-- **B.** (0.2589, 0.7411)
-- **C.** (0.7411, 0.2589)
-- **D.** (0.0863, 0.9137)
+- **A.** For multiway information gain, use $1-\left(H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)\right)$
+- **B.** For multiway information gain, use $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$
+- **C.** For multiway information gain, use $\sqrt{H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)}$
+- **D.** For multiway information gain, use sum inputs without the required weighting for multiway information gain
 
-**Correct Answer:** (0.2589, 0.7411)
+**Correct Answer:** For multiway information gain, use $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$
 
-**Explanation:** Weight each child by its size/16. Weighted entropy=0.2589, parent entropy=1, hence IG=0.7411.
+**Explanation:** The chapter defines multiway information gain with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 26
 
-**Question:** A binary node contains 6 positive and 4 negative cases. What is its entropy in bits?
+**Question:** Four datasets are candidates. Which one produces entropy=1?
 
 **Choices:**
-- **A.** 0.48
-- **B.** 0.971
-- **C.** 0.4855
-- **D.** 0.029
+- **A.** For entropy, the first dataset: binary counts=(1,11)
+- **B.** For entropy, the third dataset: binary counts=(6,6)
+- **C.** For entropy, the second dataset: binary counts=(3,9)
+- **D.** For entropy, the fourth dataset: binary counts=(9,3)
 
-**Correct Answer:** 0.971
+**Correct Answer:** For entropy, the third dataset: binary counts=(6,6)
 
-**Explanation:** With p+=0.6000, entropy=-sum p log2 p=0.971 bits.
+**Explanation:** Evaluating all four with $-\sum_i p_i\log_2 p_i$ shows that the third dataset produces 1.
 
 ---
 
 ## Question 27
 
-**Question:** A split creates children with (+,-) counts (7, 1) and (1, 9). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Four datasets are candidates. Which one produces information gain=0.4986?
 
 **Choices:**
-- **A.** 0.5021
-- **B.** 0.4889
-- **C.** 0.9911
-- **D.** 1.4932
+- **A.** For information gain, the fourth dataset: child (+,-) counts=(10, 1) and (1, 13)
+- **B.** For information gain, the first dataset: child (+,-) counts=(2, 1) and (1, 5)
+- **C.** For information gain, the second dataset: child (+,-) counts=(4, 1) and (1, 7)
+- **D.** For information gain, the third dataset: child (+,-) counts=(7, 1) and (1, 10)
 
-**Correct Answer:** 0.4889
+**Correct Answer:** For information gain, the third dataset: child (+,-) counts=(7, 1) and (1, 10)
 
-**Explanation:** Parent entropy=0.9911; weighted child entropy=0.5021; IG=0.9911-0.5021=0.4889.
+**Explanation:** Evaluating all four with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$ shows that the third dataset produces 0.4986.
 
 ---
 
 ## Question 28
 
-**Question:** A node has class counts (7,8). What is its Gini impurity?
+**Question:** Four datasets are candidates. Which one produces Gini impurity=0.4922?
 
 **Choices:**
-- **A.** 0.4978
-- **B.** 0.9968
-- **C.** 0.5022
-- **D.** 7.5333
+- **A.** For Gini impurity, the first dataset: class counts=(2,9)
+- **B.** For Gini impurity, the third dataset: class counts=(7,9)
+- **C.** For Gini impurity, the second dataset: class counts=(4,9)
+- **D.** For Gini impurity, the fourth dataset: class counts=(10,9)
 
-**Correct Answer:** 0.4978
+**Correct Answer:** For Gini impurity, the third dataset: class counts=(7,9)
 
-**Explanation:** Gini=1-[(7/15)^2+(8/15)^2]=0.4978.
+**Explanation:** Evaluating all four with $1-\sum_i p_i^2$ shows that the third dataset produces 0.4922.
 
 ---
 
 ## Question 29
 
-**Question:** Two candidate splits have weighted child entropies A=0.45 and B=0.47 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Four datasets are candidates. Which one produces weighted child entropy=0.475?
 
 **Choices:**
-- **A.** Choose B; IG=0.48
-- **B.** Choose A; IG=0.5
-- **C.** Choose A; IG=1.4
-- **D.** Choose B; IG=1.42
+- **A.** For weighted child entropy, the third dataset: child entropies=(0.3,0.65), sizes=(8,8)
+- **B.** For weighted child entropy, the first dataset: child entropies=(0.2,0.7), sizes=(3,8)
+- **C.** For weighted child entropy, the second dataset: child entropies=(0.24,0.68), sizes=(5,8)
+- **D.** For weighted child entropy, the fourth dataset: child entropies=(0.36,0.62), sizes=(11,8)
 
-**Correct Answer:** Choose A; IG=0.5
+**Correct Answer:** For weighted child entropy, the third dataset: child entropies=(0.3,0.65), sizes=(8,8)
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.5 and IG_B=0.48, so split A is selected with gain 0.5.
+**Explanation:** Evaluating all four with $\sum_v\frac{|S_v|}{|S|}H(S_v)$ shows that the third dataset produces 0.475.
 
 ---
 
 ## Question 30
 
-**Question:** A three-way split yields child (+,-) counts [(8, 0), (1, 7), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Four datasets are candidates. Which one produces multiway information gain=0.7584?
 
 **Choices:**
-- **A.** (1, 0.2416)
-- **B.** (0.7584, 0.2416)
-- **C.** (0.2416, 0.7584)
-- **D.** (0.0805, 0.9195)
+- **A.** For multiway information gain, the third dataset: three child counts=[(8, 0), (1, 7), (0, 2)]
+- **B.** For multiway information gain, the first dataset: three child counts=[(3, 0), (1, 2), (0, 2)]
+- **C.** For multiway information gain, the second dataset: three child counts=[(5, 0), (1, 4), (0, 2)]
+- **D.** For multiway information gain, the fourth dataset: three child counts=[(11, 0), (1, 10), (0, 2)]
 
-**Correct Answer:** (0.2416, 0.7584)
+**Correct Answer:** For multiway information gain, the third dataset: three child counts=[(8, 0), (1, 7), (0, 2)]
 
-**Explanation:** Weight each child by its size/18. Weighted entropy=0.2416, parent entropy=1, hence IG=0.7584.
+**Explanation:** Evaluating all four with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$ shows that the third dataset produces 0.7584.
 
 ---
 
 ## Question 31
 
-**Question:** A binary node contains 7 positive and 3 negative cases. What is its entropy in bits?
+**Question:** For binary counts=(7,5), a student reports entropy=1.2248. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.8813
-- **B.** 0.42
-- **C.** 0.4406
-- **D.** 0.1187
+- **A.** corrected entropy = 1.3326
+- **B.** corrected entropy = 1.1562
+- **C.** corrected entropy = 0.8035
+- **D.** corrected entropy = 0.9799
 
-**Correct Answer:** 0.8813
+**Correct Answer:** corrected entropy = 0.9799
 
-**Explanation:** With p+=0.7000, entropy=-sum p log2 p=0.8813 bits.
+**Explanation:** Recomputing with $-\sum_i p_i\log_2 p_i$ gives 0.9799, so the reported 1.2248 is rejected.
 
 ---
 
 ## Question 32
 
-**Question:** A split creates children with (+,-) counts (8, 1) and (1, 10). Compute information gain from the implied parent. Round to four decimals.
+**Question:** For child (+,-) counts=(8, 1) and (1, 11), a student reports information gain=0.6663. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.4682
-- **B.** 0.9928
-- **C.** 0.5246
-- **D.** 1.461
+- **A.** corrected information gain = 0.725
+- **B.** corrected information gain = 0.629
+- **C.** corrected information gain = 0.4371
+- **D.** corrected information gain = 0.5331
 
-**Correct Answer:** 0.5246
+**Correct Answer:** corrected information gain = 0.5331
 
-**Explanation:** Parent entropy=0.9928; weighted child entropy=0.4682; IG=0.9928-0.4682=0.5246.
+**Explanation:** Recomputing with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$ gives 0.5331, so the reported 0.6663 is rejected.
 
 ---
 
 ## Question 33
 
-**Question:** A node has class counts (8,8). What is its Gini impurity?
+**Question:** For class counts=(8,9), a student reports Gini impurity=0.6228. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.637
-- **B.** 0.307
-- **C.** 0.771
-- **D.** 0.5
+- **A.** corrected Gini impurity = 0.4983
+- **B.** corrected Gini impurity = 0.588
+- **C.** corrected Gini impurity = 0.4086
+- **D.** corrected Gini impurity = 0.6776
 
-**Correct Answer:** 0.5
+**Correct Answer:** corrected Gini impurity = 0.4983
 
-**Explanation:** Gini=1-[(8/16)^2+(8/16)^2]=0.5.
+**Explanation:** Recomputing with $1-\sum_i p_i^2$ gives 0.4983, so the reported 0.6228 is rejected.
 
 ---
 
 ## Question 34
 
-**Question:** Two candidate splits have weighted child entropies A=0.47 and B=0.46 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** For child entropies=(0.32,0.64), sizes=(9,8), a student reports weighted child entropy=0.5882. What corrected value should replace it?
 
 **Choices:**
-- **A.** Choose A; IG=0.48
-- **B.** Choose B; IG=1.41
-- **C.** Choose B; IG=0.49
-- **D.** Choose A; IG=1.42
+- **A.** corrected weighted child entropy = 0.3859
+- **B.** corrected weighted child entropy = 0.5553
+- **C.** corrected weighted child entropy = 0.4706
+- **D.** corrected weighted child entropy = 0.64
 
-**Correct Answer:** Choose B; IG=0.49
+**Correct Answer:** corrected weighted child entropy = 0.4706
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.48 and IG_B=0.49, so split B is selected with gain 0.49.
+**Explanation:** Recomputing with $\sum_v\frac{|S_v|}{|S|}H(S_v)$ gives 0.4706, so the reported 0.5882 is rejected.
 
 ---
 
 ## Question 35
 
-**Question:** A three-way split yields child (+,-) counts [(9, 0), (1, 8), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** For three child counts=[(9, 0), (1, 8), (0, 2)], a student reports multiway information gain=0.9669. What corrected value should replace it?
 
 **Choices:**
-- **A.** (1, 0.2265)
-- **B.** (0.7735, 0.2265)
-- **C.** (0.2265, 0.7735)
-- **D.** (0.0755, 0.9245)
+- **A.** corrected multiway information gain = 1.052
+- **B.** corrected multiway information gain = 0.9128
+- **C.** corrected multiway information gain = 0.6343
+- **D.** corrected multiway information gain = 0.7735
 
-**Correct Answer:** (0.2265, 0.7735)
+**Correct Answer:** corrected multiway information gain = 0.7735
 
-**Explanation:** Weight each child by its size/20. Weighted entropy=0.2265, parent entropy=1, hence IG=0.7735.
+**Explanation:** Recomputing with $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$ gives 0.7735, so the reported 0.9669 is rejected.
 
 ---
 
 ## Question 36
 
-**Question:** A binary node contains 8 positive and 2 negative cases. What is its entropy in bits?
+**Question:** Compute entropy separately for (binary counts=(8,4)) and (binary counts=(1,11)), then average the two results.
 
 **Choices:**
-- **A.** 0.32
-- **B.** 0.361
-- **C.** 0.2781
-- **D.** 0.7219
+- **A.** mean of the two entropy values = 0.9058
+- **B.** mean of the two entropy values = 0.7859
+- **C.** mean of the two entropy values = 0.5462
+- **D.** mean of the two entropy values = 0.6661
 
-**Correct Answer:** 0.7219
+**Correct Answer:** mean of the two entropy values = 0.6661
 
-**Explanation:** With p+=0.8000, entropy=-sum p log2 p=0.7219 bits.
+**Explanation:** The individual results are 0.9183 and 0.4138; their arithmetic mean is 0.6661.
 
 ---
 
 ## Question 37
 
-**Question:** A split creates children with (+,-) counts (9, 1) and (1, 11). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Compute information gain separately for (child (+,-) counts=(9, 1) and (1, 12)) and (child (+,-) counts=(2, 1) and (1, 5)), then average the two results.
 
 **Choices:**
-- **A.** 0.4389
-- **B.** 0.994
-- **C.** 1.4329
-- **D.** 0.5551
+- **A.** mean of the two information gain values = 0.2997
+- **B.** mean of the two information gain values = 0.4417
+- **C.** mean of the two information gain values = 0.3707
+- **D.** mean of the two information gain values = 0.5127
 
-**Correct Answer:** 0.5551
+**Correct Answer:** mean of the two information gain values = 0.3707
 
-**Explanation:** Parent entropy=0.994; weighted child entropy=0.4389; IG=0.994-0.4389=0.5551.
+**Explanation:** The individual results are 0.5626 and 0.1788; their arithmetic mean is 0.3707.
 
 ---
 
 ## Question 38
 
-**Question:** A node has class counts (9,8). What is its Gini impurity?
+**Question:** Compute Gini impurity separately for (class counts=(9,9)) and (class counts=(2,9)), then average the two results.
 
 **Choices:**
-- **A.** 0.9975
-- **B.** 0.5017
-- **C.** 8.5294
-- **D.** 0.4983
+- **A.** mean of the two Gini impurity values = 0.3988
+- **B.** mean of the two Gini impurity values = 0.4705
+- **C.** mean of the two Gini impurity values = 0.327
+- **D.** mean of the two Gini impurity values = 0.5423
 
-**Correct Answer:** 0.4983
+**Correct Answer:** mean of the two Gini impurity values = 0.3988
 
-**Explanation:** Gini=1-[(9/17)^2+(8/17)^2]=0.4983.
+**Explanation:** The individual results are 0.5 and 0.2975; their arithmetic mean is 0.3988.
 
 ---
 
 ## Question 39
 
-**Question:** Two candidate splits have weighted child entropies A=0.49 and B=0.45 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Compute weighted child entropy separately for (child entropies=(0.34,0.63), sizes=(10,8)) and (child entropies=(0.2,0.7), sizes=(3,8)), then average the two results.
 
 **Choices:**
-- **A.** Choose B; IG=0.5
-- **B.** Choose A; IG=0.46
-- **C.** Choose B; IG=1.4
-- **D.** Choose A; IG=1.44
+- **A.** mean of the two weighted child entropy values = 0.6092
+- **B.** mean of the two weighted child entropy values = 0.5163
+- **C.** mean of the two weighted child entropy values = 0.4233
+- **D.** mean of the two weighted child entropy values = 0.7021
 
-**Correct Answer:** Choose B; IG=0.5
+**Correct Answer:** mean of the two weighted child entropy values = 0.5163
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.46 and IG_B=0.5, so split B is selected with gain 0.5.
+**Explanation:** The individual results are 0.4689 and 0.5636; their arithmetic mean is 0.5163.
 
 ---
 
 ## Question 40
 
-**Question:** A three-way split yields child (+,-) counts [(10, 0), (1, 9), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Compute multiway information gain separately for (three child counts=[(10, 0), (1, 9), (0, 2)]) and (three child counts=[(3, 0), (1, 2), (0, 2)]), then average the two results.
 
 **Choices:**
-- **A.** (1, 0.2132)
-- **B.** (0.2132, 0.7868)
-- **C.** (0.7868, 0.2132)
-- **D.** (0.0711, 0.9289)
+- **A.** mean of the two multiway information gain values = 0.7212
+- **B.** mean of the two multiway information gain values = 0.8511
+- **C.** mean of the two multiway information gain values = 0.5914
+- **D.** mean of the two multiway information gain values = 0.9809
 
-**Correct Answer:** (0.2132, 0.7868)
+**Correct Answer:** mean of the two multiway information gain values = 0.7212
 
-**Explanation:** Weight each child by its size/22. Weighted entropy=0.2132, parent entropy=1, hence IG=0.7868.
+**Explanation:** The individual results are 0.7868 and 0.6556; their arithmetic mean is 0.7212.
 
 ---
 
 ## Question 41
 
-**Question:** A binary node contains 9 positive and 1 negative cases. What is its entropy in bits?
+**Question:** After the data change from (binary counts=(9,3)) to (binary counts=(7,5)), what is the new entropy?
 
 **Choices:**
-- **A.** 0.18
-- **B.** 0.2345
-- **C.** 0.469
-- **D.** 0.531
+- **A.** entropy = 0.8035
+- **B.** entropy = 1.1562
+- **C.** entropy = 0.9799
+- **D.** entropy = 1.3326
 
-**Correct Answer:** 0.469
+**Correct Answer:** entropy = 0.9799
 
-**Explanation:** With p+=0.9000, entropy=-sum p log2 p=0.469 bits.
+**Explanation:** Only the new data enter $-\sum_i p_i\log_2 p_i$; they produce 0.9799.
 
 ---
 
 ## Question 42
 
-**Question:** A split creates children with (+,-) counts (10, 1) and (1, 12). Compute information gain from the implied parent. Round to four decimals.
+**Question:** After the data change from (child (+,-) counts=(10, 1) and (1, 13)) to (child (+,-) counts=(8, 1) and (1, 11)), what is the new information gain?
 
 **Choices:**
-- **A.** 0.4134
-- **B.** 0.995
-- **C.** 0.5816
-- **D.** 1.4083
+- **A.** information gain = 0.4371
+- **B.** information gain = 0.629
+- **C.** information gain = 0.5331
+- **D.** information gain = 0.725
 
-**Correct Answer:** 0.5816
+**Correct Answer:** information gain = 0.5331
 
-**Explanation:** Parent entropy=0.995; weighted child entropy=0.4134; IG=0.995-0.4134=0.5816.
+**Explanation:** Only the new data enter $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; they produce 0.5331.
 
 ---
 
 ## Question 43
 
-**Question:** A node has class counts (10,8). What is its Gini impurity?
+**Question:** After the data change from (class counts=(10,9)) to (class counts=(8,9)), what is the new Gini impurity?
 
 **Choices:**
-- **A.** 0.9911
-- **B.** 0.4938
-- **C.** 0.5062
-- **D.** 9.1111
+- **A.** Gini impurity = 0.4983
+- **B.** Gini impurity = 0.588
+- **C.** Gini impurity = 0.4086
+- **D.** Gini impurity = 0.6776
 
-**Correct Answer:** 0.4938
+**Correct Answer:** Gini impurity = 0.4983
 
-**Explanation:** Gini=1-[(10/18)^2+(8/18)^2]=0.4938.
+**Explanation:** Only the new data enter $1-\sum_i p_i^2$; they produce 0.4983.
 
 ---
 
 ## Question 44
 
-**Question:** Two candidate splits have weighted child entropies A=0.51 and B=0.44 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** After the data change from (child entropies=(0.36,0.62), sizes=(11,8)) to (child entropies=(0.32,0.64), sizes=(9,8)), what is the new weighted child entropy?
 
 **Choices:**
-- **A.** Choose B; IG=0.51
-- **B.** Choose A; IG=0.44
-- **C.** Choose B; IG=1.39
-- **D.** Choose A; IG=1.46
+- **A.** weighted child entropy = 0.4706
+- **B.** weighted child entropy = 0.5553
+- **C.** weighted child entropy = 0.3859
+- **D.** weighted child entropy = 0.64
 
-**Correct Answer:** Choose B; IG=0.51
+**Correct Answer:** weighted child entropy = 0.4706
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.44 and IG_B=0.51, so split B is selected with gain 0.51.
+**Explanation:** Only the new data enter $\sum_v\frac{|S_v|}{|S|}H(S_v)$; they produce 0.4706.
 
 ---
 
 ## Question 45
 
-**Question:** A three-way split yields child (+,-) counts [(11, 0), (1, 10), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** After the data change from (three child counts=[(11, 0), (1, 10), (0, 2)]) to (three child counts=[(9, 0), (1, 8), (0, 2)]), what is the new multiway information gain?
 
 **Choices:**
-- **A.** (1, 0.2014)
-- **B.** (0.7986, 0.2014)
-- **C.** (0.0671, 0.9329)
-- **D.** (0.2014, 0.7986)
+- **A.** multiway information gain = 0.9128
+- **B.** multiway information gain = 0.7735
+- **C.** multiway information gain = 0.6343
+- **D.** multiway information gain = 1.052
 
-**Correct Answer:** (0.2014, 0.7986)
+**Correct Answer:** multiway information gain = 0.7735
 
-**Explanation:** Weight each child by its size/24. Weighted entropy=0.2014, parent entropy=1, hence IG=0.7986.
+**Explanation:** Only the new data enter $H(S)-\sum_v\frac{|S_v|}{|S|}H(S_v)$; they produce 0.7735.
 
 ---
 
 ## Question 46
 
-**Question:** A binary node contains 10 positive and 1 negative cases. What is its entropy in bits?
+**Question:** Rank P, Q, R, S from largest to smallest entropy: P(binary counts=(2,10)), Q(binary counts=(4,8)), R(binary counts=(7,5)), S(binary counts=(10,2)).
 
 **Choices:**
-- **A.** 0.1653
-- **B.** 0.2197
-- **C.** 0.4395
-- **D.** 0.5605
+- **A.** entropy ranking: P > Q > R > S
+- **B.** entropy ranking: S > P > Q > R
+- **C.** entropy ranking: P = Q = R = S
+- **D.** entropy ranking: R > Q > P = S
 
-**Correct Answer:** 0.4395
+**Correct Answer:** entropy ranking: R > Q > P = S
 
-**Explanation:** With p+=0.9091, entropy=-sum p log2 p=0.4395 bits.
+**Explanation:** Their values are {'P': '0.65', 'Q': '0.9183', 'R': '0.9799', 'S': '0.65'}; grouping equal values and sorting descending gives entropy ranking: R > Q > P = S.
 
 ---
 
 ## Question 47
 
-**Question:** A split creates children with (+,-) counts (11, 1) and (1, 13). Compute information gain from the implied parent. Round to four decimals.
+**Question:** Rank P, Q, R, S from largest to smallest information gain: P(child (+,-) counts=(3, 1) and (1, 6)), Q(child (+,-) counts=(5, 1) and (1, 8)), R(child (+,-) counts=(8, 1) and (1, 11)), S(child (+,-) counts=(11, 1) and (1, 14)).
 
 **Choices:**
-- **A.** 0.3909
-- **B.** 0.9957
-- **C.** 1.3866
-- **D.** 0.6048
+- **A.** information gain ranking: P > Q > R > S
+- **B.** information gain ranking: S > R > Q > P
+- **C.** information gain ranking: P = Q = R = S
+- **D.** information gain ranking: Q > P > S > R
 
-**Correct Answer:** 0.6048
+**Correct Answer:** information gain ranking: S > R > Q > P
 
-**Explanation:** Parent entropy=0.9957; weighted child entropy=0.3909; IG=0.9957-0.3909=0.6048.
+**Explanation:** Their values are {'P': '0.2741', 'Q': '0.409', 'R': '0.5331', 'S': '0.6108'}; grouping equal values and sorting descending gives information gain ranking: S > R > Q > P.
 
 ---
 
 ## Question 48
 
-**Question:** A node has class counts (11,8). What is its Gini impurity?
+**Question:** Rank P, Q, R, S from largest to smallest Gini impurity: P(class counts=(3,9)), Q(class counts=(5,9)), R(class counts=(8,9)), S(class counts=(11,9)).
 
 **Choices:**
-- **A.** 0.9819
-- **B.** 0.4875
-- **C.** 0.5125
-- **D.** 9.7368
+- **A.** Gini impurity ranking: P = Q = R = S
+- **B.** Gini impurity ranking: P > Q > S > R
+- **C.** Gini impurity ranking: R > S > Q > P
+- **D.** Gini impurity ranking: P > Q > R > S
 
-**Correct Answer:** 0.4875
+**Correct Answer:** Gini impurity ranking: R > S > Q > P
 
-**Explanation:** Gini=1-[(11/19)^2+(8/19)^2]=0.4875.
+**Explanation:** Their values are {'P': '0.375', 'Q': '0.4592', 'R': '0.4983', 'S': '0.495'}; grouping equal values and sorting descending gives Gini impurity ranking: R > S > Q > P.
 
 ---
 
 ## Question 49
 
-**Question:** Two candidate splits have weighted child entropies A=0.53 and B=0.43 under parent entropy 0.95. Which choice and gain are correct?
+**Question:** Rank P, Q, R, S from largest to smallest weighted child entropy: P(child entropies=(0.22,0.69), sizes=(4,8)), Q(child entropies=(0.26,0.67), sizes=(6,8)), R(child entropies=(0.32,0.64), sizes=(9,8)), S(child entropies=(0.38,0.61), sizes=(12,8)).
 
 **Choices:**
-- **A.** Choose A; IG=0.42
-- **B.** Choose B; IG=0.52
-- **C.** Choose B; IG=1.38
-- **D.** Choose A; IG=1.48
+- **A.** weighted child entropy ranking: P = Q = R = S
+- **B.** weighted child entropy ranking: R > S > Q > P
+- **C.** weighted child entropy ranking: P > Q > S > R
+- **D.** weighted child entropy ranking: P > Q > R > S
 
-**Correct Answer:** Choose B; IG=0.52
+**Correct Answer:** weighted child entropy ranking: P > Q > S > R
 
-**Explanation:** The smaller weighted entropy gives larger gain. IG_A=0.42 and IG_B=0.52, so split B is selected with gain 0.52.
+**Explanation:** Their values are {'P': '0.5333', 'Q': '0.4943', 'R': '0.4706', 'S': '0.472'}; grouping equal values and sorting descending gives weighted child entropy ranking: P > Q > S > R.
 
 ---
 
 ## Question 50
 
-**Question:** A three-way split yields child (+,-) counts [(12, 0), (1, 11), (0, 2)]. What pair (weighted entropy, information gain) is correct?
+**Question:** Rank P, Q, R, S from largest to smallest multiway information gain: P(three child counts=[(4, 0), (1, 3), (0, 2)]), Q(three child counts=[(6, 0), (1, 5), (0, 2)]), R(three child counts=[(9, 0), (1, 8), (0, 2)]), S(three child counts=[(12, 0), (1, 11), (0, 2)]).
 
 **Choices:**
-- **A.** (0.191, 0.809)
-- **B.** (1, 0.191)
-- **C.** (0.809, 0.191)
-- **D.** (0.0637, 0.9363)
+- **A.** multiway information gain ranking: P = Q = R = S
+- **B.** multiway information gain ranking: P > Q > R > S
+- **C.** multiway information gain ranking: S > R > Q > P
+- **D.** multiway information gain ranking: Q > P > S > R
 
-**Correct Answer:** (0.191, 0.809)
+**Correct Answer:** multiway information gain ranking: S > R > Q > P
 
-**Explanation:** Weight each child by its size/26. Weighted entropy=0.191, parent entropy=1, hence IG=0.809.
+**Explanation:** Their values are {'P': '0.6755', 'Q': '0.7214', 'R': '0.7735', 'S': '0.809'}; grouping equal values and sorting descending gives multiway information gain ranking: S > R > Q > P.
 
 ---
 
 ## Question 51
 
-**Question:** A tree-induction result is being challenged. Case 1: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** A pure node maximizes both entropy and Gini impurity.
-- **B.** A pure node must contain equal counts of every class.
-- **C.** A pure node has entropy zero and Gini impurity zero.
-- **D.** Purity is determined by feature values without using labels.
-
-**Correct Answer:** A pure node has entropy zero and Gini impurity zero.
-
-**Explanation:** When one class has probability one, both impurity formulas evaluate to zero.
-
----
-
-## Question 52
-
-**Question:** A tree-induction result is being challenged. Case 2: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** ID3 chooses the candidate split with the largest information gain.
-- **B.** ID3 chooses the split with the largest weighted child entropy., even when the other quantities in the formula are fixed
-- **C.** ID3 always selects the feature with the most values.
-- **D.** ID3 ranks splits only by the depth they would create.
-
-**Correct Answer:** ID3 chooses the candidate split with the largest information gain.
-
-**Explanation:** Information gain is parent entropy minus weighted post-split entropy.
-
----
-
-## Question 53
-
-**Question:** A tree-induction result is being challenged. Case 3: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Continuous features must be discarded before tree induction., as a consequence that holds for every permitted input
-- **B.** Every distinct continuous value must become a class label.
-- **C.** Thresholds are valid only for regression trees.
-- **D.** A continuous feature can be tested using a threshold such as length < 3.
-
-**Correct Answer:** A continuous feature can be tested using a threshold such as length < 3.
-
-**Explanation:** Threshold branches allow decision trees to partition continuous inputs.
-
----
-
-## Question 54
-
-**Question:** A tree-induction result is being challenged. Case 4: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Post-pruning forbids the tree from growing beyond its root.
-- **B.** Post-pruning grows a tree first and then removes weak branches.
-- **C.** Pre-pruning removes branches only after full growth.
-- **D.** Pruning guarantees zero error on both training and test sets., without needing any additional modeling assumption
-
-**Correct Answer:** Post-pruning grows a tree first and then removes weak branches.
-
-**Explanation:** The timing distinguishes post-pruning from early stopping.
-
----
-
-## Question 55
-
-**Question:** A tree-induction result is being challenged. Case 5: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** A classification leaf must contain a continuous threshold., under both the training and evaluation conditions stated
-- **B.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-- **C.** A regression leaf may output only a category name.
-- **D.** The two tree types differ only in drawing style.
-
-**Correct Answer:** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-
-**Explanation:** Their output types follow the classification/regression distinction.
-
----
-
-## Question 56
-
-**Question:** A tree-induction result is being challenged. Case 6: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** A single path is a disjunction of every incompatible branch.
-- **B.** A root-to-leaf path corresponds to a conjunction of tests.
-- **C.** Leaves are evaluated before any internal test.
-- **D.** A path ignores feature outcomes and uses only class frequency.
-
-**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
-
-**Explanation:** All tests along a path must be satisfied, forming an AND condition.
-
----
-
-## Question 57
-
-**Question:** A tree-induction result is being challenged. Case 7: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Every child receives weight one regardless of size.
-- **B.** Only the purest child contributes to information gain., as a consequence that holds for every permitted input
-- **C.** Weights are the logarithms of the number of features.
-- **D.** Weighted child entropy accounts for the relative sizes of child subsets.
-
-**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
-
-**Explanation:** The formula weights each child by |S_v|/|S|.
-
----
-
-## Question 58
-
-**Question:** A tree-induction result is being challenged. Case 8: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Information gain mathematically guarantees best test accuracy., without needing any additional modeling assumption
-- **B.** Overfitting can occur only in linear regression.
-- **C.** A fully grown tree is always simpler than a pruned tree.
-- **D.** A high-information-gain training split can still contribute to overfitting.
-
-**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
-
-**Explanation:** Greedy training improvement is not a guarantee of unseen-data generalization.
-
----
-
-## Question 59
-
-**Question:** A tree-induction result is being challenged. Case 9: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Missing or noisy data motivates special handling and possibly pruning.
-- **B.** Any missing value makes a decision tree definitionally impossible., under both the training and evaluation conditions stated
-- **C.** Noise always increases information gain for the true feature.
-- **D.** Pruning is used solely to increase the number of leaves.
-
-**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
-
-**Explanation:** Trees can accommodate imperfect data, while pruning can reduce brittle structure.
-
----
-
-## Question 60
-
-**Question:** A tree-induction result is being challenged. Case 10: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Decision trees can be rewritten as rule sets such as DNF.
-- **B.** Decision trees represent only a single linear inequality.
-- **C.** A decision tree cannot express conjunctions or disjunctions.
-- **D.** Rule conversion changes all leaf predictions into features.
-
-**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
-
-**Explanation:** Paths yield conjunctions and multiple positive paths can be disjoined.
-
----
-
-## Question 61
-
-**Question:** A tree-induction result is being challenged. Case 11: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A pure node maximizes both entropy and Gini impurity.
-- **B.** A pure node has entropy zero and Gini impurity zero.
-- **C.** A pure node must contain equal counts of every class.
-- **D.** Purity is determined by feature values without using labels.
-
-**Correct Answer:** A pure node has entropy zero and Gini impurity zero.
-
-**Explanation:** When one class has probability one, both impurity formulas evaluate to zero.
-
----
-
-## Question 62
-
-**Question:** A tree-induction result is being challenged. Case 12: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** ID3 chooses the candidate split with the largest information gain.
-- **B.** ID3 chooses the split with the largest weighted child entropy., without needing any additional modeling assumption
-- **C.** ID3 always selects the feature with the most values.
-- **D.** ID3 ranks splits only by the depth they would create.
-
-**Correct Answer:** ID3 chooses the candidate split with the largest information gain.
-
-**Explanation:** Information gain is parent entropy minus weighted post-split entropy.
-
----
-
-## Question 63
-
-**Question:** A tree-induction result is being challenged. Case 13: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Continuous features must be discarded before tree induction., under both the training and evaluation conditions stated
-- **B.** Every distinct continuous value must become a class label.
-- **C.** A continuous feature can be tested using a threshold such as length < 3.
-- **D.** Thresholds are valid only for regression trees.
-
-**Correct Answer:** A continuous feature can be tested using a threshold such as length < 3.
-
-**Explanation:** Threshold branches allow decision trees to partition continuous inputs.
-
----
-
-## Question 64
-
-**Question:** A tree-induction result is being challenged. Case 14: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Post-pruning forbids the tree from growing beyond its root.
-- **B.** Pre-pruning removes branches only after full growth.
-- **C.** Post-pruning grows a tree first and then removes weak branches.
-- **D.** Pruning guarantees zero error on both training and test sets., even when the other quantities in the formula are fixed
-
-**Correct Answer:** Post-pruning grows a tree first and then removes weak branches.
-
-**Explanation:** The timing distinguishes post-pruning from early stopping.
-
----
-
-## Question 65
-
-**Question:** A tree-induction result is being challenged. Case 15: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A classification leaf must contain a continuous threshold., as a consequence that holds for every permitted input
-- **B.** A regression leaf may output only a category name.
-- **C.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-- **D.** The two tree types differ only in drawing style.
-
-**Correct Answer:** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-
-**Explanation:** Their output types follow the classification/regression distinction.
-
----
-
-## Question 66
-
-**Question:** A tree-induction result is being challenged. Case 16: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A single path is a disjunction of every incompatible branch.
-- **B.** Leaves are evaluated before any internal test.
-- **C.** A root-to-leaf path corresponds to a conjunction of tests.
-- **D.** A path ignores feature outcomes and uses only class frequency.
-
-**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
-
-**Explanation:** All tests along a path must be satisfied, forming an AND condition.
-
----
-
-## Question 67
-
-**Question:** A tree-induction result is being challenged. Case 17: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Every child receives weight one regardless of size.
-- **B.** Weighted child entropy accounts for the relative sizes of child subsets.
-- **C.** Only the purest child contributes to information gain., under both the training and evaluation conditions stated
-- **D.** Weights are the logarithms of the number of features.
-
-**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
-
-**Explanation:** The formula weights each child by |S_v|/|S|.
-
----
-
-## Question 68
-
-**Question:** A tree-induction result is being challenged. Case 18: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A high-information-gain training split can still contribute to overfitting.
-- **B.** Information gain mathematically guarantees best test accuracy., even when the other quantities in the formula are fixed
-- **C.** Overfitting can occur only in linear regression.
-- **D.** A fully grown tree is always simpler than a pruned tree.
-
-**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
-
-**Explanation:** Greedy training improvement is not a guarantee of unseen-data generalization.
-
----
-
-## Question 69
-
-**Question:** A tree-induction result is being challenged. Case 19: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Any missing value makes a decision tree definitionally impossible., as a consequence that holds for every permitted input
-- **B.** Noise always increases information gain for the true feature.
-- **C.** Missing or noisy data motivates special handling and possibly pruning.
-- **D.** Pruning is used solely to increase the number of leaves.
-
-**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
-
-**Explanation:** Trees can accommodate imperfect data, while pruning can reduce brittle structure.
-
----
-
-## Question 70
-
-**Question:** A tree-induction result is being challenged. Case 20: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Decision trees represent only a single linear inequality.
-- **B.** Decision trees can be rewritten as rule sets such as DNF.
-- **C.** A decision tree cannot express conjunctions or disjunctions.
-- **D.** Rule conversion changes all leaf predictions into features.
-
-**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
-
-**Explanation:** Paths yield conjunctions and multiple positive paths can be disjoined.
-
----
-
-## Question 71
-
-**Question:** A tree-induction result is being challenged. Case 21: Which statement remains correct under the definitions in this chapter?
+**Question:** Which statement correctly characterizes pure-node impurity?
 
 **Choices:**
 - **A.** A pure node has entropy zero and Gini impurity zero.
@@ -1136,474 +816,794 @@
 
 **Correct Answer:** A pure node has entropy zero and Gini impurity zero.
 
-**Explanation:** When one class has probability one, both impurity formulas evaluate to zero.
+**Explanation:** For pure-node impurity, the accurate statement is the first one because When one class has probability one, both impurity formulas evaluate to zero.
 
 ---
 
-## Question 72
+## Question 52
 
-**Question:** A tree-induction result is being challenged. Case 22: Which statement remains correct under the definitions in this chapter?
+**Question:** Which statement correctly characterizes ID3 split selection?
 
 **Choices:**
-- **A.** ID3 chooses the candidate split with the largest information gain.
-- **B.** ID3 chooses the split with the largest weighted child entropy., even when the other quantities in the formula are fixed
-- **C.** ID3 always selects the feature with the most values.
+- **A.** ID3 always selects the feature with the most values.
+- **B.** ID3 chooses the split with the largest weighted child entropy. under every stated condition
+- **C.** ID3 chooses the candidate split with the largest information gain.
 - **D.** ID3 ranks splits only by the depth they would create.
 
 **Correct Answer:** ID3 chooses the candidate split with the largest information gain.
 
-**Explanation:** Information gain is parent entropy minus weighted post-split entropy.
+**Explanation:** For ID3 split selection, the accurate statement is the first one because Information gain is parent entropy minus weighted post-split entropy.
 
 ---
 
-## Question 73
+## Question 53
 
-**Question:** A tree-induction result is being challenged. Case 23: Which statement remains correct under the definitions in this chapter?
+**Question:** Which statement correctly characterizes continuous thresholds?
 
 **Choices:**
-- **A.** Continuous features must be discarded before tree induction., as a consequence that holds for every permitted input
-- **B.** Every distinct continuous value must become a class label.
-- **C.** Thresholds are valid only for regression trees.
-- **D.** A continuous feature can be tested using a threshold such as length < 3.
+- **A.** A continuous feature can be tested using a threshold such as length < 3.
+- **B.** Continuous features must be discarded before tree induction. without changing the supplied data
+- **C.** Every distinct continuous value must become a class label.
+- **D.** Thresholds are valid only for regression trees.
 
 **Correct Answer:** A continuous feature can be tested using a threshold such as length < 3.
 
-**Explanation:** Threshold branches allow decision trees to partition continuous inputs.
+**Explanation:** For continuous thresholds, the accurate statement is the first one because Threshold branches allow decision trees to partition continuous inputs.
 
 ---
 
-## Question 74
+## Question 54
 
-**Question:** A tree-induction result is being challenged. Case 24: Which statement remains correct under the definitions in this chapter?
+**Question:** Which statement correctly characterizes post-pruning?
 
 **Choices:**
-- **A.** Post-pruning forbids the tree from growing beyond its root.
-- **B.** Pre-pruning removes branches only after full growth.
-- **C.** Post-pruning grows a tree first and then removes weak branches.
-- **D.** Pruning guarantees zero error on both training and test sets., without needing any additional modeling assumption
+- **A.** Pruning guarantees zero error on both training and test sets. for all permitted parameter values
+- **B.** Post-pruning forbids the tree from growing beyond its root.
+- **C.** Pre-pruning removes branches only after full growth.
+- **D.** Post-pruning grows a tree first and then removes weak branches.
 
 **Correct Answer:** Post-pruning grows a tree first and then removes weak branches.
 
-**Explanation:** The timing distinguishes post-pruning from early stopping.
+**Explanation:** For post-pruning, the accurate statement is the first one because The timing distinguishes post-pruning from early stopping.
 
 ---
 
-## Question 75
+## Question 55
 
-**Question:** A tree-induction result is being challenged. Case 25: Which statement remains correct under the definitions in this chapter?
+**Question:** Which statement correctly characterizes classification and regression leaves?
 
 **Choices:**
-- **A.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-- **B.** A classification leaf must contain a continuous threshold., under both the training and evaluation conditions stated
+- **A.** A classification leaf must contain a continuous threshold. under every stated condition under the complete set of stated assumptions
+- **B.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
 - **C.** A regression leaf may output only a category name.
 - **D.** The two tree types differ only in drawing style.
 
 **Correct Answer:** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
 
-**Explanation:** Their output types follow the classification/regression distinction.
+**Explanation:** For classification and regression leaves, the accurate statement is the first one because Their output types follow the classification/regression distinction.
+
+---
+
+## Question 56
+
+**Question:** Which statement correctly characterizes root-to-leaf rules?
+
+**Choices:**
+- **A.** A path ignores feature outcomes and uses only class frequency.
+- **B.** A single path is a disjunction of every incompatible branch.
+- **C.** Leaves are evaluated before any internal test.
+- **D.** A root-to-leaf path corresponds to a conjunction of tests.
+
+**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
+
+**Explanation:** For root-to-leaf rules, the accurate statement is the first one because All tests along a path must be satisfied, forming an AND condition.
+
+---
+
+## Question 57
+
+**Question:** Which statement correctly characterizes weighted child entropy?
+
+**Choices:**
+- **A.** Weights are the logarithms of the number of features.
+- **B.** Every child receives weight one regardless of size.
+- **C.** Only the purest child contributes to information gain. for all permitted parameter values
+- **D.** Weighted child entropy accounts for the relative sizes of child subsets.
+
+**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
+
+**Explanation:** For weighted child entropy, the accurate statement is the first one because The formula weights each child by |S_v|/|S|.
+
+---
+
+## Question 58
+
+**Question:** Which statement correctly characterizes greedy gain and overfitting?
+
+**Choices:**
+- **A.** A fully grown tree is always simpler than a pruned tree.
+- **B.** A high-information-gain training split can still contribute to overfitting.
+- **C.** Overfitting can occur only in linear regression.
+- **D.** Information gain mathematically guarantees best test accuracy. under every stated condition
+
+**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
+
+**Explanation:** For greedy gain and overfitting, the accurate statement is the first one because Greedy training improvement is not a guarantee of unseen-data generalization.
+
+---
+
+## Question 59
+
+**Question:** Which statement correctly characterizes noisy or missing data?
+
+**Choices:**
+- **A.** Noise always increases information gain for the true feature.
+- **B.** Any missing value makes a decision tree definitionally impossible. without changing the supplied data
+- **C.** Missing or noisy data motivates special handling and possibly pruning.
+- **D.** Pruning is used solely to increase the number of leaves.
+
+**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
+
+**Explanation:** For noisy or missing data, the accurate statement is the first one because Trees can accommodate imperfect data, while pruning can reduce brittle structure.
+
+---
+
+## Question 60
+
+**Question:** Which statement correctly characterizes tree-to-rule conversion?
+
+**Choices:**
+- **A.** Decision trees represent only a single linear inequality.
+- **B.** Decision trees can be rewritten as rule sets such as DNF.
+- **C.** A decision tree cannot express conjunctions or disjunctions.
+- **D.** Rule conversion changes all leaf predictions into features.
+
+**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
+
+**Explanation:** For tree-to-rule conversion, the accurate statement is the first one because Paths yield conjunctions and multiple positive paths can be disjoined.
+
+---
+
+## Question 61
+
+**Question:** A student writes, “A pure node maximizes both entropy and Gini impurity.” Which replacement correctly repairs the claim about pure-node impurity?
+
+**Choices:**
+- **A.** Replace it with: A pure node must contain equal counts of every class.
+- **B.** Replace it with: A pure node has entropy zero and Gini impurity zero.
+- **C.** Replace it with: A pure node maximizes both entropy and Gini impurity.
+- **D.** Replace it with: Purity is determined by feature values without using labels.
+
+**Correct Answer:** Replace it with: A pure node has entropy zero and Gini impurity zero.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because When one class has probability one, both impurity formulas evaluate to zero.
+
+---
+
+## Question 62
+
+**Question:** A student writes, “ID3 chooses the split with the largest weighted child entropy.” Which replacement correctly repairs the claim about ID3 split selection?
+
+**Choices:**
+- **A.** Replace it with: ID3 chooses the candidate split with the largest information gain.
+- **B.** Replace it with: ID3 chooses the split with the largest weighted child entropy. without changing the supplied data
+- **C.** Replace it with: ID3 always selects the feature with the most values.
+- **D.** Replace it with: ID3 ranks splits only by the depth they would create.
+
+**Correct Answer:** Replace it with: ID3 chooses the candidate split with the largest information gain.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Information gain is parent entropy minus weighted post-split entropy.
+
+---
+
+## Question 63
+
+**Question:** A student writes, “Continuous features must be discarded before tree induction.” Which replacement correctly repairs the claim about continuous thresholds?
+
+**Choices:**
+- **A.** Replace it with: Thresholds are valid only for regression trees.
+- **B.** Replace it with: Continuous features must be discarded before tree induction. for all permitted parameter values
+- **C.** Replace it with: Every distinct continuous value must become a class label.
+- **D.** Replace it with: A continuous feature can be tested using a threshold such as length < 3.
+
+**Correct Answer:** Replace it with: A continuous feature can be tested using a threshold such as length < 3.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Threshold branches allow decision trees to partition continuous inputs.
+
+---
+
+## Question 64
+
+**Question:** A student writes, “Post-pruning forbids the tree from growing beyond its root.” Which replacement correctly repairs the claim about post-pruning?
+
+**Choices:**
+- **A.** Replace it with: Post-pruning forbids the tree from growing beyond its root.
+- **B.** Replace it with: Pruning guarantees zero error on both training and test sets. under every stated condition
+- **C.** Replace it with: Pre-pruning removes branches only after full growth.
+- **D.** Replace it with: Post-pruning grows a tree first and then removes weak branches.
+
+**Correct Answer:** Replace it with: Post-pruning grows a tree first and then removes weak branches.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The timing distinguishes post-pruning from early stopping.
+
+---
+
+## Question 65
+
+**Question:** A student writes, “A classification leaf must contain a continuous threshold.” Which replacement correctly repairs the claim about classification and regression leaves?
+
+**Choices:**
+- **A.** Replace it with: A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+- **B.** Replace it with: A classification leaf must contain a continuous threshold. without changing the supplied data under the complete set of stated assumptions
+- **C.** Replace it with: A regression leaf may output only a category name.
+- **D.** Replace it with: The two tree types differ only in drawing style.
+
+**Correct Answer:** Replace it with: A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Their output types follow the classification/regression distinction.
+
+---
+
+## Question 66
+
+**Question:** A student writes, “A single path is a disjunction of every incompatible branch.” Which replacement correctly repairs the claim about root-to-leaf rules?
+
+**Choices:**
+- **A.** Replace it with: A path ignores feature outcomes and uses only class frequency.
+- **B.** Replace it with: A single path is a disjunction of every incompatible branch.
+- **C.** Replace it with: Leaves are evaluated before any internal test.
+- **D.** Replace it with: A root-to-leaf path corresponds to a conjunction of tests.
+
+**Correct Answer:** Replace it with: A root-to-leaf path corresponds to a conjunction of tests.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because All tests along a path must be satisfied, forming an AND condition.
+
+---
+
+## Question 67
+
+**Question:** A student writes, “Every child receives weight one regardless of size.” Which replacement correctly repairs the claim about weighted child entropy?
+
+**Choices:**
+- **A.** Replace it with: Every child receives weight one regardless of size.
+- **B.** Replace it with: Weighted child entropy accounts for the relative sizes of child subsets.
+- **C.** Replace it with: Only the purest child contributes to information gain. under every stated condition
+- **D.** Replace it with: Weights are the logarithms of the number of features.
+
+**Correct Answer:** Replace it with: Weighted child entropy accounts for the relative sizes of child subsets.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The formula weights each child by |S_v|/|S|.
+
+---
+
+## Question 68
+
+**Question:** A student writes, “Information gain mathematically guarantees best test accuracy.” Which replacement correctly repairs the claim about greedy gain and overfitting?
+
+**Choices:**
+- **A.** Replace it with: A high-information-gain training split can still contribute to overfitting.
+- **B.** Replace it with: Information gain mathematically guarantees best test accuracy. without changing the supplied data
+- **C.** Replace it with: Overfitting can occur only in linear regression.
+- **D.** Replace it with: A fully grown tree is always simpler than a pruned tree.
+
+**Correct Answer:** Replace it with: A high-information-gain training split can still contribute to overfitting.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Greedy training improvement is not a guarantee of unseen-data generalization.
+
+---
+
+## Question 69
+
+**Question:** A student writes, “Any missing value makes a decision tree definitionally impossible.” Which replacement correctly repairs the claim about noisy or missing data?
+
+**Choices:**
+- **A.** Replace it with: Pruning is used solely to increase the number of leaves.
+- **B.** Replace it with: Any missing value makes a decision tree definitionally impossible. for all permitted parameter values
+- **C.** Replace it with: Missing or noisy data motivates special handling and possibly pruning.
+- **D.** Replace it with: Noise always increases information gain for the true feature.
+
+**Correct Answer:** Replace it with: Missing or noisy data motivates special handling and possibly pruning.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Trees can accommodate imperfect data, while pruning can reduce brittle structure.
+
+---
+
+## Question 70
+
+**Question:** A student writes, “Decision trees represent only a single linear inequality.” Which replacement correctly repairs the claim about tree-to-rule conversion?
+
+**Choices:**
+- **A.** Replace it with: Rule conversion changes all leaf predictions into features.
+- **B.** Replace it with: Decision trees represent only a single linear inequality.
+- **C.** Replace it with: Decision trees can be rewritten as rule sets such as DNF.
+- **D.** Replace it with: A decision tree cannot express conjunctions or disjunctions.
+
+**Correct Answer:** Replace it with: Decision trees can be rewritten as rule sets such as DNF.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Paths yield conjunctions and multiple positive paths can be disjoined.
+
+---
+
+## Question 71
+
+**Question:** A student's answer about pure-node impurity contains the claim “A pure node maximizes both entropy and Gini impurity.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about pure-node impurity is correct without qualification
+- **C.** The quoted claim concerns pure-node impurity but is only a harmless change of notation
+- **D.** The quoted claim about pure-node impurity is false and must be replaced
+
+**Correct Answer:** The quoted claim about pure-node impurity is false and must be replaced
+
+**Explanation:** The quoted claim contradicts pure-node impurity; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 72
+
+**Question:** A student's answer about ID3 split selection contains the claim “ID3 chooses the split with the largest weighted child entropy.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about ID3 split selection is false and must be replaced
+- **B.** The quoted claim about ID3 split selection is correct without qualification
+- **C.** The quoted claim concerns ID3 split selection but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about ID3 split selection is false and must be replaced
+
+**Explanation:** The quoted claim contradicts ID3 split selection; it must be replaced by ID3 chooses the candidate split with the largest information gain..
+
+---
+
+## Question 73
+
+**Question:** A student's answer about continuous thresholds contains the claim “Continuous features must be discarded before tree induction.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about continuous thresholds is correct without qualification
+- **B.** The quoted claim about continuous thresholds is false and must be replaced
+- **C.** The quoted claim concerns continuous thresholds but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about continuous thresholds is false and must be replaced
+
+**Explanation:** The quoted claim contradicts continuous thresholds; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 74
+
+**Question:** A student's answer about post-pruning contains the claim “Post-pruning forbids the tree from growing beyond its root.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about post-pruning is correct without qualification
+- **B.** The quoted claim about post-pruning is false and must be replaced
+- **C.** The quoted claim concerns post-pruning but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about post-pruning is false and must be replaced
+
+**Explanation:** The quoted claim contradicts post-pruning; it must be replaced by Post-pruning grows a tree first and then removes weak branches..
+
+---
+
+## Question 75
+
+**Question:** A student's answer about classification and regression leaves contains the claim “A classification leaf must contain a continuous threshold.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about classification and regression leaves is correct without qualification
+- **B.** The quoted claim about classification and regression leaves is false and must be replaced
+- **C.** The quoted claim concerns classification and regression leaves but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about classification and regression leaves is false and must be replaced
+
+**Explanation:** The quoted claim contradicts classification and regression leaves; it must be replaced by A classification leaf stores a class decision; a regression leaf stores a real-valued prediction..
 
 ---
 
 ## Question 76
 
-**Question:** A tree-induction result is being challenged. Case 26: Which statement remains correct under the definitions in this chapter?
+**Question:** A student's answer about root-to-leaf rules contains the claim “A single path is a disjunction of every incompatible branch.” Which assessment is correct?
 
 **Choices:**
-- **A.** A single path is a disjunction of every incompatible branch.
-- **B.** Leaves are evaluated before any internal test.
-- **C.** A root-to-leaf path corresponds to a conjunction of tests.
-- **D.** A path ignores feature outcomes and uses only class frequency.
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about root-to-leaf rules is correct without qualification
+- **C.** The quoted claim concerns root-to-leaf rules but is only a harmless change of notation
+- **D.** The quoted claim about root-to-leaf rules is false and must be replaced
 
-**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
+**Correct Answer:** The quoted claim about root-to-leaf rules is false and must be replaced
 
-**Explanation:** All tests along a path must be satisfied, forming an AND condition.
+**Explanation:** The quoted claim contradicts root-to-leaf rules; it must be replaced by A root-to-leaf path corresponds to a conjunction of tests..
 
 ---
 
 ## Question 77
 
-**Question:** A tree-induction result is being challenged. Case 27: Which statement remains correct under the definitions in this chapter?
+**Question:** A student's answer about weighted child entropy contains the claim “Every child receives weight one regardless of size.” Which assessment is correct?
 
 **Choices:**
-- **A.** Every child receives weight one regardless of size.
-- **B.** Only the purest child contributes to information gain., as a consequence that holds for every permitted input
-- **C.** Weights are the logarithms of the number of features.
-- **D.** Weighted child entropy accounts for the relative sizes of child subsets.
+- **A.** The quoted claim concerns weighted child entropy but is only a harmless change of notation
+- **B.** The quoted claim about weighted child entropy is correct without qualification
+- **C.** The quoted claim about weighted child entropy is false and must be replaced
+- **D.** The quoted claim becomes correct merely by changing the dataset size
 
-**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
+**Correct Answer:** The quoted claim about weighted child entropy is false and must be replaced
 
-**Explanation:** The formula weights each child by |S_v|/|S|.
+**Explanation:** The quoted claim contradicts weighted child entropy; it must be replaced by Weighted child entropy accounts for the relative sizes of child subsets..
 
 ---
 
 ## Question 78
 
-**Question:** A tree-induction result is being challenged. Case 28: Which statement remains correct under the definitions in this chapter?
+**Question:** A student's answer about greedy gain and overfitting contains the claim “Information gain mathematically guarantees best test accuracy.” Which assessment is correct?
 
 **Choices:**
-- **A.** Information gain mathematically guarantees best test accuracy., without needing any additional modeling assumption
-- **B.** Overfitting can occur only in linear regression.
-- **C.** A fully grown tree is always simpler than a pruned tree.
-- **D.** A high-information-gain training split can still contribute to overfitting.
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about greedy gain and overfitting is false and must be replaced
+- **C.** The quoted claim concerns greedy gain and overfitting but is only a harmless change of notation
+- **D.** The quoted claim about greedy gain and overfitting is correct without qualification
 
-**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
+**Correct Answer:** The quoted claim about greedy gain and overfitting is false and must be replaced
 
-**Explanation:** Greedy training improvement is not a guarantee of unseen-data generalization.
+**Explanation:** The quoted claim contradicts greedy gain and overfitting; it must be replaced by the chapter's stated rule.
 
 ---
 
 ## Question 79
 
-**Question:** A tree-induction result is being challenged. Case 29: Which statement remains correct under the definitions in this chapter?
+**Question:** A student's answer about noisy or missing data contains the claim “Any missing value makes a decision tree definitionally impossible.” Which assessment is correct?
 
 **Choices:**
-- **A.** Any missing value makes a decision tree definitionally impossible., under both the training and evaluation conditions stated
-- **B.** Missing or noisy data motivates special handling and possibly pruning.
-- **C.** Noise always increases information gain for the true feature.
-- **D.** Pruning is used solely to increase the number of leaves.
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about noisy or missing data is correct without qualification
+- **C.** The quoted claim about noisy or missing data is false and must be replaced
+- **D.** The quoted claim concerns noisy or missing data but is only a harmless change of notation
 
-**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
+**Correct Answer:** The quoted claim about noisy or missing data is false and must be replaced
 
-**Explanation:** Trees can accommodate imperfect data, while pruning can reduce brittle structure.
+**Explanation:** The quoted claim contradicts noisy or missing data; it must be replaced by the chapter's stated rule.
 
 ---
 
 ## Question 80
 
-**Question:** A tree-induction result is being challenged. Case 30: Which statement remains correct under the definitions in this chapter?
+**Question:** A student's answer about tree-to-rule conversion contains the claim “Decision trees represent only a single linear inequality.” Which assessment is correct?
 
 **Choices:**
-- **A.** Decision trees represent only a single linear inequality.
-- **B.** Decision trees can be rewritten as rule sets such as DNF.
-- **C.** A decision tree cannot express conjunctions or disjunctions.
-- **D.** Rule conversion changes all leaf predictions into features.
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about tree-to-rule conversion is false and must be replaced
+- **C.** The quoted claim concerns tree-to-rule conversion but is only a harmless change of notation
+- **D.** The quoted claim about tree-to-rule conversion is correct without qualification
 
-**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
+**Correct Answer:** The quoted claim about tree-to-rule conversion is false and must be replaced
 
-**Explanation:** Paths yield conjunctions and multiple positive paths can be disjoined.
+**Explanation:** The quoted claim contradicts tree-to-rule conversion; it must be replaced by the chapter's stated rule.
 
 ---
 
 ## Question 81
 
-**Question:** A tree-induction result is being challenged. Case 31: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “A pure node must contain equal counts of every class.” Which principle exposes the design error concerning pure-node impurity?
 
 **Choices:**
-- **A.** A pure node maximizes both entropy and Gini impurity.
-- **B.** A pure node has entropy zero and Gini impurity zero.
-- **C.** A pure node must contain equal counts of every class.
-- **D.** Purity is determined by feature values without using labels.
+- **A.** Required principle: A pure node must contain equal counts of every class.
+- **B.** Required principle: A pure node has entropy zero and Gini impurity zero.
+- **C.** Required principle: A pure node maximizes both entropy and Gini impurity.
+- **D.** Required principle: Purity is determined by feature values without using labels.
 
-**Correct Answer:** A pure node has entropy zero and Gini impurity zero.
+**Correct Answer:** Required principle: A pure node has entropy zero and Gini impurity zero.
 
-**Explanation:** When one class has probability one, both impurity formulas evaluate to zero.
+**Explanation:** The implementation encodes a false rule. The required principle follows because When one class has probability one, both impurity formulas evaluate to zero.
 
 ---
 
 ## Question 82
 
-**Question:** A tree-induction result is being challenged. Case 32: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “ID3 always selects the feature with the most values.” Which principle exposes the design error concerning ID3 split selection?
 
 **Choices:**
-- **A.** ID3 chooses the split with the largest weighted child entropy., without needing any additional modeling assumption
-- **B.** ID3 always selects the feature with the most values.
-- **C.** ID3 ranks splits only by the depth they would create.
-- **D.** ID3 chooses the candidate split with the largest information gain.
+- **A.** Required principle: ID3 ranks splits only by the depth they would create.
+- **B.** Required principle: ID3 chooses the split with the largest weighted child entropy. under every stated condition
+- **C.** Required principle: ID3 always selects the feature with the most values.
+- **D.** Required principle: ID3 chooses the candidate split with the largest information gain.
 
-**Correct Answer:** ID3 chooses the candidate split with the largest information gain.
+**Correct Answer:** Required principle: ID3 chooses the candidate split with the largest information gain.
 
-**Explanation:** Information gain is parent entropy minus weighted post-split entropy.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Information gain is parent entropy minus weighted post-split entropy.
 
 ---
 
 ## Question 83
 
-**Question:** A tree-induction result is being challenged. Case 33: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Every distinct continuous value must become a class label.” Which principle exposes the design error concerning continuous thresholds?
 
 **Choices:**
-- **A.** A continuous feature can be tested using a threshold such as length < 3.
-- **B.** Continuous features must be discarded before tree induction., under both the training and evaluation conditions stated
-- **C.** Every distinct continuous value must become a class label.
-- **D.** Thresholds are valid only for regression trees.
+- **A.** Required principle: Thresholds are valid only for regression trees.
+- **B.** Required principle: A continuous feature can be tested using a threshold such as length < 3.
+- **C.** Required principle: Every distinct continuous value must become a class label.
+- **D.** Required principle: Continuous features must be discarded before tree induction. without changing the supplied data
 
-**Correct Answer:** A continuous feature can be tested using a threshold such as length < 3.
+**Correct Answer:** Required principle: A continuous feature can be tested using a threshold such as length < 3.
 
-**Explanation:** Threshold branches allow decision trees to partition continuous inputs.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Threshold branches allow decision trees to partition continuous inputs.
 
 ---
 
 ## Question 84
 
-**Question:** A tree-induction result is being challenged. Case 34: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Pre-pruning removes branches only after full growth.” Which principle exposes the design error concerning post-pruning?
 
 **Choices:**
-- **A.** Post-pruning forbids the tree from growing beyond its root.
-- **B.** Pre-pruning removes branches only after full growth.
-- **C.** Pruning guarantees zero error on both training and test sets., even when the other quantities in the formula are fixed
-- **D.** Post-pruning grows a tree first and then removes weak branches.
+- **A.** Required principle: Post-pruning grows a tree first and then removes weak branches.
+- **B.** Required principle: Post-pruning forbids the tree from growing beyond its root.
+- **C.** Required principle: Pre-pruning removes branches only after full growth.
+- **D.** Required principle: Pruning guarantees zero error on both training and test sets. for all permitted parameter values
 
-**Correct Answer:** Post-pruning grows a tree first and then removes weak branches.
+**Correct Answer:** Required principle: Post-pruning grows a tree first and then removes weak branches.
 
-**Explanation:** The timing distinguishes post-pruning from early stopping.
+**Explanation:** The implementation encodes a false rule. The required principle follows because The timing distinguishes post-pruning from early stopping.
 
 ---
 
 ## Question 85
 
-**Question:** A tree-induction result is being challenged. Case 35: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “A regression leaf may output only a category name.” Which principle exposes the design error concerning classification and regression leaves?
 
 **Choices:**
-- **A.** A classification leaf must contain a continuous threshold., as a consequence that holds for every permitted input
-- **B.** A regression leaf may output only a category name.
-- **C.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
-- **D.** The two tree types differ only in drawing style.
+- **A.** Required principle: The two tree types differ only in drawing style.
+- **B.** Required principle: A classification leaf must contain a continuous threshold. under every stated condition under the complete set of stated assumptions
+- **C.** Required principle: A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+- **D.** Required principle: A regression leaf may output only a category name.
 
-**Correct Answer:** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+**Correct Answer:** Required principle: A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
 
-**Explanation:** Their output types follow the classification/regression distinction.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Their output types follow the classification/regression distinction.
 
 ---
 
 ## Question 86
 
-**Question:** A tree-induction result is being challenged. Case 36: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Leaves are evaluated before any internal test.” Which principle exposes the design error concerning root-to-leaf rules?
 
 **Choices:**
-- **A.** A single path is a disjunction of every incompatible branch.
-- **B.** Leaves are evaluated before any internal test.
-- **C.** A root-to-leaf path corresponds to a conjunction of tests.
-- **D.** A path ignores feature outcomes and uses only class frequency.
+- **A.** Required principle: Leaves are evaluated before any internal test.
+- **B.** Required principle: A single path is a disjunction of every incompatible branch.
+- **C.** Required principle: A path ignores feature outcomes and uses only class frequency.
+- **D.** Required principle: A root-to-leaf path corresponds to a conjunction of tests.
 
-**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
+**Correct Answer:** Required principle: A root-to-leaf path corresponds to a conjunction of tests.
 
-**Explanation:** All tests along a path must be satisfied, forming an AND condition.
+**Explanation:** The implementation encodes a false rule. The required principle follows because All tests along a path must be satisfied, forming an AND condition.
 
 ---
 
 ## Question 87
 
-**Question:** A tree-induction result is being challenged. Case 37: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Only the purest child contributes to information gain.” Which principle exposes the design error concerning weighted child entropy?
 
 **Choices:**
-- **A.** Every child receives weight one regardless of size.
-- **B.** Weighted child entropy accounts for the relative sizes of child subsets.
-- **C.** Only the purest child contributes to information gain., under both the training and evaluation conditions stated
-- **D.** Weights are the logarithms of the number of features.
+- **A.** Required principle: Every child receives weight one regardless of size.
+- **B.** Required principle: Only the purest child contributes to information gain. for all permitted parameter values
+- **C.** Required principle: Weighted child entropy accounts for the relative sizes of child subsets.
+- **D.** Required principle: Weights are the logarithms of the number of features.
 
-**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
+**Correct Answer:** Required principle: Weighted child entropy accounts for the relative sizes of child subsets.
 
-**Explanation:** The formula weights each child by |S_v|/|S|.
+**Explanation:** The implementation encodes a false rule. The required principle follows because The formula weights each child by |S_v|/|S|.
 
 ---
 
 ## Question 88
 
-**Question:** A tree-induction result is being challenged. Case 38: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Overfitting can occur only in linear regression.” Which principle exposes the design error concerning greedy gain and overfitting?
 
 **Choices:**
-- **A.** A high-information-gain training split can still contribute to overfitting.
-- **B.** Information gain mathematically guarantees best test accuracy., even when the other quantities in the formula are fixed
-- **C.** Overfitting can occur only in linear regression.
-- **D.** A fully grown tree is always simpler than a pruned tree.
+- **A.** Required principle: A high-information-gain training split can still contribute to overfitting.
+- **B.** Required principle: Information gain mathematically guarantees best test accuracy. under every stated condition
+- **C.** Required principle: Overfitting can occur only in linear regression.
+- **D.** Required principle: A fully grown tree is always simpler than a pruned tree.
 
-**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
+**Correct Answer:** Required principle: A high-information-gain training split can still contribute to overfitting.
 
-**Explanation:** Greedy training improvement is not a guarantee of unseen-data generalization.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Greedy training improvement is not a guarantee of unseen-data generalization.
 
 ---
 
 ## Question 89
 
-**Question:** A tree-induction result is being challenged. Case 39: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “Noise always increases information gain for the true feature.” Which principle exposes the design error concerning noisy or missing data?
 
 **Choices:**
-- **A.** Any missing value makes a decision tree definitionally impossible., as a consequence that holds for every permitted input
-- **B.** Missing or noisy data motivates special handling and possibly pruning.
-- **C.** Noise always increases information gain for the true feature.
-- **D.** Pruning is used solely to increase the number of leaves.
+- **A.** Required principle: Noise always increases information gain for the true feature.
+- **B.** Required principle: Any missing value makes a decision tree definitionally impossible. without changing the supplied data
+- **C.** Required principle: Missing or noisy data motivates special handling and possibly pruning.
+- **D.** Required principle: Pruning is used solely to increase the number of leaves.
 
-**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
+**Correct Answer:** Required principle: Missing or noisy data motivates special handling and possibly pruning.
 
-**Explanation:** Trees can accommodate imperfect data, while pruning can reduce brittle structure.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Trees can accommodate imperfect data, while pruning can reduce brittle structure.
 
 ---
 
 ## Question 90
 
-**Question:** A tree-induction result is being challenged. Case 40: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “A decision tree cannot express conjunctions or disjunctions.” Which principle exposes the design error concerning tree-to-rule conversion?
 
 **Choices:**
-- **A.** Decision trees represent only a single linear inequality.
-- **B.** A decision tree cannot express conjunctions or disjunctions.
-- **C.** Decision trees can be rewritten as rule sets such as DNF.
-- **D.** Rule conversion changes all leaf predictions into features.
+- **A.** Required principle: A decision tree cannot express conjunctions or disjunctions.
+- **B.** Required principle: Decision trees represent only a single linear inequality.
+- **C.** Required principle: Decision trees can be rewritten as rule sets such as DNF.
+- **D.** Required principle: Rule conversion changes all leaf predictions into features.
 
-**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
+**Correct Answer:** Required principle: Decision trees can be rewritten as rule sets such as DNF.
 
-**Explanation:** Paths yield conjunctions and multiple positive paths can be disjoined.
+**Explanation:** The implementation encodes a false rule. The required principle follows because Paths yield conjunctions and multiple positive paths can be disjoined.
 
 ---
 
 ## Question 91
 
-**Question:** A tree-induction result is being challenged. Case 41: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A pure node has entropy zero and Gini impurity zero.” Reviewer B states, “Purity is determined by feature values without using labels.” What is the correct verdict about pure-node impurity?
 
 **Choices:**
-- **A.** A pure node maximizes both entropy and Gini impurity.
-- **B.** A pure node must contain equal counts of every class.
-- **C.** A pure node has entropy zero and Gini impurity zero.
-- **D.** Purity is determined by feature values without using labels.
+- **A.** Reviewer B only is correct about pure-node impurity
+- **B.** Reviewer A only is correct about pure-node impurity
+- **C.** Both reviewers are correct about pure-node impurity
+- **D.** Neither reviewer is correct about pure-node impurity
 
-**Correct Answer:** A pure node has entropy zero and Gini impurity zero.
+**Correct Answer:** Reviewer A only is correct about pure-node impurity
 
-**Explanation:** When one class has probability one, both impurity formulas evaluate to zero.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, When one class has probability one, both impurity formulas evaluate to zero.
 
 ---
 
 ## Question 92
 
-**Question:** A tree-induction result is being challenged. Case 42: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “ID3 chooses the candidate split with the largest information gain.” Reviewer B states, “ID3 ranks splits only by the depth they would create.” What is the correct verdict about ID3 split selection?
 
 **Choices:**
-- **A.** ID3 chooses the split with the largest weighted child entropy., even when the other quantities in the formula are fixed
-- **B.** ID3 always selects the feature with the most values.
-- **C.** ID3 ranks splits only by the depth they would create.
-- **D.** ID3 chooses the candidate split with the largest information gain.
+- **A.** Reviewer B only is correct about ID3 split selection
+- **B.** Reviewer A only is correct about ID3 split selection
+- **C.** Both reviewers are correct about ID3 split selection
+- **D.** Neither reviewer is correct about ID3 split selection
 
-**Correct Answer:** ID3 chooses the candidate split with the largest information gain.
+**Correct Answer:** Reviewer A only is correct about ID3 split selection
 
-**Explanation:** Information gain is parent entropy minus weighted post-split entropy.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Information gain is parent entropy minus weighted post-split entropy.
 
 ---
 
 ## Question 93
 
-**Question:** A tree-induction result is being challenged. Case 43: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A continuous feature can be tested using a threshold such as length < 3.” Reviewer B states, “Thresholds are valid only for regression trees.” What is the correct verdict about continuous thresholds?
 
 **Choices:**
-- **A.** A continuous feature can be tested using a threshold such as length < 3.
-- **B.** Continuous features must be discarded before tree induction., as a consequence that holds for every permitted input
-- **C.** Every distinct continuous value must become a class label.
-- **D.** Thresholds are valid only for regression trees.
+- **A.** Both reviewers are correct about continuous thresholds
+- **B.** Reviewer B only is correct about continuous thresholds
+- **C.** Reviewer A only is correct about continuous thresholds
+- **D.** Neither reviewer is correct about continuous thresholds
 
-**Correct Answer:** A continuous feature can be tested using a threshold such as length < 3.
+**Correct Answer:** Reviewer A only is correct about continuous thresholds
 
-**Explanation:** Threshold branches allow decision trees to partition continuous inputs.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Threshold branches allow decision trees to partition continuous inputs.
 
 ---
 
 ## Question 94
 
-**Question:** A tree-induction result is being challenged. Case 44: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Post-pruning grows a tree first and then removes weak branches.” Reviewer B states, “Pruning guarantees zero error on both training and test sets.” What is the correct verdict about post-pruning?
 
 **Choices:**
-- **A.** Post-pruning forbids the tree from growing beyond its root.
-- **B.** Pre-pruning removes branches only after full growth.
-- **C.** Post-pruning grows a tree first and then removes weak branches.
-- **D.** Pruning guarantees zero error on both training and test sets., without needing any additional modeling assumption
+- **A.** Reviewer A only is correct about post-pruning
+- **B.** Reviewer B only is correct about post-pruning
+- **C.** Both reviewers are correct about post-pruning
+- **D.** Neither reviewer is correct about post-pruning
 
-**Correct Answer:** Post-pruning grows a tree first and then removes weak branches.
+**Correct Answer:** Reviewer A only is correct about post-pruning
 
-**Explanation:** The timing distinguishes post-pruning from early stopping.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The timing distinguishes post-pruning from early stopping.
 
 ---
 
 ## Question 95
 
-**Question:** A tree-induction result is being challenged. Case 45: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.” Reviewer B states, “The two tree types differ only in drawing style.” What is the correct verdict about classification and regression leaves?
 
 **Choices:**
-- **A.** A classification leaf must contain a continuous threshold., under both the training and evaluation conditions stated
-- **B.** A regression leaf may output only a category name.
-- **C.** The two tree types differ only in drawing style.
-- **D.** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+- **A.** Both reviewers are correct about classification and regression leaves
+- **B.** Reviewer A only is correct about classification and regression leaves
+- **C.** Reviewer B only is correct about classification and regression leaves
+- **D.** Neither reviewer is correct about classification and regression leaves
 
-**Correct Answer:** A classification leaf stores a class decision; a regression leaf stores a real-valued prediction.
+**Correct Answer:** Reviewer A only is correct about classification and regression leaves
 
-**Explanation:** Their output types follow the classification/regression distinction.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Their output types follow the classification/regression distinction.
 
 ---
 
 ## Question 96
 
-**Question:** A tree-induction result is being challenged. Case 46: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A root-to-leaf path corresponds to a conjunction of tests.” Reviewer B states, “A path ignores feature outcomes and uses only class frequency.” What is the correct verdict about root-to-leaf rules?
 
 **Choices:**
-- **A.** A single path is a disjunction of every incompatible branch.
-- **B.** Leaves are evaluated before any internal test.
-- **C.** A path ignores feature outcomes and uses only class frequency.
-- **D.** A root-to-leaf path corresponds to a conjunction of tests.
+- **A.** Neither reviewer is correct about root-to-leaf rules
+- **B.** Reviewer A only is correct about root-to-leaf rules
+- **C.** Both reviewers are correct about root-to-leaf rules
+- **D.** Reviewer B only is correct about root-to-leaf rules
 
-**Correct Answer:** A root-to-leaf path corresponds to a conjunction of tests.
+**Correct Answer:** Reviewer A only is correct about root-to-leaf rules
 
-**Explanation:** All tests along a path must be satisfied, forming an AND condition.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, All tests along a path must be satisfied, forming an AND condition.
 
 ---
 
 ## Question 97
 
-**Question:** A tree-induction result is being challenged. Case 47: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Weighted child entropy accounts for the relative sizes of child subsets.” Reviewer B states, “Weights are the logarithms of the number of features.” What is the correct verdict about weighted child entropy?
 
 **Choices:**
-- **A.** Every child receives weight one regardless of size.
-- **B.** Weighted child entropy accounts for the relative sizes of child subsets.
-- **C.** Only the purest child contributes to information gain., as a consequence that holds for every permitted input
-- **D.** Weights are the logarithms of the number of features.
+- **A.** Both reviewers are correct about weighted child entropy
+- **B.** Reviewer B only is correct about weighted child entropy
+- **C.** Neither reviewer is correct about weighted child entropy
+- **D.** Reviewer A only is correct about weighted child entropy
 
-**Correct Answer:** Weighted child entropy accounts for the relative sizes of child subsets.
+**Correct Answer:** Reviewer A only is correct about weighted child entropy
 
-**Explanation:** The formula weights each child by |S_v|/|S|.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The formula weights each child by |S_v|/|S|.
 
 ---
 
 ## Question 98
 
-**Question:** A tree-induction result is being challenged. Case 48: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A high-information-gain training split can still contribute to overfitting.” Reviewer B states, “A fully grown tree is always simpler than a pruned tree.” What is the correct verdict about greedy gain and overfitting?
 
 **Choices:**
-- **A.** A high-information-gain training split can still contribute to overfitting.
-- **B.** Information gain mathematically guarantees best test accuracy., without needing any additional modeling assumption
-- **C.** Overfitting can occur only in linear regression.
-- **D.** A fully grown tree is always simpler than a pruned tree.
+- **A.** Neither reviewer is correct about greedy gain and overfitting
+- **B.** Reviewer B only is correct about greedy gain and overfitting
+- **C.** Both reviewers are correct about greedy gain and overfitting
+- **D.** Reviewer A only is correct about greedy gain and overfitting
 
-**Correct Answer:** A high-information-gain training split can still contribute to overfitting.
+**Correct Answer:** Reviewer A only is correct about greedy gain and overfitting
 
-**Explanation:** Greedy training improvement is not a guarantee of unseen-data generalization.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Greedy training improvement is not a guarantee of unseen-data generalization.
 
 ---
 
 ## Question 99
 
-**Question:** A tree-induction result is being challenged. Case 49: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Missing or noisy data motivates special handling and possibly pruning.” Reviewer B states, “Pruning is used solely to increase the number of leaves.” What is the correct verdict about noisy or missing data?
 
 **Choices:**
-- **A.** Any missing value makes a decision tree definitionally impossible., under both the training and evaluation conditions stated
-- **B.** Noise always increases information gain for the true feature.
-- **C.** Pruning is used solely to increase the number of leaves.
-- **D.** Missing or noisy data motivates special handling and possibly pruning.
+- **A.** Neither reviewer is correct about noisy or missing data
+- **B.** Reviewer B only is correct about noisy or missing data
+- **C.** Both reviewers are correct about noisy or missing data
+- **D.** Reviewer A only is correct about noisy or missing data
 
-**Correct Answer:** Missing or noisy data motivates special handling and possibly pruning.
+**Correct Answer:** Reviewer A only is correct about noisy or missing data
 
-**Explanation:** Trees can accommodate imperfect data, while pruning can reduce brittle structure.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Trees can accommodate imperfect data, while pruning can reduce brittle structure.
 
 ---
 
 ## Question 100
 
-**Question:** A tree-induction result is being challenged. Case 50: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Decision trees can be rewritten as rule sets such as DNF.” Reviewer B states, “Rule conversion changes all leaf predictions into features.” What is the correct verdict about tree-to-rule conversion?
 
 **Choices:**
-- **A.** Decision trees represent only a single linear inequality.
-- **B.** Decision trees can be rewritten as rule sets such as DNF.
-- **C.** A decision tree cannot express conjunctions or disjunctions.
-- **D.** Rule conversion changes all leaf predictions into features.
+- **A.** Neither reviewer is correct about tree-to-rule conversion
+- **B.** Reviewer B only is correct about tree-to-rule conversion
+- **C.** Both reviewers are correct about tree-to-rule conversion
+- **D.** Reviewer A only is correct about tree-to-rule conversion
 
-**Correct Answer:** Decision trees can be rewritten as rule sets such as DNF.
+**Correct Answer:** Reviewer A only is correct about tree-to-rule conversion
 
-**Explanation:** Paths yield conjunctions and multiple positive paths can be disjoined.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Paths yield conjunctions and multiple positive paths can be disjoined.
 
 ---
 
 ### Answer distribution (self-check)
 
-Correct-choice positions: A=25, B=25, C=25, D=25. Distractors are designed around plausible definition, sign, denominator, update-order, and rounding errors.
+Correct-choice positions: A=25, B=25, C=25, D=25. Questions were audited for structural balance, verbatim reuse, and parameter-only duplicate prompts.

@@ -6,1604 +6,1604 @@
 
 ## Question 1
 
-**Question:** For w=['2', '-1'], x=['1', '2'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Using w=['2', '-1'], x=['1', '2'], $b=-0.5$, compute the hyperplane distance.
 
 **Choices:**
-- **A.** (-0.5, 1, 0.5)
-- **B.** (-0.5, -1, 0.2236)
-- **C.** (0.5, -1, 0.2236), as a consequence that holds for every permitted input
-- **D.** (-0.5, -1, 0.5)
+- **A.** hyperplane distance = 0.3656
+- **B.** hyperplane distance = 0.2946
+- **C.** hyperplane distance = 0.1526
+- **D.** hyperplane distance = 0.2236
 
-**Correct Answer:** (-0.5, -1, 0.2236)
+**Correct Answer:** hyperplane distance = 0.2236
 
-**Explanation:** score=w^T x+b=-0.5; its sign is -1; distance=|score|/||w||=0.2236.
+**Explanation:** Apply $\frac{|w^\top x+b|}{\lVert w\rVert}$; substitution gives hyperplane distance=0.2236.
 
 ---
 
 ## Question 2
 
-**Question:** A labelled point has y=1 and decision score w^T x+b=1.2. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Using label y=1, score=1.1, compute the functional margin.
 
 **Choices:**
-- **A.** (-1.2, 0)
-- **B.** (1.2, 1)
-- **C.** (1.2, 0)
-- **D.** (1.2, 2.2)
+- **A.** functional margin = 0.902
+- **B.** functional margin = 1.298
+- **C.** functional margin = 1.1
+- **D.** functional margin = 1.496
 
-**Correct Answer:** (1.2, 0)
+**Correct Answer:** functional margin = 1.1
 
-**Explanation:** Multiply by y: 1(1.2)=1.2; violation is max(0,1-1.2)=0.
+**Explanation:** Apply $y_i(w^\top x_i+b)$; substitution gives functional margin=1.1.
 
 ---
 
 ## Question 3
 
-**Question:** Two dual terms have alpha=['0.5', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Using $\alpha=[0.5, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]], compute the first component of w.
 
 **Choices:**
-- **A.** (['1.3', '-0.1'], 0.2)
-- **B.** (['0.7', '1.1'], 0.8)
-- **C.** (['-1.3', '0.1'], -0.2)
-- **D.** (['1.3', '-0.1'], 0.8)
+- **A.** first component of w = 1.066
+- **B.** first component of w = 1.534
+- **C.** first component of w = 1.3
+- **D.** first component of w = 1.768
 
-**Correct Answer:** (['1.3', '-0.1'], 0.2)
+**Correct Answer:** first component of w = 1.3
 
-**Explanation:** w is the signed weighted vector sum ['1.3', '-0.1']; the equality expression is 0.2.
+**Explanation:** Apply $\sum_i\alpha_i y_i x_{i,1}$; substitution gives first component of w=1.3.
 
 ---
 
 ## Question 4
 
-**Question:** Two points have squared distance 1. For RBF variance sigma^2=0.5, what is K(x,z)?
+**Question:** Using squared distance=1, $\sigma^2=0.5$, compute the RBF kernel value.
 
 **Choices:**
-- **A.** 0.3679
-- **B.** 0.5049
-- **C.** 0.1749
-- **D.** 0.6389
+- **A.** RBF kernel value = 0.4389
+- **B.** RBF kernel value = 0.3679
+- **C.** RBF kernel value = 0.2969
+- **D.** RBF kernel value = 0.5099
 
-**Correct Answer:** 0.3679
+**Correct Answer:** RBF kernel value = 0.3679
 
-**Explanation:** K=exp(-1/(2(0.5)))=0.3679.
+**Explanation:** Apply $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$; substitution gives RBF kernel value=0.3679.
 
 ---
 
 ## Question 5
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=-1, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Using x=-1, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2], compute the GMM mixture density.
 
 **Choices:**
-- **A.** (0.1596, 0.8994)
-- **B.** (0.1774, 0.1596)
-- **C.** (0.4287, 0.1006)
-- **D.** (0.1774, 0.8994)
+- **A.** GMM mixture density = 0.3194
+- **B.** GMM mixture density = 0.2484
+- **C.** GMM mixture density = 0.1064
+- **D.** GMM mixture density = 0.1774
 
-**Correct Answer:** (0.1774, 0.8994)
+**Correct Answer:** GMM mixture density = 0.1774
 
-**Explanation:** Weighted component terms are ['0.1596', '0.0178']; density is their sum 0.1774, and normalized component-1 share is 0.8994.
+**Explanation:** Apply $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$; substitution gives GMM mixture density=0.1774.
 
 ---
 
 ## Question 6
 
-**Question:** For w=['2.1', '-1'], x=['1', '1.9'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Compare the hyperplane distance for Case P (w=['2.1', '-1'], x=['1', '1.95'], $b=-0.5$) and Case Q (w=['2.4', '-1'], x=['1', '1.8'], $b=-0.5$).
 
 **Choices:**
-- **A.** (-0.3, 1, 0.3)
-- **B.** (-0.3, -1, 0.129)
-- **C.** (0.3, -1, 0.129), without needing any additional modeling assumption
-- **D.** (-0.3, -1, 0.3)
+- **A.** The first case is larger: 0.1505 versus 0.0385
+- **B.** The second case is larger: 0.0385 versus 0.1505
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** (-0.3, -1, 0.129)
+**Correct Answer:** The first case is larger: 0.1505 versus 0.0385
 
-**Explanation:** score=w^T x+b=-0.3; its sign is -1; distance=|score|/||w||=0.129.
+**Explanation:** The same formula gives 0.1505 for P and 0.0385 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 7
 
-**Question:** A labelled point has y=-1 and decision score w^T x+b=-1.3. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Compare the functional margin for Case P (label y=-1, score=-1.18) and Case Q (label y=1, score=1.42).
 
 **Choices:**
-- **A.** (-1.3, 0)
-- **B.** (-1.3, 1)
-- **C.** (1.3, 2.3)
-- **D.** (1.3, 0)
+- **A.** The first case is larger: 1.18 versus 1.42 under the complete set of stated assumptions
+- **B.** The second case is larger: 1.42 versus 1.18
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** (1.3, 0)
+**Correct Answer:** The second case is larger: 1.42 versus 1.18
 
-**Explanation:** Multiply by y: -1(-1.3)=1.3; violation is max(0,1-1.3)=0.
+**Explanation:** The same formula gives 1.18 for P and 1.42 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 8
 
-**Question:** Two dual terms have alpha=['0.55', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Compare the first component of w for Case P ($\alpha=[0.53, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) and Case Q ($\alpha=[0.62, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]).
 
 **Choices:**
-- **A.** (['0.8', '1.15'], 0.85)
-- **B.** (['-1.4', '0.05'], -0.25)
-- **C.** (['1.4', '-0.05'], 0.85)
-- **D.** (['1.4', '-0.05'], 0.25)
+- **A.** Only their sum can be determined
+- **B.** The first case is larger: 1.36 versus 1.54 under the complete set of stated assumptions
+- **C.** The cases are exactly equal
+- **D.** The second case is larger: 1.54 versus 1.36
 
-**Correct Answer:** (['1.4', '-0.05'], 0.25)
+**Correct Answer:** The second case is larger: 1.54 versus 1.36
 
-**Explanation:** w is the signed weighted vector sum ['1.4', '-0.05']; the equality expression is 0.25.
+**Explanation:** The same formula gives 1.36 for P and 1.54 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 9
 
-**Question:** Two points have squared distance 1.5. For RBF variance sigma^2=1, what is K(x,z)?
+**Question:** Compare the RBF kernel value for Case P (squared distance=1.4, $\sigma^2=0.7$) and Case Q (squared distance=2.6, $\sigma^2=0.5$).
 
 **Choices:**
-- **A.** 0.4724
-- **B.** 0.2231
-- **C.** 0.5421
-- **D.** 0.5276
+- **A.** The second case is larger: 0.0743 versus 0.3679
+- **B.** The first case is larger: 0.3679 versus 0.0743
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** 0.4724
+**Correct Answer:** The first case is larger: 0.3679 versus 0.0743
 
-**Explanation:** K=exp(-1.5/(2(1)))=0.4724.
+**Explanation:** The same formula gives 0.3679 for P and 0.0743 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 10
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=-0.75, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Compare the GMM mixture density for Case P (x=-0.8, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) and Case Q (x=-0.2, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]).
 
 **Choices:**
-- **A.** (0.1547, 0.8582)
-- **B.** (0.1802, 0.1547)
-- **C.** (0.4293, 0.1418)
-- **D.** (0.1802, 0.8582)
+- **A.** The second case is larger: 0.1663 versus 0.1803
+- **B.** The first case is larger: 0.1803 versus 0.1663
+- **C.** The cases are exactly equal
+- **D.** Only their sum can be determined
 
-**Correct Answer:** (0.1802, 0.8582)
+**Correct Answer:** The first case is larger: 0.1803 versus 0.1663
 
-**Explanation:** Weighted component terms are ['0.1547', '0.0256']; density is their sum 0.1802, and normalized component-1 share is 0.8582.
+**Explanation:** The same formula gives 0.1803 for P and 0.1663 for Q, establishing the stated comparison.
 
 ---
 
 ## Question 11
 
-**Question:** For w=['2.2', '-1'], x=['1', '1.8'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** How far apart are the hyperplane distance values for (w=['2.2', '-1'], x=['1', '1.9'], $b=-0.5$) and (w=['2.8', '-1'], x=['1', '1.6'], $b=-0.5$)?
 
 **Choices:**
-- **A.** (-0.1, -1, 0.0414)
-- **B.** (-0.1, 1, 0.1)
-- **C.** (0.1, -1, 0.0414), under both the training and evaluation conditions stated
-- **D.** (-0.1, -1, 0.1)
+- **A.** absolute hyperplane distance difference = 0.2237
+- **B.** absolute hyperplane distance difference = 0.1527
+- **C.** absolute hyperplane distance difference = 0.0817
+- **D.** absolute hyperplane distance difference = 0.2947
 
-**Correct Answer:** (-0.1, -1, 0.0414)
+**Correct Answer:** absolute hyperplane distance difference = 0.1527
 
-**Explanation:** score=w^T x+b=-0.1; its sign is -1; distance=|score|/||w||=0.0414.
+**Explanation:** The two values are 0.0828 and 0.2354; their absolute difference is 0.1527.
 
 ---
 
 ## Question 12
 
-**Question:** A labelled point has y=1 and decision score w^T x+b=1.4. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** How far apart are the functional margin values for (label y=1, score=1.26) and (label y=1, score=1.74)?
 
 **Choices:**
-- **A.** (1.4, 0)
-- **B.** (-1.4, 0)
-- **C.** (1.4, 1)
-- **D.** (1.4, 2.4)
+- **A.** absolute functional margin difference = 0.3936
+- **B.** absolute functional margin difference = 0.5664
+- **C.** absolute functional margin difference = 0.48
+- **D.** absolute functional margin difference = 0.6528
 
-**Correct Answer:** (1.4, 0)
+**Correct Answer:** absolute functional margin difference = 0.48
 
-**Explanation:** Multiply by y: 1(1.4)=1.4; violation is max(0,1-1.4)=0.
+**Explanation:** The two values are 1.26 and 1.74; their absolute difference is 0.48.
 
 ---
 
 ## Question 13
 
-**Question:** Two dual terms have alpha=['0.6', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** How far apart are the first component of w values for ($\alpha=[0.56, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) and ($\alpha=[0.74, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]])?
 
 **Choices:**
-- **A.** (['0.9', '1.2'], 0.9)
-- **B.** (['1.5', '0'], 0.3)
-- **C.** (['-1.5', '0'], -0.3)
-- **D.** (['1.5', '0'], 0.9)
+- **A.** absolute first component of w difference = 0.36
+- **B.** absolute first component of w difference = 0.431
+- **C.** absolute first component of w difference = 0.289
+- **D.** absolute first component of w difference = 0.502
 
-**Correct Answer:** (['1.5', '0'], 0.3)
+**Correct Answer:** absolute first component of w difference = 0.36
 
-**Explanation:** w is the signed weighted vector sum ['1.5', '0']; the equality expression is 0.3.
+**Explanation:** The two values are 1.42 and 1.78; their absolute difference is 0.36.
 
 ---
 
 ## Question 14
 
-**Question:** Two points have squared distance 2. For RBF variance sigma^2=1.5, what is K(x,z)?
+**Question:** How far apart are the RBF kernel value values for (squared distance=1.8, $\sigma^2=0.9$) and (squared distance=4.2, $\sigma^2=0.5$)?
 
 **Choices:**
-- **A.** 0.2636
-- **B.** 0.6241
-- **C.** 0.5134
-- **D.** 0.4866
+- **A.** absolute RBF kernel value difference = 0.2819
+- **B.** absolute RBF kernel value difference = 0.4239
+- **C.** absolute RBF kernel value difference = 0.3529
+- **D.** absolute RBF kernel value difference = 0.4949
 
-**Correct Answer:** 0.5134
+**Correct Answer:** absolute RBF kernel value difference = 0.3529
 
-**Explanation:** K=exp(-2/(2(1.5)))=0.5134.
+**Explanation:** The two values are 0.3679 and 0.015; their absolute difference is 0.3529.
 
 ---
 
 ## Question 15
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=-0.5, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** How far apart are the GMM mixture density values for (x=-0.6, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) and (x=0.6, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2])?
 
 **Choices:**
-- **A.** (0.1408, 0.7988)
-- **B.** (0.1763, 0.1408)
-- **C.** (0.4112, 0.2012)
-- **D.** (0.1763, 0.7988)
+- **A.** absolute GMM mixture density difference = 0.1015
+- **B.** absolute GMM mixture density difference = 0.0305
+- **C.** absolute GMM mixture density difference = -0.0405
+- **D.** absolute GMM mixture density difference = 0.1725
 
-**Correct Answer:** (0.1763, 0.7988)
+**Correct Answer:** absolute GMM mixture density difference = 0.0305
 
-**Explanation:** Weighted component terms are ['0.1408', '0.0355']; density is their sum 0.1763, and normalized component-1 share is 0.7988.
+**Explanation:** The two values are 0.1785 and 0.1481; their absolute difference is 0.0305.
 
 ---
 
 ## Question 16
 
-**Question:** For w=['2.3', '-1'], x=['1', '1.7'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Taking (w=['2.3', '-1'], x=['1', '1.85'], $b=-0.5$) as baseline and (w=['2.1', '-1'], x=['1', '1.95'], $b=-0.5$) as the new case, what is the percentage change in hyperplane distance?
 
 **Choices:**
-- **A.** (0.1, -1, 0.1)
-- **B.** (-0.1, 1, 0.0399)
-- **C.** (0.1, 1, 0.0399)
-- **D.** (0.1, 1, 0.1)
+- **A.** percentage change in hyperplane distance = 536.9258
+- **B.** percentage change in hyperplane distance = 772.6493
+- **C.** percentage change in hyperplane distance = 654.7876
+- **D.** percentage change in hyperplane distance = 890.5111
 
-**Correct Answer:** (0.1, 1, 0.0399)
+**Correct Answer:** percentage change in hyperplane distance = 654.7876
 
-**Explanation:** score=w^T x+b=0.1; its sign is 1; distance=|score|/||w||=0.0399.
+**Explanation:** The values change from 0.0199 to 0.1505; (new-old)/|old|*100=654.7876%.
 
 ---
 
 ## Question 17
 
-**Question:** A labelled point has y=-1 and decision score w^T x+b=-1.5. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Taking (label y=-1, score=-1.34) as baseline and (label y=-1, score=-1.18) as the new case, what is the percentage change in functional margin?
 
 **Choices:**
-- **A.** (-1.5, 0)
-- **B.** (-1.5, 1)
-- **C.** (1.5, 0)
-- **D.** (1.5, 2.5)
+- **A.** percentage change in functional margin = -11.9403
+- **B.** percentage change in functional margin = -9.791
+- **C.** percentage change in functional margin = -14.0896
+- **D.** percentage change in functional margin = -7.6418
 
-**Correct Answer:** (1.5, 0)
+**Correct Answer:** percentage change in functional margin = -11.9403
 
-**Explanation:** Multiply by y: -1(-1.5)=1.5; violation is max(0,1-1.5)=0.
+**Explanation:** The values change from 1.34 to 1.18; (new-old)/|old|*100=-11.9403%.
 
 ---
 
 ## Question 18
 
-**Question:** Two dual terms have alpha=['0.65', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Taking ($\alpha=[0.59, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) as baseline and ($\alpha=[0.53, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) as the new case, what is the percentage change in first component of w?
 
 **Choices:**
-- **A.** (['1', '1.25'], 0.95)
-- **B.** (['-1.6', '-0.05'], -0.35)
-- **C.** (['1.6', '0.05'], 0.35)
-- **D.** (['1.6', '0.05'], 0.95)
+- **A.** percentage change in first component of w = -9.5676
+- **B.** percentage change in first component of w = -6.6486
+- **C.** percentage change in first component of w = -8.1081
+- **D.** percentage change in first component of w = -5.1892
 
-**Correct Answer:** (['1.6', '0.05'], 0.35)
+**Correct Answer:** percentage change in first component of w = -8.1081
 
-**Explanation:** w is the signed weighted vector sum ['1.6', '0.05']; the equality expression is 0.35.
+**Explanation:** The values change from 1.48 to 1.36; (new-old)/|old|*100=-8.1081%.
 
 ---
 
 ## Question 19
 
-**Question:** Two points have squared distance 2.5. For RBF variance sigma^2=2, what is K(x,z)?
+**Question:** Taking (squared distance=2.2, $\sigma^2=1.1$) as baseline and (squared distance=1.4, $\sigma^2=0.7$) as the new case, what is the percentage change in RBF kernel value?
 
 **Choices:**
-- **A.** 0.2865
-- **B.** 0.6735
-- **C.** 0.5353
-- **D.** 0.4647
+- **A.** percentage change in RBF kernel value = 0.142
+- **B.** percentage change in RBF kernel value = 0.071
+- **C.** percentage change in RBF kernel value = -0.071
+- **D.** percentage change in RBF kernel value = 0
 
-**Correct Answer:** 0.5353
+**Correct Answer:** percentage change in RBF kernel value = 0
 
-**Explanation:** K=exp(-2.5/(2(2)))=0.5353.
+**Explanation:** The values change from 0.3679 to 0.3679; (new-old)/|old|*100=0%.
 
 ---
 
 ## Question 20
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=-0.25, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Taking (x=-0.4, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) as baseline and (x=-0.8, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) as the new case, what is the percentage change in GMM mixture density?
 
 **Choices:**
-- **A.** (0.1205, 0.7162)
-- **B.** (0.1682, 0.7162)
-- **C.** (0.1682, 0.1205)
-- **D.** (0.3807, 0.2838)
+- **A.** percentage change in GMM mixture density = 5.386
+- **B.** percentage change in GMM mixture density = 4.6732
+- **C.** percentage change in GMM mixture density = 3.2475
+- **D.** percentage change in GMM mixture density = 3.9603
 
-**Correct Answer:** (0.1682, 0.7162)
+**Correct Answer:** percentage change in GMM mixture density = 3.9603
 
-**Explanation:** Weighted component terms are ['0.1205', '0.0477']; density is their sum 0.1682, and normalized component-1 share is 0.7162.
+**Explanation:** The values change from 0.1734 to 0.1803; (new-old)/|old|*100=3.9603%.
 
 ---
 
 ## Question 21
 
-**Question:** For w=['2.4', '-1'], x=['1', '1.6'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Which formula must be applied to obtain hyperplane distance from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (0.3, -1, 0.3)
-- **B.** (0.3, 1, 0.1154)
-- **C.** (-0.3, 1, 0.1154)
-- **D.** (0.3, 1, 0.3)
+- **A.** For hyperplane distance, use $\sqrt{\frac{|w^\top x+b|}{\lVert w\rVert}}$
+- **B.** For hyperplane distance, use $1-\left(\frac{|w^\top x+b|}{\lVert w\rVert}\right)$
+- **C.** For hyperplane distance, use $\frac{|w^\top x+b|}{\lVert w\rVert}$
+- **D.** For hyperplane distance, use sum inputs without the required weighting for hyperplane distance
 
-**Correct Answer:** (0.3, 1, 0.1154)
+**Correct Answer:** For hyperplane distance, use $\frac{|w^\top x+b|}{\lVert w\rVert}$
 
-**Explanation:** score=w^T x+b=0.3; its sign is 1; distance=|score|/||w||=0.1154.
+**Explanation:** The chapter defines hyperplane distance with $\frac{|w^\top x+b|}{\lVert w\rVert}$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 22
 
-**Question:** A labelled point has y=1 and decision score w^T x+b=1.6. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Which formula must be applied to obtain functional margin from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (-1.6, 0)
-- **B.** (1.6, 1)
-- **C.** (1.6, 0)
-- **D.** (1.6, 2.6)
+- **A.** For functional margin, use $\sqrt{y_i(w^\top x_i+b)}$
+- **B.** For functional margin, use $1-\left(y_i(w^\top x_i+b)\right)$
+- **C.** For functional margin, use $y_i(w^\top x_i+b)$
+- **D.** For functional margin, use sum inputs without the required weighting for functional margin
 
-**Correct Answer:** (1.6, 0)
+**Correct Answer:** For functional margin, use $y_i(w^\top x_i+b)$
 
-**Explanation:** Multiply by y: 1(1.6)=1.6; violation is max(0,1-1.6)=0.
+**Explanation:** The chapter defines functional margin with $y_i(w^\top x_i+b)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 23
 
-**Question:** Two dual terms have alpha=['0.7', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Which formula must be applied to obtain first component of w from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (['1.1', '1.3'], 1)
-- **B.** (['1.7', '0.1'], 0.4)
-- **C.** (['-1.7', '-0.1'], -0.4)
-- **D.** (['1.7', '0.1'], 1)
+- **A.** For first component of w, use $\sum_i\alpha_i y_i x_{i,1}$
+- **B.** For first component of w, use $1-\left(\sum_i\alpha_i y_i x_{i,1}\right)$
+- **C.** For first component of w, use $\sqrt{\sum_i\alpha_i y_i x_{i,1}}$
+- **D.** For first component of w, use sum inputs without the required weighting for first component of w
 
-**Correct Answer:** (['1.7', '0.1'], 0.4)
+**Correct Answer:** For first component of w, use $\sum_i\alpha_i y_i x_{i,1}$
 
-**Explanation:** w is the signed weighted vector sum ['1.7', '0.1']; the equality expression is 0.4.
+**Explanation:** The chapter defines first component of w with $\sum_i\alpha_i y_i x_{i,1}$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 24
 
-**Question:** Two points have squared distance 3. For RBF variance sigma^2=0.5, what is K(x,z)?
+**Question:** Which formula must be applied to obtain RBF kernel value from the supplied chapter quantities?
 
 **Choices:**
-- **A.** 0.0025
-- **B.** 0.1769
-- **C.** 0.0498
-- **D.** 0.9502
+- **A.** For RBF kernel value, use $\sqrt{\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)}$
+- **B.** For RBF kernel value, use $1-\left(\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)\right)$
+- **C.** For RBF kernel value, use $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$
+- **D.** For RBF kernel value, use sum inputs without the required weighting for RBF kernel value
 
-**Correct Answer:** 0.0498
+**Correct Answer:** For RBF kernel value, use $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$
 
-**Explanation:** K=exp(-3/(2(0.5)))=0.0498.
+**Explanation:** The chapter defines RBF kernel value with $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 25
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=0, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Which formula must be applied to obtain GMM mixture density from the supplied chapter quantities?
 
 **Choices:**
-- **A.** (0.1591, 0.6085)
-- **B.** (0.0968, 0.6085)
-- **C.** (0.1591, 0.0968)
-- **D.** (0.3457, 0.3915)
+- **A.** For GMM mixture density, use $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$
+- **B.** For GMM mixture density, use $1-\left(\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)\right)$
+- **C.** For GMM mixture density, use $\sqrt{\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)}$
+- **D.** For GMM mixture density, use sum inputs without the required weighting for GMM mixture density
 
-**Correct Answer:** (0.1591, 0.6085)
+**Correct Answer:** For GMM mixture density, use $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$
 
-**Explanation:** Weighted component terms are ['0.0968', '0.0623']; density is their sum 0.1591, and normalized component-1 share is 0.6085.
+**Explanation:** The chapter defines GMM mixture density with $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$; the other expressions change an operation or omit required weighting.
 
 ---
 
 ## Question 26
 
-**Question:** For w=['2.5', '-1'], x=['1', '1.5'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Four datasets are candidates. Which one produces hyperplane distance=0.0928?
 
 **Choices:**
-- **A.** (0.5, -1, 0.5)
-- **B.** (0.5, 1, 0.1857)
-- **C.** (-0.5, 1, 0.1857)
-- **D.** (0.5, 1, 0.5)
+- **A.** For hyperplane distance, the second dataset: w=['2.2', '-1'], x=['1', '1.9'], $b=-0.5$
+- **B.** For hyperplane distance, the first dataset: w=['2', '-1'], x=['1', '2'], $b=-0.5$
+- **C.** For hyperplane distance, the third dataset: w=['2.5', '-1'], x=['1', '1.75'], $b=-0.5$
+- **D.** For hyperplane distance, the fourth dataset: w=['2.8', '-1'], x=['1', '1.6'], $b=-0.5$
 
-**Correct Answer:** (0.5, 1, 0.1857)
+**Correct Answer:** For hyperplane distance, the third dataset: w=['2.5', '-1'], x=['1', '1.75'], $b=-0.5$
 
-**Explanation:** score=w^T x+b=0.5; its sign is 1; distance=|score|/||w||=0.1857.
+**Explanation:** Evaluating all four with $\frac{|w^\top x+b|}{\lVert w\rVert}$ shows that the third dataset produces 0.0928.
 
 ---
 
 ## Question 27
 
-**Question:** A labelled point has y=-1 and decision score w^T x+b=-1.7. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Four datasets are candidates. Which one produces functional margin=1.5?
 
 **Choices:**
-- **A.** (-1.7, 0)
-- **B.** (1.7, 0)
-- **C.** (-1.7, 1)
-- **D.** (1.7, 2.7)
+- **A.** For functional margin, the fourth dataset: label y=1, score=1.74
+- **B.** For functional margin, the first dataset: label y=1, score=1.1
+- **C.** For functional margin, the second dataset: label y=1, score=1.26
+- **D.** For functional margin, the third dataset: label y=-1, score=-1.5
 
-**Correct Answer:** (1.7, 0)
+**Correct Answer:** For functional margin, the third dataset: label y=-1, score=-1.5
 
-**Explanation:** Multiply by y: -1(-1.7)=1.7; violation is max(0,1-1.7)=0.
+**Explanation:** Evaluating all four with $y_i(w^\top x_i+b)$ shows that the third dataset produces 1.5.
 
 ---
 
 ## Question 28
 
-**Question:** Two dual terms have alpha=['0.75', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Four datasets are candidates. Which one produces first component of w=1.6?
 
 **Choices:**
-- **A.** (['1.2', '1.35'], 1.05)
-- **B.** (['1.8', '0.15'], 0.45)
-- **C.** (['-1.8', '-0.15'], -0.45)
-- **D.** (['1.8', '0.15'], 1.05)
+- **A.** For first component of w, the fourth dataset: $\alpha=[0.74, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]
+- **B.** For first component of w, the first dataset: $\alpha=[0.5, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]
+- **C.** For first component of w, the second dataset: $\alpha=[0.56, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]
+- **D.** For first component of w, the third dataset: $\alpha=[0.65, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]
 
-**Correct Answer:** (['1.8', '0.15'], 0.45)
+**Correct Answer:** For first component of w, the third dataset: $\alpha=[0.65, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]
 
-**Explanation:** w is the signed weighted vector sum ['1.8', '0.15']; the equality expression is 0.45.
+**Explanation:** Evaluating all four with $\sum_i\alpha_i y_i x_{i,1}$ shows that the third dataset produces 1.6.
 
 ---
 
 ## Question 29
 
-**Question:** Two points have squared distance 3.5. For RBF variance sigma^2=1, what is K(x,z)?
+**Question:** Four datasets are candidates. Which one produces RBF kernel value=0.1173?
 
 **Choices:**
-- **A.** 0.0302
-- **B.** 0.3924
-- **C.** 0.1738
-- **D.** 0.8262
+- **A.** For RBF kernel value, the fourth dataset: squared distance=4.2, $\sigma^2=0.5$
+- **B.** For RBF kernel value, the first dataset: squared distance=1, $\sigma^2=0.5$
+- **C.** For RBF kernel value, the second dataset: squared distance=1.8, $\sigma^2=0.9$
+- **D.** For RBF kernel value, the third dataset: squared distance=3, $\sigma^2=0.7$
 
-**Correct Answer:** 0.1738
+**Correct Answer:** For RBF kernel value, the third dataset: squared distance=3, $\sigma^2=0.7$
 
-**Explanation:** K=exp(-3.5/(2(1)))=0.1738.
+**Explanation:** Evaluating all four with $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$ shows that the third dataset produces 0.1173.
 
 ---
 
 ## Question 30
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=0.25, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Four datasets are candidates. Which one produces GMM mixture density=0.1591?
 
 **Choices:**
-- **A.** (0.0731, 0.4814)
-- **B.** (0.1518, 0.4814)
-- **C.** (0.1518, 0.0731)
-- **D.** (0.3138, 0.5186)
+- **A.** For GMM mixture density, the first dataset: x=-1, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]
+- **B.** For GMM mixture density, the third dataset: x=0, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]
+- **C.** For GMM mixture density, the second dataset: x=-0.6, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]
+- **D.** For GMM mixture density, the fourth dataset: x=0.6, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]
 
-**Correct Answer:** (0.1518, 0.4814)
+**Correct Answer:** For GMM mixture density, the third dataset: x=0, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]
 
-**Explanation:** Weighted component terms are ['0.0731', '0.0787']; density is their sum 0.1518, and normalized component-1 share is 0.4814.
+**Explanation:** Evaluating all four with $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$ shows that the third dataset produces 0.1591.
 
 ---
 
 ## Question 31
 
-**Question:** For w=['2.6', '-1'], x=['1', '1.4'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** For w=['2.6', '-1'], x=['1', '1.7'], $b=-0.5$, a student reports hyperplane distance=0.2436. What corrected value should replace it?
 
 **Choices:**
-- **A.** (0.7, 1, 0.2513)
-- **B.** (0.7, -1, 0.7)
-- **C.** (-0.7, 1, 0.2513)
-- **D.** (0.7, 1, 0.7)
+- **A.** corrected hyperplane distance = 0.2856
+- **B.** corrected hyperplane distance = 0.2146
+- **C.** corrected hyperplane distance = 0.0726
+- **D.** corrected hyperplane distance = 0.1436
 
-**Correct Answer:** (0.7, 1, 0.2513)
+**Correct Answer:** corrected hyperplane distance = 0.1436
 
-**Explanation:** score=w^T x+b=0.7; its sign is 1; distance=|score|/||w||=0.2513.
+**Explanation:** Recomputing with $\frac{|w^\top x+b|}{\lVert w\rVert}$ gives 0.1436, so the reported 0.2436 is rejected.
 
 ---
 
 ## Question 32
 
-**Question:** A labelled point has y=1 and decision score w^T x+b=1.8. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** For label y=1, score=1.58, a student reports functional margin=1.975. What corrected value should replace it?
 
 **Choices:**
-- **A.** (1.8, 0)
-- **B.** (-1.8, 0)
-- **C.** (1.8, 1)
-- **D.** (1.8, 2.8)
+- **A.** corrected functional margin = 1.2956
+- **B.** corrected functional margin = 1.8644
+- **C.** corrected functional margin = 1.58
+- **D.** corrected functional margin = 2.1488
 
-**Correct Answer:** (1.8, 0)
+**Correct Answer:** corrected functional margin = 1.58
 
-**Explanation:** Multiply by y: 1(1.8)=1.8; violation is max(0,1-1.8)=0.
+**Explanation:** Recomputing with $y_i(w^\top x_i+b)$ gives 1.58, so the reported 1.975 is rejected.
 
 ---
 
 ## Question 33
 
-**Question:** Two dual terms have alpha=['0.8', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** For $\alpha=[0.68, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]], a student reports first component of w=2.075. What corrected value should replace it?
 
 **Choices:**
-- **A.** (['1.3', '1.4'], 1.1)
-- **B.** (['-1.9', '-0.2'], -0.5)
-- **C.** (['1.9', '0.2'], 1.1)
-- **D.** (['1.9', '0.2'], 0.5)
+- **A.** corrected first component of w = 1.9588
+- **B.** corrected first component of w = 1.66
+- **C.** corrected first component of w = 1.3612
+- **D.** corrected first component of w = 2.2576
 
-**Correct Answer:** (['1.9', '0.2'], 0.5)
+**Correct Answer:** corrected first component of w = 1.66
 
-**Explanation:** w is the signed weighted vector sum ['1.9', '0.2']; the equality expression is 0.5.
+**Explanation:** Recomputing with $\sum_i\alpha_i y_i x_{i,1}$ gives 1.66, so the reported 2.075 is rejected.
 
 ---
 
 ## Question 34
 
-**Question:** Two points have squared distance 4. For RBF variance sigma^2=1.5, what is K(x,z)?
+**Question:** For squared distance=3.4, $\sigma^2=0.9$, a student reports RBF kernel value=0.2512. What corrected value should replace it?
 
 **Choices:**
-- **A.** 0.0695
-- **B.** 0.5134
-- **C.** 0.2636
-- **D.** 0.7364
+- **A.** corrected RBF kernel value = 0.2222
+- **B.** corrected RBF kernel value = 0.1512
+- **C.** corrected RBF kernel value = 0.0802
+- **D.** corrected RBF kernel value = 0.2932
 
-**Correct Answer:** 0.2636
+**Correct Answer:** corrected RBF kernel value = 0.1512
 
-**Explanation:** K=exp(-4/(2(1.5)))=0.2636.
+**Explanation:** Recomputing with $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$ gives 0.1512, so the reported 0.2512 is rejected.
 
 ---
 
 ## Question 35
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=0.5, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** For x=0.2, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2], a student reports GMM mixture density=0.253. What corrected value should replace it?
 
 **Choices:**
-- **A.** (0.0518, 0.3495)
-- **B.** (0.1482, 0.3495)
-- **C.** (0.1482, 0.0518)
-- **D.** (0.2903, 0.6505)
+- **A.** corrected GMM mixture density = 0.295
+- **B.** corrected GMM mixture density = 0.224
+- **C.** corrected GMM mixture density = 0.082
+- **D.** corrected GMM mixture density = 0.153
 
-**Correct Answer:** (0.1482, 0.3495)
+**Correct Answer:** corrected GMM mixture density = 0.153
 
-**Explanation:** Weighted component terms are ['0.0518', '0.0964']; density is their sum 0.1482, and normalized component-1 share is 0.3495.
+**Explanation:** Recomputing with $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$ gives 0.153, so the reported 0.253 is rejected.
 
 ---
 
 ## Question 36
 
-**Question:** For w=['2.7', '-1'], x=['1', '1.3'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Compute hyperplane distance separately for (w=['2.7', '-1'], x=['1', '1.65'], $b=-0.5$) and (w=['2', '-1'], x=['1', '2'], $b=-0.5$), then average the two results.
 
 **Choices:**
-- **A.** (0.9, -1, 0.9)
-- **B.** (-0.9, 1, 0.3126)
-- **C.** (0.9, 1, 0.3126)
-- **D.** (0.9, 1, 0.9)
+- **A.** mean of the two hyperplane distance values = 0.3493
+- **B.** mean of the two hyperplane distance values = 0.2783
+- **C.** mean of the two hyperplane distance values = 0.1363
+- **D.** mean of the two hyperplane distance values = 0.2073
 
-**Correct Answer:** (0.9, 1, 0.3126)
+**Correct Answer:** mean of the two hyperplane distance values = 0.2073
 
-**Explanation:** score=w^T x+b=0.9; its sign is 1; distance=|score|/||w||=0.3126.
+**Explanation:** The individual results are 0.191 and 0.2236; their arithmetic mean is 0.2073.
 
 ---
 
 ## Question 37
 
-**Question:** A labelled point has y=-1 and decision score w^T x+b=-1.9. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Compute functional margin separately for (label y=-1, score=-1.66) and (label y=1, score=1.1), then average the two results.
 
 **Choices:**
-- **A.** (-1.9, 0)
-- **B.** (-1.9, 1)
-- **C.** (1.9, 0)
-- **D.** (1.9, 2.9)
+- **A.** mean of the two functional margin values = 1.38
+- **B.** mean of the two functional margin values = 1.6284
+- **C.** mean of the two functional margin values = 1.1316
+- **D.** mean of the two functional margin values = 1.8768
 
-**Correct Answer:** (1.9, 0)
+**Correct Answer:** mean of the two functional margin values = 1.38
 
-**Explanation:** Multiply by y: -1(-1.9)=1.9; violation is max(0,1-1.9)=0.
+**Explanation:** The individual results are 1.66 and 1.1; their arithmetic mean is 1.38.
 
 ---
 
 ## Question 38
 
-**Question:** Two dual terms have alpha=['0.85', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Compute first component of w separately for ($\alpha=[0.71, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) and ($\alpha=[0.5, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]), then average the two results.
 
 **Choices:**
-- **A.** (['2', '0.25'], 0.55)
-- **B.** (['1.4', '1.45'], 1.15)
-- **C.** (['-2', '-0.25'], -0.55)
-- **D.** (['2', '0.25'], 1.15)
+- **A.** mean of the two first component of w values = 1.51
+- **B.** mean of the two first component of w values = 1.7818
+- **C.** mean of the two first component of w values = 1.2382
+- **D.** mean of the two first component of w values = 2.0536
 
-**Correct Answer:** (['2', '0.25'], 0.55)
+**Correct Answer:** mean of the two first component of w values = 1.51
 
-**Explanation:** w is the signed weighted vector sum ['2', '0.25']; the equality expression is 0.55.
+**Explanation:** The individual results are 1.72 and 1.3; their arithmetic mean is 1.51.
 
 ---
 
 ## Question 39
 
-**Question:** Two points have squared distance 4.5. For RBF variance sigma^2=2, what is K(x,z)?
+**Question:** Compute RBF kernel value separately for (squared distance=3.8, $\sigma^2=1.1$) and (squared distance=1, $\sigma^2=0.5$), then average the two results.
 
 **Choices:**
-- **A.** 0.3247
-- **B.** 0.1054
-- **C.** 0.5884
-- **D.** 0.6753
+- **A.** mean of the two RBF kernel value values = 0.3438
+- **B.** mean of the two RBF kernel value values = 0.2728
+- **C.** mean of the two RBF kernel value values = 0.2018
+- **D.** mean of the two RBF kernel value values = 0.4148
 
-**Correct Answer:** 0.3247
+**Correct Answer:** mean of the two RBF kernel value values = 0.2728
 
-**Explanation:** K=exp(-4.5/(2(2)))=0.3247.
+**Explanation:** The individual results are 0.1778 and 0.3679; their arithmetic mean is 0.2728.
 
 ---
 
 ## Question 40
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=0.75, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Compute GMM mixture density separately for (x=0.4, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) and (x=-1, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]), then average the two results.
 
 **Choices:**
-- **A.** (0.0345, 0.2316)
-- **B.** (0.149, 0.2316)
-- **C.** (0.149, 0.0345)
-- **D.** (0.2772, 0.7684)
+- **A.** mean of the two GMM mixture density values = 0.0923
+- **B.** mean of the two GMM mixture density values = 0.2343
+- **C.** mean of the two GMM mixture density values = 0.1633
+- **D.** mean of the two GMM mixture density values = 0.3053
 
-**Correct Answer:** (0.149, 0.2316)
+**Correct Answer:** mean of the two GMM mixture density values = 0.1633
 
-**Explanation:** Weighted component terms are ['0.0345', '0.1145']; density is their sum 0.149, and normalized component-1 share is 0.2316.
+**Explanation:** The individual results are 0.1491 and 0.1774; their arithmetic mean is 0.1633.
 
 ---
 
 ## Question 41
 
-**Question:** For w=['2.8', '-1'], x=['1', '1.2'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** After the data change from (w=['2.8', '-1'], x=['1', '1.6'], $b=-0.5$) to (w=['2.6', '-1'], x=['1', '1.7'], $b=-0.5$), what is the new hyperplane distance?
 
 **Choices:**
-- **A.** (1.1, -1, 1.1)
-- **B.** (-1.1, 1, 0.37)
-- **C.** (1.1, 1, 0.37)
-- **D.** (1.1, 1, 1.1)
+- **A.** hyperplane distance = 0.0726
+- **B.** hyperplane distance = 0.2146
+- **C.** hyperplane distance = 0.1436
+- **D.** hyperplane distance = 0.2856
 
-**Correct Answer:** (1.1, 1, 0.37)
+**Correct Answer:** hyperplane distance = 0.1436
 
-**Explanation:** score=w^T x+b=1.1; its sign is 1; distance=|score|/||w||=0.37.
+**Explanation:** Only the new data enter $\frac{|w^\top x+b|}{\lVert w\rVert}$; they produce 0.1436.
 
 ---
 
 ## Question 42
 
-**Question:** A labelled point has y=1 and decision score w^T x+b=2. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** After the data change from (label y=1, score=1.74) to (label y=1, score=1.58), what is the new functional margin?
 
 **Choices:**
-- **A.** (-2, 0)
-- **B.** (2, 0)
-- **C.** (2, 1)
-- **D.** (2, 3)
+- **A.** functional margin = 1.58
+- **B.** functional margin = 1.8644
+- **C.** functional margin = 1.2956
+- **D.** functional margin = 2.1488
 
-**Correct Answer:** (2, 0)
+**Correct Answer:** functional margin = 1.58
 
-**Explanation:** Multiply by y: 1(2)=2; violation is max(0,1-2)=0.
+**Explanation:** Only the new data enter $y_i(w^\top x_i+b)$; they produce 1.58.
 
 ---
 
 ## Question 43
 
-**Question:** Two dual terms have alpha=['0.9', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** After the data change from ($\alpha=[0.74, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]) to ($\alpha=[0.68, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]), what is the new first component of w?
 
 **Choices:**
-- **A.** (['1.5', '1.5'], 1.2)
-- **B.** (['-2.1', '-0.3'], -0.6)
-- **C.** (['2.1', '0.3'], 1.2)
-- **D.** (['2.1', '0.3'], 0.6)
+- **A.** first component of w = 1.66
+- **B.** first component of w = 1.9588
+- **C.** first component of w = 1.3612
+- **D.** first component of w = 2.2576
 
-**Correct Answer:** (['2.1', '0.3'], 0.6)
+**Correct Answer:** first component of w = 1.66
 
-**Explanation:** w is the signed weighted vector sum ['2.1', '0.3']; the equality expression is 0.6.
+**Explanation:** Only the new data enter $\sum_i\alpha_i y_i x_{i,1}$; they produce 1.66.
 
 ---
 
 ## Question 44
 
-**Question:** Two points have squared distance 5. For RBF variance sigma^2=0.5, what is K(x,z)?
+**Question:** After the data change from (squared distance=4.2, $\sigma^2=0.5$) to (squared distance=3.4, $\sigma^2=0.9$), what is the new RBF kernel value?
 
 **Choices:**
-- **A.** 0
-- **B.** 0.1069
-- **C.** 0.0067
-- **D.** 0.9933
+- **A.** RBF kernel value = 0.2222
+- **B.** RBF kernel value = 0.1512
+- **C.** RBF kernel value = 0.0802
+- **D.** RBF kernel value = 0.2932
 
-**Correct Answer:** 0.0067
+**Correct Answer:** RBF kernel value = 0.1512
 
-**Explanation:** K=exp(-5/(2(0.5)))=0.0067.
+**Explanation:** Only the new data enter $\exp\!\left(-\frac{\lVert x-z\rVert^2}{2\sigma^2}\right)$; they produce 0.1512.
 
 ---
 
 ## Question 45
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=1, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** After the data change from (x=0.6, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]) to (x=0.2, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]), what is the new GMM mixture density?
 
 **Choices:**
-- **A.** (0.0216, 0.1408)
-- **B.** (0.1534, 0.0216)
-- **C.** (0.2737, 0.8592)
-- **D.** (0.1534, 0.1408)
+- **A.** GMM mixture density = 0.082
+- **B.** GMM mixture density = 0.224
+- **C.** GMM mixture density = 0.153
+- **D.** GMM mixture density = 0.295
 
-**Correct Answer:** (0.1534, 0.1408)
+**Correct Answer:** GMM mixture density = 0.153
 
-**Explanation:** Weighted component terms are ['0.0216', '0.1318']; density is their sum 0.1534, and normalized component-1 share is 0.1408.
+**Explanation:** Only the new data enter $\sum_k\pi_k\mathcal{N}(x\mid\mu_k,\sigma_k^2)$; they produce 0.153.
 
 ---
 
 ## Question 46
 
-**Question:** For w=['2.9', '-1'], x=['1', '1.1'], b=-0.5, compute (score, predicted sign, distance to hyperplane).
+**Question:** Rank P, Q, R, S from largest to smallest hyperplane distance: P(w=['2.1', '-1'], x=['1', '1.95'], $b=-0.5$), Q(w=['2.3', '-1'], x=['1', '1.85'], $b=-0.5$), R(w=['2.6', '-1'], x=['1', '1.7'], $b=-0.5$), S(w=['2.9', '-1'], x=['1', '1.55'], $b=-0.5$).
 
 **Choices:**
-- **A.** (1.3, -1, 1.3)
-- **B.** (1.3, 1, 0.4238)
-- **C.** (-1.3, 1, 0.4238)
-- **D.** (1.3, 1, 1.3)
+- **A.** hyperplane distance ranking: P = Q = R = S
+- **B.** hyperplane distance ranking: Q > R > P > S
+- **C.** hyperplane distance ranking: S > P > R > Q
+- **D.** hyperplane distance ranking: P > Q > R > S
 
-**Correct Answer:** (1.3, 1, 0.4238)
+**Correct Answer:** hyperplane distance ranking: S > P > R > Q
 
-**Explanation:** score=w^T x+b=1.3; its sign is 1; distance=|score|/||w||=0.4238.
+**Explanation:** Their values are {'P': '0.1505', 'Q': '0.0199', 'R': '0.1436', 'S': '0.2771'}; grouping equal values and sorting descending gives hyperplane distance ranking: S > P > R > Q.
 
 ---
 
 ## Question 47
 
-**Question:** A labelled point has y=-1 and decision score w^T x+b=-2.1. What are (functional-margin product, hard-margin violation amount max(0,1-product))?
+**Question:** Rank P, Q, R, S from largest to smallest functional margin: P(label y=-1, score=-1.18), Q(label y=-1, score=-1.34), R(label y=1, score=1.58), S(label y=-1, score=-1.82).
 
 **Choices:**
-- **A.** (2.1, 0)
-- **B.** (-2.1, 0)
-- **C.** (-2.1, 1)
-- **D.** (2.1, 3.1)
+- **A.** functional margin ranking: S > R > Q > P
+- **B.** functional margin ranking: P > Q > R > S
+- **C.** functional margin ranking: P = Q = R = S
+- **D.** functional margin ranking: Q > P > S > R
 
-**Correct Answer:** (2.1, 0)
+**Correct Answer:** functional margin ranking: S > R > Q > P
 
-**Explanation:** Multiply by y: -1(-2.1)=2.1; violation is max(0,1-2.1)=0.
+**Explanation:** Their values are {'P': '1.18', 'Q': '1.34', 'R': '1.58', 'S': '1.82'}; grouping equal values and sorting descending gives functional margin ranking: S > R > Q > P.
 
 ---
 
 ## Question 48
 
-**Question:** Two dual terms have alpha=['0.95', '0.3'], y=[1, -1], x=[[2, 1], [-1, 2]]. What pair (w, sum alpha_i y_i) results?
+**Question:** Rank P, Q, R, S from largest to smallest first component of w: P($\alpha=[0.53, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]), Q($\alpha=[0.59, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]), R($\alpha=[0.68, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]), S($\alpha=[0.77, 0.3]$, labels=[1, -1], x=[[2, 1], [-1, 2]]).
 
 **Choices:**
-- **A.** (['2.2', '0.35'], 0.65)
-- **B.** (['1.6', '1.55'], 1.25)
-- **C.** (['-2.2', '-0.35'], -0.65)
-- **D.** (['2.2', '0.35'], 1.25)
+- **A.** first component of w ranking: S > R > Q > P
+- **B.** first component of w ranking: P > Q > R > S
+- **C.** first component of w ranking: P = Q = R = S
+- **D.** first component of w ranking: Q > P > S > R
 
-**Correct Answer:** (['2.2', '0.35'], 0.65)
+**Correct Answer:** first component of w ranking: S > R > Q > P
 
-**Explanation:** w is the signed weighted vector sum ['2.2', '0.35']; the equality expression is 0.65.
+**Explanation:** Their values are {'P': '1.36', 'Q': '1.48', 'R': '1.66', 'S': '1.84'}; grouping equal values and sorting descending gives first component of w ranking: S > R > Q > P.
 
 ---
 
 ## Question 49
 
-**Question:** Two points have squared distance 5.5. For RBF variance sigma^2=1, what is K(x,z)?
+**Question:** Rank P, Q, R, S from largest to smallest RBF kernel value: P(squared distance=1.4, $\sigma^2=0.7$), Q(squared distance=2.2, $\sigma^2=1.1$), R(squared distance=3.4, $\sigma^2=0.9$), S(squared distance=4.6, $\sigma^2=0.7$).
 
 **Choices:**
-- **A.** 0.0041
-- **B.** 0.3096
-- **C.** 0.9361
-- **D.** 0.0639
+- **A.** RBF kernel value ranking: P = Q = R = S
+- **B.** RBF kernel value ranking: S > R > Q > P
+- **C.** RBF kernel value ranking: P = Q > R > S
+- **D.** RBF kernel value ranking: P > Q > R > S
 
-**Correct Answer:** 0.0639
+**Correct Answer:** RBF kernel value ranking: P = Q > R > S
 
-**Explanation:** K=exp(-5.5/(2(1)))=0.0639.
+**Explanation:** Their values are {'P': '0.3679', 'Q': '0.3679', 'R': '0.1512', 'S': '0.0374'}; grouping equal values and sorting descending gives RBF kernel value ranking: P = Q > R > S.
 
 ---
 
 ## Question 50
 
-**Question:** A 1D GMM has pi=[0.4, 0.6], mu=[-1, 2], variances=[1, 2]. At x=1.25, what pair (mixture density, component-1 normalized membership) is correct?
+**Question:** Rank P, Q, R, S from largest to smallest GMM mixture density: P(x=-0.8, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]), Q(x=-0.4, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]), R(x=0.2, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]), S(x=0.8, $\pi=[0.4, 0.6]$, $\mu=[-1, 2]$, variances=[1, 2]).
 
 **Choices:**
-- **A.** (0.1597, 0.0795)
-- **B.** (0.0127, 0.0795)
-- **C.** (0.1597, 0.0127)
-- **D.** (0.2768, 0.9205)
+- **A.** GMM mixture density ranking: P = Q = R = S
+- **B.** GMM mixture density ranking: S > R > Q > P
+- **C.** GMM mixture density ranking: P > Q > R > S
+- **D.** GMM mixture density ranking: Q > P > S > R
 
-**Correct Answer:** (0.1597, 0.0795)
+**Correct Answer:** GMM mixture density ranking: P > Q > R > S
 
-**Explanation:** Weighted component terms are ['0.0127', '0.1471']; density is their sum 0.1597, and normalized component-1 share is 0.0795.
+**Explanation:** Their values are {'P': '0.1803', 'Q': '0.1734', 'R': '0.153', 'S': '0.1497'}; grouping equal values and sorting descending gives GMM mixture density ranking: P > Q > R > S.
 
 ---
 
 ## Question 51
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 1: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes support-vector influence?
 
 **Choices:**
 - **A.** Every non-support vector has a nonzero dual coefficient.
-- **B.** Support vectors are always the points farthest from the hyperplane.
-- **C.** Support vectors are the training points that determine the maximum-margin boundary.
-- **D.** Removing all support vectors leaves the same boundary by definition., under both the training and evaluation conditions stated
+- **B.** Support vectors are the training points that determine the maximum-margin boundary.
+- **C.** Support vectors are always the points farthest from the hyperplane.
+- **D.** Removing all support vectors leaves the same boundary by definition. for all permitted parameter values
 
 **Correct Answer:** Support vectors are the training points that determine the maximum-margin boundary.
 
-**Explanation:** Nonzero alpha values identify the influential closest points.
+**Explanation:** For support-vector influence, the accurate statement is the first one because Nonzero alpha values identify the influential closest points.
 
 ---
 
 ## Question 52
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 2: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes hard-margin feasibility?
 
 **Choices:**
-- **A.** Hard margin accepts every point with product below zero.
-- **B.** The constraint omits labels and uses only ||w||.
-- **C.** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-- **D.** Hard margin requires every point to lie on the hyperplane., even when the other quantities in the formula are fixed
+- **A.** Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
+- **B.** Hard margin accepts every point with product below zero.
+- **C.** The constraint omits labels and uses only $\lVert w\rVert$.
+- **D.** Hard margin requires every point to lie on the hyperplane. under every stated condition
 
-**Correct Answer:** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
+**Correct Answer:** Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
 
-**Explanation:** The signed functional margin must meet at least one.
+**Explanation:** For hard-margin feasibility, the accurate statement is the first one because The signed functional margin must meet at least one.
 
 ---
 
 ## Question 53
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 3: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes norm minimization?
 
 **Choices:**
-- **A.** Maximizing ||w|| always widens the margin.
-- **B.** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-- **C.** The objective directly maximizes the number of features., as a consequence that holds for every permitted input
-- **D.** The norm controls only the class-label encoding.
+- **A.** The norm controls only the class-label encoding.
+- **B.** Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
+- **C.** The objective directly maximizes the number of features. without changing the supplied data
+- **D.** Maximizing $\lVert w\rVert$ always widens the margin.
 
-**Correct Answer:** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
+**Correct Answer:** Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
 
-**Explanation:** Under fixed functional scaling, geometric margin varies inversely with ||w||.
+**Explanation:** For norm minimization, the accurate statement is the first one because Under fixed functional scaling, geometric margin varies inversely with $\lVert w\rVert$.
 
 ---
 
 ## Question 54
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 4: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes nonzero dual coefficients?
 
 **Choices:**
-- **A.** All alpha values must be negative for support vectors.
-- **B.** The equality constraint is sum alpha_i=1 without labels., without needing any additional modeling assumption
-- **C.** The dual removes every dependence on inner products.
-- **D.** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
+- **A.** The equality constraint is sum $\alpha_i$=1 without labels. for all permitted parameter values
+- **B.** Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
+- **C.** All alpha values must be negative for support vectors.
+- **D.** The dual removes every dependence on inner products.
 
-**Correct Answer:** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
+**Correct Answer:** Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
 
-**Explanation:** Zero coefficients vanish from the weighted sum.
+**Explanation:** For nonzero dual coefficients, the accurate statement is the first one because Zero coefficients vanish from the weighted sum.
 
 ---
 
 ## Question 55
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 5: Which conclusion is the single most defensible?
+**Question:** Which statement correctly characterizes the kernel substitution?
 
 **Choices:**
-- **A.** A kernel replaces every label with a continuous target.
-- **B.** A kernel guarantees linearly separable raw inputs without parameters.
-- **C.** A kernel replaces an input-space inner product with K(x_i,x_j).
-- **D.** A kernel is the same as the SVM penalty C.
+- **A.** A kernel is the same as the SVM penalty C.
+- **B.** A kernel replaces every label with a continuous target.
+- **C.** A kernel guarantees linearly separable raw inputs without parameters.
+- **D.** A kernel replaces an input-space inner product with K($x_i$,$x_j$).
 
-**Correct Answer:** A kernel replaces an input-space inner product with K(x_i,x_j).
+**Correct Answer:** A kernel replaces an input-space inner product with K($x_i$,$x_j$).
 
-**Explanation:** The kernel trick changes similarity computation in the dual.
+**Explanation:** For the kernel substitution, the accurate statement is the first one because The kernel trick changes similarity computation in the dual.
 
 ---
 
 ## Question 56
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 6: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Small variance makes every pair's kernel value exactly one., even when the other quantities in the formula are fixed
-- **B.** Large variance always creates more local variation.
-- **C.** RBF variance is the misclassification penalty C.
-- **D.** Small RBF variance produces a more localized, flexible boundary.
-
-**Correct Answer:** Small RBF variance produces a more localized, flexible boundary.
-
-**Explanation:** Narrow Gaussians decay quickly with distance.
-
----
-
-## Question 57
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 7: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Large C penalizes violations more strongly and can increase variance.
-- **B.** Large C ignores every misclassification.
-- **C.** Small C necessarily produces zero training error., as a consequence that holds for every permitted input
-- **D.** C is the Gaussian mixing coefficient sum.
-
-**Correct Answer:** Large C penalizes violations more strongly and can increase variance.
-
-**Explanation:** The stated trade-off links large C with lower bias and higher variance.
-
----
-
-## Question 58
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 8: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** GMM gives each point a probability-like membership across components.
-- **B.** GMM assigns every point permanently to exactly one centroid., without needing any additional modeling assumption
-- **C.** GMM contains no mixing coefficients.
-- **D.** GMM cannot represent more than one Gaussian.
-
-**Correct Answer:** GMM gives each point a probability-like membership across components.
-
-**Explanation:** GMM is soft, probabilistic clustering.
-
----
-
-## Question 59
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 9: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** Each mixing coefficient must be greater than one.
-- **B.** Mixing coefficients are unconstrained SVM dual variables.
-- **C.** Their sum must equal the number of data points.
-- **D.** Mixing coefficients are nonnegative and sum to one.
-
-**Correct Answer:** Mixing coefficients are nonnegative and sum to one.
-
-**Explanation:** They form component prior probabilities.
-
----
-
-## Question 60
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 10: Which conclusion is the single most defensible?
-
-**Choices:**
-- **A.** K-Means and GMM return identical membership probabilities by definition., even when the other quantities in the formula are fixed
-- **B.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-- **C.** GMM has centroids but no Gaussian parameters.
-- **D.** K-Means requires covariance matrices for every point.
-
-**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-
-**Explanation:** The tracker explicitly contrasts their assignments and representations.
-
----
-
-## Question 61
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 11: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Support vectors are the training points that determine the maximum-margin boundary.
-- **B.** Every non-support vector has a nonzero dual coefficient.
-- **C.** Support vectors are always the points farthest from the hyperplane.
-- **D.** Removing all support vectors leaves the same boundary by definition., as a consequence that holds for every permitted input
-
-**Correct Answer:** Support vectors are the training points that determine the maximum-margin boundary.
-
-**Explanation:** Nonzero alpha values identify the influential closest points.
-
----
-
-## Question 62
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 12: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Hard margin accepts every point with product below zero.
-- **B.** The constraint omits labels and uses only ||w||.
-- **C.** Hard margin requires every point to lie on the hyperplane., without needing any additional modeling assumption
-- **D.** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Correct Answer:** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Explanation:** The signed functional margin must meet at least one.
-
----
-
-## Question 63
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 13: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Maximizing ||w|| always widens the margin.
-- **B.** The objective directly maximizes the number of features., under both the training and evaluation conditions stated
-- **C.** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-- **D.** The norm controls only the class-label encoding.
-
-**Correct Answer:** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-
-**Explanation:** Under fixed functional scaling, geometric margin varies inversely with ||w||.
-
----
-
-## Question 64
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 14: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-- **B.** All alpha values must be negative for support vectors.
-- **C.** The equality constraint is sum alpha_i=1 without labels., even when the other quantities in the formula are fixed
-- **D.** The dual removes every dependence on inner products.
-
-**Correct Answer:** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-
-**Explanation:** Zero coefficients vanish from the weighted sum.
-
----
-
-## Question 65
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 15: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** A kernel replaces every label with a continuous target.
-- **B.** A kernel guarantees linearly separable raw inputs without parameters.
-- **C.** A kernel is the same as the SVM penalty C.
-- **D.** A kernel replaces an input-space inner product with K(x_i,x_j).
-
-**Correct Answer:** A kernel replaces an input-space inner product with K(x_i,x_j).
-
-**Explanation:** The kernel trick changes similarity computation in the dual.
-
----
-
-## Question 66
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 16: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Small variance makes every pair's kernel value exactly one., without needing any additional modeling assumption
-- **B.** Large variance always creates more local variation.
-- **C.** Small RBF variance produces a more localized, flexible boundary.
-- **D.** RBF variance is the misclassification penalty C.
-
-**Correct Answer:** Small RBF variance produces a more localized, flexible boundary.
-
-**Explanation:** Narrow Gaussians decay quickly with distance.
-
----
-
-## Question 67
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 17: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Large C ignores every misclassification.
-- **B.** Small C necessarily produces zero training error., under both the training and evaluation conditions stated
-- **C.** C is the Gaussian mixing coefficient sum.
-- **D.** Large C penalizes violations more strongly and can increase variance.
-
-**Correct Answer:** Large C penalizes violations more strongly and can increase variance.
-
-**Explanation:** The stated trade-off links large C with lower bias and higher variance.
-
----
-
-## Question 68
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 18: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** GMM assigns every point permanently to exactly one centroid., even when the other quantities in the formula are fixed
-- **B.** GMM contains no mixing coefficients.
-- **C.** GMM gives each point a probability-like membership across components.
-- **D.** GMM cannot represent more than one Gaussian.
-
-**Correct Answer:** GMM gives each point a probability-like membership across components.
-
-**Explanation:** GMM is soft, probabilistic clustering.
-
----
-
-## Question 69
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 19: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** Each mixing coefficient must be greater than one.
-- **B.** Mixing coefficients are nonnegative and sum to one.
-- **C.** Mixing coefficients are unconstrained SVM dual variables.
-- **D.** Their sum must equal the number of data points.
-
-**Correct Answer:** Mixing coefficients are nonnegative and sum to one.
-
-**Explanation:** They form component prior probabilities.
-
----
-
-## Question 70
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 20: A student must reject three claims. Which claim should be retained?
-
-**Choices:**
-- **A.** K-Means and GMM return identical membership probabilities by definition., without needing any additional modeling assumption
-- **B.** GMM has centroids but no Gaussian parameters.
-- **C.** K-Means requires covariance matrices for every point.
-- **D.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-
-**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-
-**Explanation:** The tracker explicitly contrasts their assignments and representations.
-
----
-
-## Question 71
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 21: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Every non-support vector has a nonzero dual coefficient.
-- **B.** Support vectors are always the points farthest from the hyperplane.
-- **C.** Removing all support vectors leaves the same boundary by definition., under both the training and evaluation conditions stated
-- **D.** Support vectors are the training points that determine the maximum-margin boundary.
-
-**Correct Answer:** Support vectors are the training points that determine the maximum-margin boundary.
-
-**Explanation:** Nonzero alpha values identify the influential closest points.
-
----
-
-## Question 72
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 22: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Hard margin accepts every point with product below zero.
-- **B.** The constraint omits labels and uses only ||w||.
-- **C.** Hard margin requires every point to lie on the hyperplane., even when the other quantities in the formula are fixed
-- **D.** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Correct Answer:** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Explanation:** The signed functional margin must meet at least one.
-
----
-
-## Question 73
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 23: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-- **B.** Maximizing ||w|| always widens the margin.
-- **C.** The objective directly maximizes the number of features., as a consequence that holds for every permitted input
-- **D.** The norm controls only the class-label encoding.
-
-**Correct Answer:** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-
-**Explanation:** Under fixed functional scaling, geometric margin varies inversely with ||w||.
-
----
-
-## Question 74
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 24: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** All alpha values must be negative for support vectors.
-- **B.** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-- **C.** The equality constraint is sum alpha_i=1 without labels., without needing any additional modeling assumption
-- **D.** The dual removes every dependence on inner products.
-
-**Correct Answer:** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-
-**Explanation:** Zero coefficients vanish from the weighted sum.
-
----
-
-## Question 75
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 25: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** A kernel replaces every label with a continuous target.
-- **B.** A kernel guarantees linearly separable raw inputs without parameters.
-- **C.** A kernel replaces an input-space inner product with K(x_i,x_j).
-- **D.** A kernel is the same as the SVM penalty C.
-
-**Correct Answer:** A kernel replaces an input-space inner product with K(x_i,x_j).
-
-**Explanation:** The kernel trick changes similarity computation in the dual.
-
----
-
-## Question 76
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 26: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Small variance makes every pair's kernel value exactly one., even when the other quantities in the formula are fixed
-- **B.** Large variance always creates more local variation.
-- **C.** RBF variance is the misclassification penalty C.
-- **D.** Small RBF variance produces a more localized, flexible boundary.
-
-**Correct Answer:** Small RBF variance produces a more localized, flexible boundary.
-
-**Explanation:** Narrow Gaussians decay quickly with distance.
-
----
-
-## Question 77
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 27: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Large C ignores every misclassification.
-- **B.** Small C necessarily produces zero training error., as a consequence that holds for every permitted input
-- **C.** Large C penalizes violations more strongly and can increase variance.
-- **D.** C is the Gaussian mixing coefficient sum.
-
-**Correct Answer:** Large C penalizes violations more strongly and can increase variance.
-
-**Explanation:** The stated trade-off links large C with lower bias and higher variance.
-
----
-
-## Question 78
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 28: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** GMM gives each point a probability-like membership across components.
-- **B.** GMM assigns every point permanently to exactly one centroid., without needing any additional modeling assumption
-- **C.** GMM contains no mixing coefficients.
-- **D.** GMM cannot represent more than one Gaussian.
-
-**Correct Answer:** GMM gives each point a probability-like membership across components.
-
-**Explanation:** GMM is soft, probabilistic clustering.
-
----
-
-## Question 79
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 29: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** Each mixing coefficient must be greater than one.
-- **B.** Mixing coefficients are nonnegative and sum to one.
-- **C.** Mixing coefficients are unconstrained SVM dual variables.
-- **D.** Their sum must equal the number of data points.
-
-**Correct Answer:** Mixing coefficients are nonnegative and sum to one.
-
-**Explanation:** They form component prior probabilities.
-
----
-
-## Question 80
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 30: Which statement remains correct under the definitions in this chapter?
-
-**Choices:**
-- **A.** K-Means and GMM return identical membership probabilities by definition., even when the other quantities in the formula are fixed
-- **B.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-- **C.** GMM has centroids but no Gaussian parameters.
-- **D.** K-Means requires covariance matrices for every point.
-
-**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-
-**Explanation:** The tracker explicitly contrasts their assignments and representations.
-
----
-
-## Question 81
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 31: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Every non-support vector has a nonzero dual coefficient.
-- **B.** Support vectors are always the points farthest from the hyperplane.
-- **C.** Removing all support vectors leaves the same boundary by definition., as a consequence that holds for every permitted input
-- **D.** Support vectors are the training points that determine the maximum-margin boundary.
-
-**Correct Answer:** Support vectors are the training points that determine the maximum-margin boundary.
-
-**Explanation:** Nonzero alpha values identify the influential closest points.
-
----
-
-## Question 82
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 32: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Hard margin accepts every point with product below zero.
-- **B.** The constraint omits labels and uses only ||w||.
-- **C.** Hard margin requires every point to lie on the hyperplane., without needing any additional modeling assumption
-- **D.** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Correct Answer:** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-
-**Explanation:** The signed functional margin must meet at least one.
-
----
-
-## Question 83
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 33: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-- **B.** Maximizing ||w|| always widens the margin.
-- **C.** The objective directly maximizes the number of features., under both the training and evaluation conditions stated
-- **D.** The norm controls only the class-label encoding.
-
-**Correct Answer:** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-
-**Explanation:** Under fixed functional scaling, geometric margin varies inversely with ||w||.
-
----
-
-## Question 84
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 34: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** All alpha values must be negative for support vectors.
-- **B.** The equality constraint is sum alpha_i=1 without labels., even when the other quantities in the formula are fixed
-- **C.** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-- **D.** The dual removes every dependence on inner products.
-
-**Correct Answer:** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
-
-**Explanation:** Zero coefficients vanish from the weighted sum.
-
----
-
-## Question 85
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 35: Which interpretation avoids the most tempting conceptual error?
-
-**Choices:**
-- **A.** A kernel replaces an input-space inner product with K(x_i,x_j).
-- **B.** A kernel replaces every label with a continuous target.
-- **C.** A kernel guarantees linearly separable raw inputs without parameters.
-- **D.** A kernel is the same as the SVM penalty C.
-
-**Correct Answer:** A kernel replaces an input-space inner product with K(x_i,x_j).
-
-**Explanation:** The kernel trick changes similarity computation in the dual.
-
----
-
-## Question 86
-
-**Question:** An SVM/GMM model-selection argument is examined. Case 36: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes RBF width?
 
 **Choices:**
 - **A.** Small RBF variance produces a more localized, flexible boundary.
-- **B.** Small variance makes every pair's kernel value exactly one., without needing any additional modeling assumption
+- **B.** Small variance makes every pair's kernel value exactly one. without changing the supplied data
 - **C.** Large variance always creates more local variation.
 - **D.** RBF variance is the misclassification penalty C.
 
 **Correct Answer:** Small RBF variance produces a more localized, flexible boundary.
 
-**Explanation:** Narrow Gaussians decay quickly with distance.
+**Explanation:** For RBF width, the accurate statement is the first one because Narrow Gaussians decay quickly with distance.
 
 ---
 
-## Question 87
+## Question 57
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 37: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes the C trade-off?
 
 **Choices:**
-- **A.** Large C ignores every misclassification.
-- **B.** Large C penalizes violations more strongly and can increase variance.
-- **C.** Small C necessarily produces zero training error., under both the training and evaluation conditions stated
-- **D.** C is the Gaussian mixing coefficient sum.
+- **A.** Small C necessarily produces zero training error. for all permitted parameter values
+- **B.** Large C ignores every misclassification.
+- **C.** C is the Gaussian mixing coefficient sum.
+- **D.** Large C penalizes violations more strongly and can increase variance.
 
 **Correct Answer:** Large C penalizes violations more strongly and can increase variance.
 
-**Explanation:** The stated trade-off links large C with lower bias and higher variance.
+**Explanation:** For the C trade-off, the accurate statement is the first one because The stated trade-off links large C with lower bias and higher variance.
 
 ---
 
-## Question 88
+## Question 58
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 38: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes soft GMM membership?
 
 **Choices:**
-- **A.** GMM assigns every point permanently to exactly one centroid., even when the other quantities in the formula are fixed
-- **B.** GMM contains no mixing coefficients.
-- **C.** GMM gives each point a probability-like membership across components.
-- **D.** GMM cannot represent more than one Gaussian.
+- **A.** GMM cannot represent more than one Gaussian.
+- **B.** GMM gives each point a probability-like membership across components.
+- **C.** GMM contains no mixing coefficients.
+- **D.** GMM assigns every point permanently to exactly one centroid. under every stated condition
 
 **Correct Answer:** GMM gives each point a probability-like membership across components.
 
-**Explanation:** GMM is soft, probabilistic clustering.
+**Explanation:** For soft GMM membership, the accurate statement is the first one because GMM is soft, probabilistic clustering.
 
 ---
 
-## Question 89
+## Question 59
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 39: Which interpretation avoids the most tempting conceptual error?
+**Question:** Which statement correctly characterizes mixing coefficients?
 
 **Choices:**
-- **A.** Each mixing coefficient must be greater than one.
-- **B.** Mixing coefficients are nonnegative and sum to one.
+- **A.** Mixing coefficients are nonnegative and sum to one.
+- **B.** Each mixing coefficient must be greater than one.
 - **C.** Mixing coefficients are unconstrained SVM dual variables.
 - **D.** Their sum must equal the number of data points.
 
 **Correct Answer:** Mixing coefficients are nonnegative and sum to one.
 
-**Explanation:** They form component prior probabilities.
+**Explanation:** For mixing coefficients, the accurate statement is the first one because They form component prior probabilities.
+
+---
+
+## Question 60
+
+**Question:** Which statement correctly characterizes K-Means versus GMM?
+
+**Choices:**
+- **A.** K-Means and GMM return identical membership probabilities by definition. for all permitted parameter values
+- **B.** K-Means requires covariance matrices for every point.
+- **C.** GMM has centroids but no Gaussian parameters.
+- **D.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+
+**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+
+**Explanation:** For K-Means versus GMM, the accurate statement is the first one because The tracker explicitly contrasts their assignments and representations.
+
+---
+
+## Question 61
+
+**Question:** A student writes, “Every non-support vector has a nonzero dual coefficient.” Which replacement correctly repairs the claim about support-vector influence?
+
+**Choices:**
+- **A.** Replace it with: Removing all support vectors leaves the same boundary by definition. under every stated condition
+- **B.** Replace it with: Support vectors are the training points that determine the maximum-margin boundary.
+- **C.** Replace it with: Support vectors are always the points farthest from the hyperplane.
+- **D.** Replace it with: Every non-support vector has a nonzero dual coefficient.
+
+**Correct Answer:** Replace it with: Support vectors are the training points that determine the maximum-margin boundary.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Nonzero alpha values identify the influential closest points.
+
+---
+
+## Question 62
+
+**Question:** A student writes, “Hard margin accepts every point with product below zero.” Which replacement correctly repairs the claim about hard-margin feasibility?
+
+**Choices:**
+- **A.** Replace it with: Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
+- **B.** Replace it with: Hard margin accepts every point with product below zero.
+- **C.** Replace it with: The constraint omits labels and uses only $\lVert w\rVert$.
+- **D.** Replace it with: Hard margin requires every point to lie on the hyperplane. without changing the supplied data
+
+**Correct Answer:** Replace it with: Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The signed functional margin must meet at least one.
+
+---
+
+## Question 63
+
+**Question:** A student writes, “Maximizing $\lVert w\rVert$ always widens the margin.” Which replacement correctly repairs the claim about norm minimization?
+
+**Choices:**
+- **A.** Replace it with: Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
+- **B.** Replace it with: Maximizing $\lVert w\rVert$ always widens the margin.
+- **C.** Replace it with: The objective directly maximizes the number of features. for all permitted parameter values
+- **D.** Replace it with: The norm controls only the class-label encoding.
+
+**Correct Answer:** Replace it with: Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Under fixed functional scaling, geometric margin varies inversely with $\lVert w\rVert$.
+
+---
+
+## Question 64
+
+**Question:** A student writes, “All alpha values must be negative for support vectors.” Which replacement correctly repairs the claim about nonzero dual coefficients?
+
+**Choices:**
+- **A.** Replace it with: Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
+- **B.** Replace it with: All alpha values must be negative for support vectors.
+- **C.** Replace it with: The equality constraint is sum $\alpha_i$=1 without labels. under every stated condition
+- **D.** Replace it with: The dual removes every dependence on inner products.
+
+**Correct Answer:** Replace it with: Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Zero coefficients vanish from the weighted sum.
+
+---
+
+## Question 65
+
+**Question:** A student writes, “A kernel replaces every label with a continuous target.” Which replacement correctly repairs the claim about the kernel substitution?
+
+**Choices:**
+- **A.** Replace it with: A kernel guarantees linearly separable raw inputs without parameters.
+- **B.** Replace it with: A kernel replaces every label with a continuous target.
+- **C.** Replace it with: A kernel is the same as the SVM penalty C.
+- **D.** Replace it with: A kernel replaces an input-space inner product with K($x_i$,$x_j$).
+
+**Correct Answer:** Replace it with: A kernel replaces an input-space inner product with K($x_i$,$x_j$).
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The kernel trick changes similarity computation in the dual.
+
+---
+
+## Question 66
+
+**Question:** A student writes, “Small variance makes every pair's kernel value exactly one.” Which replacement correctly repairs the claim about RBF width?
+
+**Choices:**
+- **A.** Replace it with: Large variance always creates more local variation.
+- **B.** Replace it with: Small variance makes every pair's kernel value exactly one. for all permitted parameter values
+- **C.** Replace it with: Small RBF variance produces a more localized, flexible boundary.
+- **D.** Replace it with: RBF variance is the misclassification penalty C.
+
+**Correct Answer:** Replace it with: Small RBF variance produces a more localized, flexible boundary.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because Narrow Gaussians decay quickly with distance.
+
+---
+
+## Question 67
+
+**Question:** A student writes, “Large C ignores every misclassification.” Which replacement correctly repairs the claim about the C trade-off?
+
+**Choices:**
+- **A.** Replace it with: Large C penalizes violations more strongly and can increase variance.
+- **B.** Replace it with: Large C ignores every misclassification.
+- **C.** Replace it with: Small C necessarily produces zero training error. under every stated condition
+- **D.** Replace it with: C is the Gaussian mixing coefficient sum.
+
+**Correct Answer:** Replace it with: Large C penalizes violations more strongly and can increase variance.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The stated trade-off links large C with lower bias and higher variance.
+
+---
+
+## Question 68
+
+**Question:** A student writes, “GMM assigns every point permanently to exactly one centroid.” Which replacement correctly repairs the claim about soft GMM membership?
+
+**Choices:**
+- **A.** Replace it with: GMM contains no mixing coefficients.
+- **B.** Replace it with: GMM assigns every point permanently to exactly one centroid. without changing the supplied data
+- **C.** Replace it with: GMM cannot represent more than one Gaussian.
+- **D.** Replace it with: GMM gives each point a probability-like membership across components.
+
+**Correct Answer:** Replace it with: GMM gives each point a probability-like membership across components.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because GMM is soft, probabilistic clustering.
+
+---
+
+## Question 69
+
+**Question:** A student writes, “Each mixing coefficient must be greater than one.” Which replacement correctly repairs the claim about mixing coefficients?
+
+**Choices:**
+- **A.** Replace it with: Mixing coefficients are nonnegative and sum to one.
+- **B.** Replace it with: Each mixing coefficient must be greater than one.
+- **C.** Replace it with: Mixing coefficients are unconstrained SVM dual variables.
+- **D.** Replace it with: Their sum must equal the number of data points.
+
+**Correct Answer:** Replace it with: Mixing coefficients are nonnegative and sum to one.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because They form component prior probabilities.
+
+---
+
+## Question 70
+
+**Question:** A student writes, “K-Means and GMM return identical membership probabilities by definition.” Which replacement correctly repairs the claim about K-Means versus GMM?
+
+**Choices:**
+- **A.** Replace it with: K-Means requires covariance matrices for every point.
+- **B.** Replace it with: K-Means and GMM return identical membership probabilities by definition. under every stated condition
+- **C.** Replace it with: GMM has centroids but no Gaussian parameters.
+- **D.** Replace it with: K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+
+**Correct Answer:** Replace it with: K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+
+**Explanation:** The student's claim confuses the chapter definitions. The correction is required because The tracker explicitly contrasts their assignments and representations.
+
+---
+
+## Question 71
+
+**Question:** A student's answer about support-vector influence contains the claim “Every non-support vector has a nonzero dual coefficient.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about support-vector influence is correct without qualification
+- **B.** The quoted claim concerns support-vector influence but is only a harmless change of notation
+- **C.** The quoted claim about support-vector influence is false and must be replaced
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about support-vector influence is false and must be replaced
+
+**Explanation:** The quoted claim contradicts support-vector influence; it must be replaced by Support vectors are the training points that determine the maximum-margin boundary..
+
+---
+
+## Question 72
+
+**Question:** A student's answer about hard-margin feasibility contains the claim “Hard margin accepts every point with product below zero.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about hard-margin feasibility is correct without qualification
+- **B.** The quoted claim about hard-margin feasibility is false and must be replaced
+- **C.** The quoted claim concerns hard-margin feasibility but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about hard-margin feasibility is false and must be replaced
+
+**Explanation:** The quoted claim contradicts hard-margin feasibility; it must be replaced by Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point..
+
+---
+
+## Question 73
+
+**Question:** A student's answer about norm minimization contains the claim “Maximizing $\lVert w\rVert$ always widens the margin.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about norm minimization is false and must be replaced
+- **B.** The quoted claim about norm minimization is correct without qualification
+- **C.** The quoted claim concerns norm minimization but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about norm minimization is false and must be replaced
+
+**Explanation:** The quoted claim contradicts norm minimization; it must be replaced by Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin..
+
+---
+
+## Question 74
+
+**Question:** A student's answer about nonzero dual coefficients contains the claim “All alpha values must be negative for support vectors.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about nonzero dual coefficients is correct without qualification
+- **C.** The quoted claim concerns nonzero dual coefficients but is only a harmless change of notation
+- **D.** The quoted claim about nonzero dual coefficients is false and must be replaced
+
+**Correct Answer:** The quoted claim about nonzero dual coefficients is false and must be replaced
+
+**Explanation:** The quoted claim contradicts nonzero dual coefficients; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 75
+
+**Question:** A student's answer about the kernel substitution contains the claim “A kernel replaces every label with a continuous target.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about the kernel substitution is false and must be replaced
+- **B.** The quoted claim about the kernel substitution is correct without qualification
+- **C.** The quoted claim concerns the kernel substitution but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about the kernel substitution is false and must be replaced
+
+**Explanation:** The quoted claim contradicts the kernel substitution; it must be replaced by A kernel replaces an input-space inner product with K($x_i$,$x_j$)..
+
+---
+
+## Question 76
+
+**Question:** A student's answer about RBF width contains the claim “Small variance makes every pair's kernel value exactly one.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about RBF width is false and must be replaced
+- **B.** The quoted claim about RBF width is correct without qualification
+- **C.** The quoted claim concerns RBF width but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about RBF width is false and must be replaced
+
+**Explanation:** The quoted claim contradicts RBF width; it must be replaced by Small RBF variance produces a more localized, flexible boundary..
+
+---
+
+## Question 77
+
+**Question:** A student's answer about the C trade-off contains the claim “Large C ignores every misclassification.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim concerns the C trade-off but is only a harmless change of notation
+- **B.** The quoted claim about the C trade-off is false and must be replaced
+- **C.** The quoted claim about the C trade-off is correct without qualification
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about the C trade-off is false and must be replaced
+
+**Explanation:** The quoted claim contradicts the C trade-off; it must be replaced by Large C penalizes violations more strongly and can increase variance..
+
+---
+
+## Question 78
+
+**Question:** A student's answer about soft GMM membership contains the claim “GMM assigns every point permanently to exactly one centroid.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about soft GMM membership is false and must be replaced
+- **B.** The quoted claim about soft GMM membership is correct without qualification
+- **C.** The quoted claim concerns soft GMM membership but is only a harmless change of notation
+- **D.** The quoted claim becomes correct merely by changing the dataset size
+
+**Correct Answer:** The quoted claim about soft GMM membership is false and must be replaced
+
+**Explanation:** The quoted claim contradicts soft GMM membership; it must be replaced by the chapter's stated rule.
+
+---
+
+## Question 79
+
+**Question:** A student's answer about mixing coefficients contains the claim “Each mixing coefficient must be greater than one.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim about mixing coefficients is correct without qualification
+- **B.** The quoted claim becomes correct merely by changing the dataset size
+- **C.** The quoted claim concerns mixing coefficients but is only a harmless change of notation
+- **D.** The quoted claim about mixing coefficients is false and must be replaced
+
+**Correct Answer:** The quoted claim about mixing coefficients is false and must be replaced
+
+**Explanation:** The quoted claim contradicts mixing coefficients; it must be replaced by Mixing coefficients are nonnegative and sum to one..
+
+---
+
+## Question 80
+
+**Question:** A student's answer about K-Means versus GMM contains the claim “K-Means and GMM return identical membership probabilities by definition.” Which assessment is correct?
+
+**Choices:**
+- **A.** The quoted claim becomes correct merely by changing the dataset size
+- **B.** The quoted claim about K-Means versus GMM is false and must be replaced
+- **C.** The quoted claim concerns K-Means versus GMM but is only a harmless change of notation
+- **D.** The quoted claim about K-Means versus GMM is correct without qualification
+
+**Correct Answer:** The quoted claim about K-Means versus GMM is false and must be replaced
+
+**Explanation:** The quoted claim contradicts K-Means versus GMM; it must be replaced by K-Means is distance-based hard clustering; GMM is density-based soft clustering..
+
+---
+
+## Question 81
+
+**Question:** An implementation is designed around the rule “Support vectors are always the points farthest from the hyperplane.” Which principle exposes the design error concerning support-vector influence?
+
+**Choices:**
+- **A.** Required principle: Removing all support vectors leaves the same boundary by definition. for all permitted parameter values
+- **B.** Required principle: Every non-support vector has a nonzero dual coefficient.
+- **C.** Required principle: Support vectors are always the points farthest from the hyperplane.
+- **D.** Required principle: Support vectors are the training points that determine the maximum-margin boundary.
+
+**Correct Answer:** Required principle: Support vectors are the training points that determine the maximum-margin boundary.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because Nonzero alpha values identify the influential closest points.
+
+---
+
+## Question 82
+
+**Question:** An implementation is designed around the rule “The constraint omits labels and uses only $\lVert w\rVert$.” Which principle exposes the design error concerning hard-margin feasibility?
+
+**Choices:**
+- **A.** Required principle: Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
+- **B.** Required principle: Hard margin accepts every point with product below zero.
+- **C.** Required principle: The constraint omits labels and uses only $\lVert w\rVert$.
+- **D.** Required principle: Hard margin requires every point to lie on the hyperplane. under every stated condition
+
+**Correct Answer:** Required principle: Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The signed functional margin must meet at least one.
+
+---
+
+## Question 83
+
+**Question:** An implementation is designed around the rule “The objective directly maximizes the number of features.” Which principle exposes the design error concerning norm minimization?
+
+**Choices:**
+- **A.** Required principle: Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
+- **B.** Required principle: Maximizing $\lVert w\rVert$ always widens the margin.
+- **C.** Required principle: The objective directly maximizes the number of features. without changing the supplied data
+- **D.** Required principle: The norm controls only the class-label encoding.
+
+**Correct Answer:** Required principle: Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because Under fixed functional scaling, geometric margin varies inversely with $\lVert w\rVert$.
+
+---
+
+## Question 84
+
+**Question:** An implementation is designed around the rule “The equality constraint is sum $\alpha_i$=1 without labels.” Which principle exposes the design error concerning nonzero dual coefficients?
+
+**Choices:**
+- **A.** Required principle: All alpha values must be negative for support vectors.
+- **B.** Required principle: The equality constraint is sum $\alpha_i$=1 without labels. for all permitted parameter values
+- **C.** Required principle: Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
+- **D.** Required principle: The dual removes every dependence on inner products.
+
+**Correct Answer:** Required principle: Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because Zero coefficients vanish from the weighted sum.
+
+---
+
+## Question 85
+
+**Question:** An implementation is designed around the rule “A kernel guarantees linearly separable raw inputs without parameters.” Which principle exposes the design error concerning the kernel substitution?
+
+**Choices:**
+- **A.** Required principle: A kernel is the same as the SVM penalty C.
+- **B.** Required principle: A kernel replaces an input-space inner product with K($x_i$,$x_j$).
+- **C.** Required principle: A kernel guarantees linearly separable raw inputs without parameters.
+- **D.** Required principle: A kernel replaces every label with a continuous target.
+
+**Correct Answer:** Required principle: A kernel replaces an input-space inner product with K($x_i$,$x_j$).
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The kernel trick changes similarity computation in the dual.
+
+---
+
+## Question 86
+
+**Question:** An implementation is designed around the rule “Large variance always creates more local variation.” Which principle exposes the design error concerning RBF width?
+
+**Choices:**
+- **A.** Required principle: RBF variance is the misclassification penalty C.
+- **B.** Required principle: Small variance makes every pair's kernel value exactly one. without changing the supplied data
+- **C.** Required principle: Large variance always creates more local variation.
+- **D.** Required principle: Small RBF variance produces a more localized, flexible boundary.
+
+**Correct Answer:** Required principle: Small RBF variance produces a more localized, flexible boundary.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because Narrow Gaussians decay quickly with distance.
+
+---
+
+## Question 87
+
+**Question:** An implementation is designed around the rule “Small C necessarily produces zero training error.” Which principle exposes the design error concerning the C trade-off?
+
+**Choices:**
+- **A.** Required principle: Large C ignores every misclassification.
+- **B.** Required principle: Small C necessarily produces zero training error. for all permitted parameter values
+- **C.** Required principle: Large C penalizes violations more strongly and can increase variance.
+- **D.** Required principle: C is the Gaussian mixing coefficient sum.
+
+**Correct Answer:** Required principle: Large C penalizes violations more strongly and can increase variance.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because The stated trade-off links large C with lower bias and higher variance.
+
+---
+
+## Question 88
+
+**Question:** An implementation is designed around the rule “GMM contains no mixing coefficients.” Which principle exposes the design error concerning soft GMM membership?
+
+**Choices:**
+- **A.** Required principle: GMM contains no mixing coefficients.
+- **B.** Required principle: GMM assigns every point permanently to exactly one centroid. under every stated condition
+- **C.** Required principle: GMM gives each point a probability-like membership across components.
+- **D.** Required principle: GMM cannot represent more than one Gaussian.
+
+**Correct Answer:** Required principle: GMM gives each point a probability-like membership across components.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because GMM is soft, probabilistic clustering.
+
+---
+
+## Question 89
+
+**Question:** An implementation is designed around the rule “Mixing coefficients are unconstrained SVM dual variables.” Which principle exposes the design error concerning mixing coefficients?
+
+**Choices:**
+- **A.** Required principle: Each mixing coefficient must be greater than one.
+- **B.** Required principle: Mixing coefficients are nonnegative and sum to one.
+- **C.** Required principle: Mixing coefficients are unconstrained SVM dual variables.
+- **D.** Required principle: Their sum must equal the number of data points.
+
+**Correct Answer:** Required principle: Mixing coefficients are nonnegative and sum to one.
+
+**Explanation:** The implementation encodes a false rule. The required principle follows because They form component prior probabilities.
 
 ---
 
 ## Question 90
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 40: Which interpretation avoids the most tempting conceptual error?
+**Question:** An implementation is designed around the rule “GMM has centroids but no Gaussian parameters.” Which principle exposes the design error concerning K-Means versus GMM?
 
 **Choices:**
-- **A.** K-Means and GMM return identical membership probabilities by definition., without needing any additional modeling assumption
-- **B.** GMM has centroids but no Gaussian parameters.
-- **C.** K-Means requires covariance matrices for every point.
-- **D.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+- **A.** Required principle: K-Means requires covariance matrices for every point.
+- **B.** Required principle: K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+- **C.** Required principle: GMM has centroids but no Gaussian parameters.
+- **D.** Required principle: K-Means and GMM return identical membership probabilities by definition. for all permitted parameter values
 
-**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+**Correct Answer:** Required principle: K-Means is distance-based hard clustering; GMM is density-based soft clustering.
 
-**Explanation:** The tracker explicitly contrasts their assignments and representations.
+**Explanation:** The implementation encodes a false rule. The required principle follows because The tracker explicitly contrasts their assignments and representations.
 
 ---
 
 ## Question 91
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 41: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Support vectors are the training points that determine the maximum-margin boundary.” Reviewer B states, “Removing all support vectors leaves the same boundary by definition.” What is the correct verdict about support-vector influence?
 
 **Choices:**
-- **A.** Support vectors are the training points that determine the maximum-margin boundary.
-- **B.** Every non-support vector has a nonzero dual coefficient.
-- **C.** Support vectors are always the points farthest from the hyperplane.
-- **D.** Removing all support vectors leaves the same boundary by definition., under both the training and evaluation conditions stated
+- **A.** Both reviewers are correct about support-vector influence
+- **B.** Reviewer B only is correct about support-vector influence
+- **C.** Reviewer A only is correct about support-vector influence
+- **D.** Neither reviewer is correct about support-vector influence
 
-**Correct Answer:** Support vectors are the training points that determine the maximum-margin boundary.
+**Correct Answer:** Reviewer A only is correct about support-vector influence
 
-**Explanation:** Nonzero alpha values identify the influential closest points.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Nonzero alpha values identify the influential closest points.
 
 ---
 
 ## Question 92
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 42: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Hard-margin constraints require $y_i(w^\top x_i+b)\ge 1$ for every training point.” Reviewer B states, “Hard margin requires every point to lie on the hyperplane.” What is the correct verdict about hard-margin feasibility?
 
 **Choices:**
-- **A.** Hard margin accepts every point with product below zero.
-- **B.** The constraint omits labels and uses only ||w||.
-- **C.** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
-- **D.** Hard margin requires every point to lie on the hyperplane., even when the other quantities in the formula are fixed
+- **A.** Neither reviewer is correct about hard-margin feasibility
+- **B.** Reviewer B only is correct about hard-margin feasibility
+- **C.** Both reviewers are correct about hard-margin feasibility
+- **D.** Reviewer A only is correct about hard-margin feasibility
 
-**Correct Answer:** Hard-margin constraints require y_i(w^T x_i+b) >= 1 for every training point.
+**Correct Answer:** Reviewer A only is correct about hard-margin feasibility
 
-**Explanation:** The signed functional margin must meet at least one.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The signed functional margin must meet at least one.
 
 ---
 
 ## Question 93
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 43: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Minimizing $\lVert w\rVert^2$ under the canonical constraints maximizes geometric margin.” Reviewer B states, “The norm controls only the class-label encoding.” What is the correct verdict about norm minimization?
 
 **Choices:**
-- **A.** Maximizing ||w|| always widens the margin.
-- **B.** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
-- **C.** The objective directly maximizes the number of features., as a consequence that holds for every permitted input
-- **D.** The norm controls only the class-label encoding.
+- **A.** Both reviewers are correct about norm minimization
+- **B.** Reviewer A only is correct about norm minimization
+- **C.** Reviewer B only is correct about norm minimization
+- **D.** Neither reviewer is correct about norm minimization
 
-**Correct Answer:** Minimizing ||w||^2 under the canonical constraints maximizes geometric margin.
+**Correct Answer:** Reviewer A only is correct about norm minimization
 
-**Explanation:** Under fixed functional scaling, geometric margin varies inversely with ||w||.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Under fixed functional scaling, geometric margin varies inversely with $\lVert w\rVert$.
 
 ---
 
 ## Question 94
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 44: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Only nonzero dual coefficients contribute to $w=\sum_i\alpha_i y_i x_i$.” Reviewer B states, “The dual removes every dependence on inner products.” What is the correct verdict about nonzero dual coefficients?
 
 **Choices:**
-- **A.** All alpha values must be negative for support vectors.
-- **B.** The equality constraint is sum alpha_i=1 without labels., without needing any additional modeling assumption
-- **C.** The dual removes every dependence on inner products.
-- **D.** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
+- **A.** Reviewer B only is correct about nonzero dual coefficients
+- **B.** Both reviewers are correct about nonzero dual coefficients
+- **C.** Reviewer A only is correct about nonzero dual coefficients
+- **D.** Neither reviewer is correct about nonzero dual coefficients
 
-**Correct Answer:** Only nonzero dual coefficients contribute to w=sum alpha_i y_i x_i.
+**Correct Answer:** Reviewer A only is correct about nonzero dual coefficients
 
-**Explanation:** Zero coefficients vanish from the weighted sum.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Zero coefficients vanish from the weighted sum.
 
 ---
 
 ## Question 95
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 45: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “A kernel replaces an input-space inner product with K($x_i$,$x_j$).” Reviewer B states, “A kernel is the same as the SVM penalty C.” What is the correct verdict about the kernel substitution?
 
 **Choices:**
-- **A.** A kernel replaces every label with a continuous target.
-- **B.** A kernel replaces an input-space inner product with K(x_i,x_j).
-- **C.** A kernel guarantees linearly separable raw inputs without parameters.
-- **D.** A kernel is the same as the SVM penalty C.
+- **A.** Reviewer B only is correct about the kernel substitution
+- **B.** Neither reviewer is correct about the kernel substitution
+- **C.** Both reviewers are correct about the kernel substitution
+- **D.** Reviewer A only is correct about the kernel substitution
 
-**Correct Answer:** A kernel replaces an input-space inner product with K(x_i,x_j).
+**Correct Answer:** Reviewer A only is correct about the kernel substitution
 
-**Explanation:** The kernel trick changes similarity computation in the dual.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The kernel trick changes similarity computation in the dual.
 
 ---
 
 ## Question 96
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 46: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Small RBF variance produces a more localized, flexible boundary.” Reviewer B states, “RBF variance is the misclassification penalty C.” What is the correct verdict about RBF width?
 
 **Choices:**
-- **A.** Small variance makes every pair's kernel value exactly one., even when the other quantities in the formula are fixed
-- **B.** Large variance always creates more local variation.
-- **C.** RBF variance is the misclassification penalty C.
-- **D.** Small RBF variance produces a more localized, flexible boundary.
+- **A.** Both reviewers are correct about RBF width
+- **B.** Reviewer B only is correct about RBF width
+- **C.** Reviewer A only is correct about RBF width
+- **D.** Neither reviewer is correct about RBF width
 
-**Correct Answer:** Small RBF variance produces a more localized, flexible boundary.
+**Correct Answer:** Reviewer A only is correct about RBF width
 
-**Explanation:** Narrow Gaussians decay quickly with distance.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, Narrow Gaussians decay quickly with distance.
 
 ---
 
 ## Question 97
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 47: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Large C penalizes violations more strongly and can increase variance.” Reviewer B states, “C is the Gaussian mixing coefficient sum.” What is the correct verdict about the C trade-off?
 
 **Choices:**
-- **A.** Large C penalizes violations more strongly and can increase variance.
-- **B.** Large C ignores every misclassification.
-- **C.** Small C necessarily produces zero training error., as a consequence that holds for every permitted input
-- **D.** C is the Gaussian mixing coefficient sum.
+- **A.** Reviewer B only is correct about the C trade-off
+- **B.** Reviewer A only is correct about the C trade-off
+- **C.** Both reviewers are correct about the C trade-off
+- **D.** Neither reviewer is correct about the C trade-off
 
-**Correct Answer:** Large C penalizes violations more strongly and can increase variance.
+**Correct Answer:** Reviewer A only is correct about the C trade-off
 
-**Explanation:** The stated trade-off links large C with lower bias and higher variance.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The stated trade-off links large C with lower bias and higher variance.
 
 ---
 
 ## Question 98
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 48: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “GMM gives each point a probability-like membership across components.” Reviewer B states, “GMM cannot represent more than one Gaussian.” What is the correct verdict about soft GMM membership?
 
 **Choices:**
-- **A.** GMM gives each point a probability-like membership across components.
-- **B.** GMM assigns every point permanently to exactly one centroid., without needing any additional modeling assumption
-- **C.** GMM contains no mixing coefficients.
-- **D.** GMM cannot represent more than one Gaussian.
+- **A.** Reviewer B only is correct about soft GMM membership
+- **B.** Neither reviewer is correct about soft GMM membership
+- **C.** Both reviewers are correct about soft GMM membership
+- **D.** Reviewer A only is correct about soft GMM membership
 
-**Correct Answer:** GMM gives each point a probability-like membership across components.
+**Correct Answer:** Reviewer A only is correct about soft GMM membership
 
-**Explanation:** GMM is soft, probabilistic clustering.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, GMM is soft, probabilistic clustering.
 
 ---
 
 ## Question 99
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 49: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “Mixing coefficients are nonnegative and sum to one.” Reviewer B states, “Their sum must equal the number of data points.” What is the correct verdict about mixing coefficients?
 
 **Choices:**
-- **A.** Each mixing coefficient must be greater than one.
-- **B.** Mixing coefficients are unconstrained SVM dual variables.
-- **C.** Their sum must equal the number of data points.
-- **D.** Mixing coefficients are nonnegative and sum to one.
+- **A.** Reviewer B only is correct about mixing coefficients
+- **B.** Reviewer A only is correct about mixing coefficients
+- **C.** Both reviewers are correct about mixing coefficients
+- **D.** Neither reviewer is correct about mixing coefficients
 
-**Correct Answer:** Mixing coefficients are nonnegative and sum to one.
+**Correct Answer:** Reviewer A only is correct about mixing coefficients
 
-**Explanation:** They form component prior probabilities.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, They form component prior probabilities.
 
 ---
 
 ## Question 100
 
-**Question:** An SVM/GMM model-selection argument is examined. Case 50: An examiner changes only the wording, not the underlying assumptions. Which answer is still valid?
+**Question:** Reviewer A states, “K-Means is distance-based hard clustering; GMM is density-based soft clustering.” Reviewer B states, “K-Means requires covariance matrices for every point.” What is the correct verdict about K-Means versus GMM?
 
 **Choices:**
-- **A.** K-Means and GMM return identical membership probabilities by definition., even when the other quantities in the formula are fixed
-- **B.** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
-- **C.** GMM has centroids but no Gaussian parameters.
-- **D.** K-Means requires covariance matrices for every point.
+- **A.** Both reviewers are correct about K-Means versus GMM
+- **B.** Reviewer B only is correct about K-Means versus GMM
+- **C.** Neither reviewer is correct about K-Means versus GMM
+- **D.** Reviewer A only is correct about K-Means versus GMM
 
-**Correct Answer:** K-Means is distance-based hard clustering; GMM is density-based soft clustering.
+**Correct Answer:** Reviewer A only is correct about K-Means versus GMM
 
-**Explanation:** The tracker explicitly contrasts their assignments and representations.
+**Explanation:** Reviewer A states the chapter's rule, while Reviewer B contradicts it. In particular, The tracker explicitly contrasts their assignments and representations.
 
 ---
 
 ### Answer distribution (self-check)
 
-Correct-choice positions: A=25, B=25, C=25, D=25. Distractors are designed around plausible definition, sign, denominator, update-order, and rounding errors.
+Correct-choice positions: A=25, B=25, C=25, D=25. Questions were audited for structural balance, verbatim reuse, and parameter-only duplicate prompts.
