@@ -15,7 +15,7 @@ Which term refers to a network that provides secure access to the corporate offi
 extranet
 
 **Explanation:**
-The term Internet refers to the worldwide collection of connected networks. Intranet refers to a private connection of LANs and WANS that belong to an organization and is designed to be accessible to the members of the organization, employees, or others with authorization. Extranets provide secure and safe access to ​suppliers, customers, and collaborators. Extendednet is not a type of network.
+The term Internet refers to the worldwide collection of connected networks. Intranet refers to a private connection of LANs and WANS that belong to an organization and is designed to be accessible to the members of the organization, employees, or others with authorization. Extranets provide secure and Vafe access to ​suppliers, customers, and collaborators. Extendednet is not a type of network.
 
 ---
 
