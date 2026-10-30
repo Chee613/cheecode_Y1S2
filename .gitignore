@@ -1,7 +1,23 @@
-# Ignore compiled Java class files
+# Compiled Java class files & NetBeans build directories
 *.class
 /WIA1002-DS/Assignment/GroceryStoreSystem-NetBeans/nbproject/private/
 /WIA1002-DS/Assignment/GroceryStoreSystem-NetBeans/dist/
 
-# Ignore Office temporary lock files
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Office & temporary lock files
 ~$*
+~*
+*.tmp
+
+# OS & Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Internal agent scratchpads & working specs
+docs/superpowers/
+.superpowers/
