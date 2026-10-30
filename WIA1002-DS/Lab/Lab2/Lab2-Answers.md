@@ -138,7 +138,7 @@ class MinMaxTwoDArray {
         return list[0][0];
     }
     public static void main(String[] args) {
-        Integer[][] numbers = {{4, 5, 6}, {1, 2, 3}};
+        Integer[][] numbers = { {4, 5, 6}, {1, 2, 3} };
         System.out.println("Minimum: " + min(numbers)); // 1
         System.out.println("Maximum: " + max(numbers)); // 6
     }
